@@ -16,7 +16,7 @@
         var imagePos = $(this).offset().top;
 
         var topOfWindow = $(window).scrollTop();
-            if (imagePos < topOfWindow+260) {
+            if (imagePos < topOfWindow+330) {
                 $(this).addClass("pullUp");
             }
         });

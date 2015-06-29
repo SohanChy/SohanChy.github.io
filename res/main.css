@@ -278,7 +278,7 @@ img.banner {
 #cloneFront, #cloneBack {
     backface-visibility: hidden;
     width:100%;
-
+    height:100%;
     position:absolute;
     -webkit-transition:.6s;
     transition:.6s;

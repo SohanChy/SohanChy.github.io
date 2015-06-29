@@ -188,6 +188,8 @@ $(".cards").click(function () {
             $clone.find('#cloneBack').css({
                 'transform': rotateback
             });
+            $clone.css("height", null);
+
         }, 100);
     } else {
         $('body').click();

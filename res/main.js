@@ -197,7 +197,7 @@ $(".cards").click(function () {
 
 //If user clicks outside of the flipped card, return to default state
 //Also Disable floating,Pulse for anchors
-$('body').click(function (e) {
+$('.iambody, .myname, .covertyped, .centerify, .nav_links, .landing').click(function (e) {
 
 //anchors
 $('div').removeClass('floating');
@@ -221,28 +221,5 @@ $('div').removeClass('floating');
         }
     }
 });
-centerify.click(function (e) {
 
-    //anchors
-$('div').removeClass('floating');
-
-//cards
-    if (cloneflipped) {
-        if (e.target === e.currentTarget) {
-            //Reverse the animation
-            $clone.css({
-                'top': lastelement.top + 'px',
-                    'left': lastelement.left + 'px',
-                    'height': lastelement.height + 'px',
-                    'width': lastelement.width + 'px'
-            });
-            $clone.find('#cloneFront').css({
-                'transform': 'rotateY(0deg)'
-            });
-            $clone.find('#cloneBack').css({
-                'transform': 'rotateY(-180deg)'
-            });
-        }
-    }
-});
 });//]]>  

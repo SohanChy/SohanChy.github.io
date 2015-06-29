@@ -144,14 +144,10 @@ a {
         border: 2px solid #F5F5F5;
 }
 
-.highlight {
-    display:inline-block;
-    margin: 4px 0 2px;
-    color: #FFFFFF;
-    padding: 2px;
-    border-radius: 4px;
-
+.highlight:hover {
+        color: #DC143C;
 }
+
 
 .twtpx {
     font-size: 24px;
@@ -171,8 +167,6 @@ a {
 }
 
 
-
-
 /* Cards */
 .tright {
     text-align: right;
@@ -188,6 +182,17 @@ a {
     text-align:center; 
     visibility: hidden;
     width: 100%;
+}
+
+
+#gitbanner {
+   background-image: url('imgs/gitbanner.jpg');
+   height: 144px;
+   width: 304px;
+}
+
+#gitbanner:hover {
+   background-image: url('imgs/gitbannerh.jpg');
 }
 
 .cardscontainer {
@@ -244,6 +249,11 @@ img.tinydp {
     margin:0 0 15px 15px;
     float: right;
 }
+.textincard {
+    word-wrap: break-word;
+    margin: 0 5px 0 5px;
+}
+
 img.banner {
     display:block;
     width:100%;
@@ -533,4 +543,56 @@ pulse
         -webkit-transform: scale(0.95);
         opacity: 0.7;   
     }           
+}
+
+
+/* Radial Out */
+.highlight {
+    cursor:pointer;
+    margin: 4px 0 2px;
+    color: #FFFFFF;
+    padding: 2px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+    background: #01579B;
+
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.highlight:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2098d1;
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.highlight:hover, .highlight:focus, .highlight:active {
+  color: white;
+}
+.highlight:hover:before, .highlight:focus:before, .highlight:active:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
 }

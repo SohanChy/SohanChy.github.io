@@ -282,8 +282,10 @@ img.banner {
     position:absolute;
     -webkit-transition:.6s;
     transition:.6s;
-    overflow:hidden;
+    overflow: auto;
 }
+
+
 #cloneFront {
     z-index:100;
     background-color:white;

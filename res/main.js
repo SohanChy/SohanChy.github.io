@@ -188,10 +188,12 @@ $(".cards").click(function () {
             $clone.find('#cloneBack').css({
                 'transform': rotateback
             });
-            $clone.css("height", null);
 
         }, 100);
-    } else {
+    }
+
+
+     else {
         $('body').click();
     }
 });
@@ -203,6 +205,8 @@ $('.iambody, .myname, .covertyped, .centerify, .nav_links, .landing').click(func
 
 //anchors
 $('div').removeClass('floating');
+
+
 
 //card flips
     if (cloneflipped) {

@@ -395,8 +395,8 @@ pullUp
     animation-name: pullUp;
     -webkit-animation-name: pullUp; 
 
-    animation-duration: 1.1s;   
-    -webkit-animation-duration: 1.1s;
+    animation-duration: 1.3s;   
+    -webkit-animation-duration: 1.3s;
 
     animation-timing-function: ease-out;    
     -webkit-animation-timing-function: ease-out;    
@@ -548,8 +548,7 @@ pulse
 }
 
 
-/* Radial Out */
-.highlight {
+.highlighted {
     cursor:pointer;
     margin: 4px 0 2px;
     color: #FFFFFF;
@@ -560,6 +559,11 @@ pulse
     position: relative;
     overflow: hidden;
     background: #01579B;
+}
+
+/* Radial Out */
+.highlight {
+
 
   -webkit-transform: translateZ(0);
   transform: translateZ(0);

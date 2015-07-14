@@ -1,3 +1,20 @@
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+
 # Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
 RewriteBase /
 
@@ -12,17 +29,3 @@ BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 BrowserMatch \bMSI[E] !no-gzip !gzip-only-text/html
 SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip
 Header append Vary User-Agent env=!dont-vary
-
-ExpiresActive On
-ExpiresByType image/gif A2592000
-ExpiresByType image/jpeg A2592000
-ExpiresByType image/jpg A2592000
-ExpiresByType image/png A2592000
-ExpiresByType image/x-icon A2592000
-ExpiresByType text/css A86400
-ExpiresByType text/javascript A86400
-ExpiresByType application/x-shockwave-flash A2592000
-#
-<FilesMatch "\.(gif¦jpe?g¦png¦ico¦css¦js¦swf)$">
-Header set Cache-Control "public"
-</FilesMatch>

@@ -1,9 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
+
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <title>Sohan Chy's Homepage</title>
   <script type='text/javascript' src='res/jquery-1.11.3.min.js'></script>
+ <style>
+  body {
+	overflow: hidden;
+}
+
+/* Preloader */
+
+#preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#2196F3; /* change if the mask should have another color then white */
+    z-index:99; /* makes sure it stays on top */
+}
+
+#status {
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%; /* centers the loading animation horizontally one the screen */
+    top:50%; /* centers the loading animation vertically one the screen */
+    background-image:url(res/imgs/loading.gif); /* path to your loading animation */
+    background-repeat:no-repeat;
+    background-position:center;
+    margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+</style>
+<!-- Preloader -->
+<script type="text/javascript">
+	//<![CDATA[
+		$(window).load(function() { // makes sure the whole site is loaded
+			$('#status').fadeOut(); // will first fade out the loading animation
+			$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+			$('body').delay(350).css({'overflow':'visible'});
+		})
+	//]]>
+</script>
+
   <script src="res/typed.min.js" type="text/javascript"></script>
   <link href="res/main.css" type="text/css" rel="stylesheet">
   <script type='text/javascript' src='res/main.js'></script>
@@ -28,6 +69,7 @@
       <ul class='nav_links'>
               <li class="intro"><a href="#goto_intro">Intro</a></li>
         <li class="home"><a href="#goto_home">Home</a></li>
+        <li class="blog"><a id="blog" href="http://blog.sohan.ga">Blog</a></li>
         <li class="git"><a id="anchor_git" href="#anchor_gitL">My Code</a></li>
         <li class="contact"><a id="anchor_contact" href="#anchor_contactL" href="#">Contact</a></li>
       </ul>
@@ -196,6 +238,10 @@ At least not anymore.</p>
 
 </body>
 
+<!-- Preloader -->
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
 
 </html>
 

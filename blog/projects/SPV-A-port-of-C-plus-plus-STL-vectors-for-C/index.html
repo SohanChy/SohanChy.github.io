@@ -17,14 +17,14 @@
     
 
     
-    <title>How to printf a upside down star pyramid in C - Sohans Blog</title>
-    <meta property='og:title' content="How to printf a upside down star pyramid in C - Sohans Blog">
+    <title>SPV - A port of C&#43;&#43; STL vectors for C - Sohans Blog</title>
+    <meta property='og:title' content="SPV - A port of C&#43;&#43; STL vectors for C - Sohans Blog">
     <meta property="og:type" content="article">
     
 
-    <meta property="og:url" content="http://sohanchy.github.io/blog/code/print-upside-down-star-pyramid-in-c/">
-    <meta name="description" content="Here&#39;s my simple approach to writing a program to find prime numbers in C...">
-    <meta property="og:image" content="http://sohanchy.github.io/blog/images/code/printf-a-upside-down-star-pyramid.png">
+    <meta property="og:url" content="http://sohanchy.github.io/blog/projects/SPV-A-port-of-C-plus-plus-STL-vectors-for-C/">
+    <meta name="description" content="SPV is a C header allows vector usage like resizing, inserting, deleting, sorting of arrays and much much more.">
+    <meta property="og:image" content="http://sohanchy.github.io/blog/images/projects/spvforC.png">
 
   </head>
 
@@ -44,12 +44,12 @@
       <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
 
         <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://sohanchy.github.io/blog/"/>
-        <meta itemprop="dateModified" content="2015-06-28T00:00:00&#43;00:00">
-        <meta itemprop="headline" content="How to printf a upside down star pyramid in C">
-        <meta itemprop="description" content="Here&rsquo;s my approach to this beginner problem. Nested loops are used to format the pyramids print structure. This problem is basically taught to get students used to basic nested loops. #include &lt;stdio.h&gt; int main() { int input; do { printf(&quot;ODD input please: &quot;); scanf(&quot;%d&quot;,&amp;input); } while (input%2==0); int x; for(x=input;x&gt;0;x=x-2) { printf(&quot;\t\t\t&quot;); int j=input-x;; while(j&gt;0) { printf(&quot; &quot;); j=j-2; } int i; for(i=x;i&gt;0;i=i-1) { printf(&quot;*&quot;); } printf(&quot;\n&quot;); } return 0;">
-        <meta itemprop="url" content="http://sohanchy.github.io/blog/code/print-upside-down-star-pyramid-in-c/">
+        <meta itemprop="dateModified" content="2016-01-22T00:00:00&#43;00:00">
+        <meta itemprop="headline" content="SPV - A port of C&#43;&#43; STL vectors for C">
+        <meta itemprop="description" content="I tried to port the vector container from C&#43;&#43; STL to C. Its just a header file called spv.h and almost all features of C&#43;&#43; vectors can now be used in C just by including it. SPV arrays support resize, insert, remove, push_back, push_front, pop_back, pop_front, sort , swap, etc. For more information visit the project page at http://sohanchy.github.io/SPV-for-C/">
+        <meta itemprop="url" content="http://sohanchy.github.io/blog/projects/SPV-A-port-of-C-plus-plus-STL-vectors-for-C/">
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="http://sohanchy.github.io/blog/images/code/printf-a-upside-down-star-pyramid.png" />
+          <meta itemprop="url" content="http://sohanchy.github.io/blog/images/projects/spvforC.png" />
           <meta itemprop="width" content="800">
           <meta itemprop="height" content="800">
         </div>
@@ -65,57 +65,22 @@
           <meta itemprop="name" content="Sohan Chowdhury">
         </div>
 
-        <div class="image" style="background-image: url(http://sohanchy.github.io/blog/images/code/printf-a-upside-down-star-pyramid.png);"></div>
+        <div class="image" style="background-image: url(http://sohanchy.github.io/blog/images/projects/spvforC.png);"></div>
 
         <header class="article-header">
-          <time itemprop="datePublished" pubdate="pubdate" datetime="2015-06-28T00:00:00&#43;00:00">Sun, Jun 28, 2015</time>
-          <h1 class="article-title">How to printf a upside down star pyramid in C</h1>
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-01-22T00:00:00&#43;00:00">Fri, Jan 22, 2016</time>
+          <h1 class="article-title">SPV - A port of C&#43;&#43; STL vectors for C</h1>
         </header>
 
         <div class="article-body" itemprop="articleBody">
 
         
 
-          <p>Here&rsquo;s my approach to this beginner problem.
-Nested loops are used to format the pyramids print structure. This problem is basically taught to get students used to basic <strong>nested loops</strong>.</p>
+          <p>I tried to port the vector container from C++ STL to C.
+Its just a header file called spv.h and almost all features of C++ vectors can now be used in C just by including it.
+SPV arrays support resize, insert, remove, push_back, push_front, pop_back, pop_front, sort , swap, etc.</p>
 
-<pre><code>#include &lt;stdio.h&gt;
-
-int main()
-{
-    int input;
-    do {
-        printf(&quot;ODD input please: &quot;);
-        scanf(&quot;%d&quot;,&amp;input);
-    }
-    while (input%2==0);
-
-
-    int x;
-    for(x=input;x&gt;0;x=x-2)
-    {
-        printf(&quot;\t\t\t&quot;);
-        int j=input-x;;
-        while(j&gt;0)
-            {
-        printf(&quot; &quot;);
-            j=j-2;
-            }
-
-        int i;
-        for(i=x;i&gt;0;i=i-1)
-            {
-        printf(&quot;*&quot;);
-            }
-        printf(&quot;\n&quot;);
-    }
-
-    return 0;
-}
-</code></pre>
-
-<p>The gist is hosted here:
-<a href="https://gist.github.com/2161158a9e2ee06a1eda">https://gist.github.com/2161158a9e2ee06a1eda</a></p>
+<p>For more information visit the project page at <a href="http://sohanchy.github.io/SPV-for-C/">http://sohanchy.github.io/SPV-for-C/</a></p>
 
 
 
@@ -142,10 +107,6 @@ int main()
                                     
                     
                     
-                    <div class="well">
-                    <a style="text-decoration: none; color: #133A49;" href="http://sohanchy.github.io/blog/projects/SPV-A-port-of-C-plus-plus-STL-vectors-for-C/"><span class="glyphicon glyphicon glyphicon-book"></span> SPV - A port of C&#43;&#43; STL vectors for C</a>
-                	</div>
-                
                 
                     
 
@@ -162,6 +123,10 @@ int main()
                                     
                     
                     
+                    <div class="well">
+                    <a style="text-decoration: none; color: #133A49;" href="http://sohanchy.github.io/blog/code/print-upside-down-star-pyramid-in-c/"><span class="glyphicon glyphicon glyphicon-book"></span> How to printf a upside down star pyramid in C</a>
+                	</div>
+                
                 
                     
 
@@ -190,10 +155,10 @@ int main()
           </div>
 
           <div class="section share">
-            <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fsohanchy.github.io%2fblog%2fcode%2fprint-upside-down-star-pyramid-in-c%2f&t=How%20to%20printf%20a%20upside%20down%20star%20pyramid%20in%20C" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
-            <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fcode%2fprint-upside-down-star-pyramid-in-c%2f&text=How%20to%20printf%20a%20upside%20down%20star%20pyramid%20in%20C&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
-            <a href="https://plus.google.com/share?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fcode%2fprint-upside-down-star-pyramid-in-c%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
-            <a href="http://getpocket.com/edit?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fcode%2fprint-upside-down-star-pyramid-in-c%2f&title=How%20to%20printf%20a%20upside%20down%20star%20pyramid%20in%20C" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+            <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fsohanchy.github.io%2fblog%2fprojects%2fSPV-A-port-of-C-plus-plus-STL-vectors-for-C%2f&t=SPV%20-%20A%20port%20of%20C%2b%2b%20STL%20vectors%20for%20C" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+            <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fprojects%2fSPV-A-port-of-C-plus-plus-STL-vectors-for-C%2f&text=SPV%20-%20A%20port%20of%20C%2b%2b%20STL%20vectors%20for%20C&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+            <a href="https://plus.google.com/share?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fprojects%2fSPV-A-port-of-C-plus-plus-STL-vectors-for-C%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+            <a href="http://getpocket.com/edit?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fprojects%2fSPV-A-port-of-C-plus-plus-STL-vectors-for-C%2f&title=SPV%20-%20A%20port%20of%20C%2b%2b%20STL%20vectors%20for%20C" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
           </div>
 
 
@@ -304,7 +269,7 @@ int main()
   <div class="section taxonomies">
     <header><div class="title">tag</div></header>
     <div class="content" id="taxon-tags-cats">
-      <a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/c">c</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/gists">gists</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/ramblings">ramblings</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/self">self</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/motivation">motivation</a>
+      <a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/c">c</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/gists">gists</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/motivation">motivation</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/ramblings">ramblings</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/self">self</a>
     </div>
   </div>
   

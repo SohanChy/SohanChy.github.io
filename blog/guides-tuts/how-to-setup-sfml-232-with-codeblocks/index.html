@@ -1,0 +1,514 @@
+<div class="single">
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+    <link rel="stylesheet" href="http://sohanchy.github.io/blog/css/styles.css">
+    <link rel="stylesheet" href="http://sohanchy.github.io/blog/css/custom.css">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://sohanchy.github.io/blog//index.xml">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    
+
+    
+    <title>How to setup latest SFML 2.3.2 with Codeblocks - Sohans Blog</title>
+    <meta property='og:title' content="How to setup latest SFML 2.3.2 with Codeblocks - Sohans Blog">
+    <meta property="og:type" content="article">
+    
+
+    <meta property="og:url" content="http://sohanchy.github.io/blog/guides-tuts/how-to-setup-sfml-232-with-codeblocks/">
+    <meta name="description" content="A simple step by step guide with screenshots to setup SFML with Codeblocks">
+    
+
+  </head>
+
+  <body>
+
+    <header id="siteHeaderBar" class="site">
+      <div class="title"><a href="http://sohanchy.github.io/blog/">Sohans Blog</a></div>
+    </header>
+
+    <div class="container site">
+
+
+
+  <div class="row">
+    <div class="col-sm-9">
+
+      <article class="single" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+        <meta itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" content="http://sohanchy.github.io/blog/"/>
+        <meta itemprop="dateModified" content="2016-02-13T00:00:00&#43;00:00">
+        <meta itemprop="headline" content="How to setup latest SFML 2.3.2 with Codeblocks">
+        <meta itemprop="description" content="This post is for beginners who want use the Simple Fast Media Library(SFML) for C&#43;&#43; in the popular IDE CodeBlocks. It is a simple step by step guide with screenshots that covers from downloading, creating a project, setting it up with SFML and then linking the DLLs to running your first SFML code. Downloading: First head over to http://www.sfml-dev.org/download.php and download the latest stable version of SFML. As I am writing this, the latest stable version is SFML 2.3.2.">
+        <meta itemprop="url" content="http://sohanchy.github.io/blog/guides-tuts/how-to-setup-sfml-232-with-codeblocks/">
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="http://sohanchy.github.io/blog/images/default.jpg" />
+          <meta itemprop="width" content="800">
+          <meta itemprop="height" content="800">
+        </div>
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+          <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            <meta itemprop="url" content="http://sohanchy.github.io/blog/images/logo.jpg">
+            <meta itemprop="width" content="100">
+            <meta itemprop="height" content="100">
+          </div>
+          <meta itemprop="name" content="Sohans Blog">
+        </div>
+        <div itemprop="author" itemscope itemtype="https://schema.org/Person">
+          <meta itemprop="name" content="Sohan Chowdhury">
+        </div>
+
+        <div class="image" style="background-image: url(http://sohanchy.github.io/blog/images/default.jpg);"></div>
+
+        <header class="article-header">
+          <time itemprop="datePublished" pubdate="pubdate" datetime="2016-02-13T00:00:00&#43;00:00">Sat, Feb 13, 2016</time>
+          <h1 class="article-title">How to setup latest SFML 2.3.2 with Codeblocks</h1>
+        </header>
+
+        <div class="article-body" itemprop="articleBody">
+
+        
+
+          
+
+<p>This post is for beginners who want use the Simple Fast Media Library(SFML) for C++ in the popular IDE CodeBlocks. It is a simple step by step guide with screenshots that covers from downloading, creating a project, setting it up with SFML and then linking the DLLs to running your first SFML code.</p>
+
+<h2 id="downloading:7fed918ca7c4cf4cd322c46c5af333c5">Downloading:</h2>
+
+<p>First head over to <a href="http://www.sfml-dev.org/download.php">http://www.sfml-dev.org/download.php</a> and download the
+latest stable version of SFML. As I am writing this, the latest stable
+version is <strong>SFML 2.3.2.</strong></p>
+
+<p>For CodeBlocks on Windows, the proper version is usually <strong>GCC 4.7.1
+TDM (SJLJ) - 32-bit</strong>
+On Linux, it is usually <strong>GCC 4.7.1 TDM (SJLJ) - 64-bit</strong> (on Ubuntu)</p>
+
+<p>Download the proper zip file and extract it using 7-Zip or Winrar or any
+other archive manager of your choice. Inside the extracted folder you
+will find a folder named <strong>SFML-2.3.2.</strong>
+This is our library. So remember this folder, we will be needing it.</p>
+
+<h2 id="setup-the-codeblocks-project:7fed918ca7c4cf4cd322c46c5af333c5">Setup the Codeblocks project:</h2>
+
+<p>Now open Codeblocks and go to
+<strong>Create a new project &gt; Console Application &gt; C++</strong></p>
+
+<p><strong>Give your project a title and create it in a folder of your choice.</strong>
+But remember where the folder is. Suppose we create it in a folder
+called <strong>My Code.</strong></p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image1.png" alt="" /></p>
+
+<p>Now build and run the project to see if the hello world application
+works, this is just to make sure that your codeblocks is working
+properly and has a compiler.</p>
+
+<p>Now remember our extracted <strong>SFML 2.3.2</strong> folder? Copy it to the <strong>My
+Code</strong> folder or whatever folder you created the project in.</p>
+
+<p>Now go back to CodeBlocks and find the <strong>Management panel</strong> on the
+left(usually) and on the <strong>project</strong> tab, right click your project name.</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image2.png" alt="" /></p>
+
+<p>Now, usually debug is pre-selected at this stage, so click on your
+project name to select it.</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image3.png" alt="" /></p>
+
+<p>Go to <strong>Search</strong> <strong>Directories &gt; Compiler</strong>.</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image4.png" alt="" /></p>
+
+<p>Now Click Add and go to our SFML 2.3.2 folder,</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image5.png" alt="" /></p>
+
+<p>Then select the Include folder inside and click ok.</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image6.png" alt="" /></p>
+
+<p>Now go to Go to <strong>Search</strong> <strong>Directories &gt; Linker.</strong> And this time
+select the <strong>lib</strong> folder and click ok.</p>
+
+<p>Now your project should look like this:</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image7.png" alt="" /></p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image8.png" alt="" /></p>
+
+<p>Now select <strong>debug</strong> under your project.</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image9.png" alt="" /></p>
+
+<p>Go to <strong>Linker Settings.</strong></p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image10.png" alt="" /></p>
+
+<p>Now <strong>this is for DEBUG</strong>, so the files <strong>will have a –d</strong> in the
+end.
+Add the files</p>
+
+<ul>
+<li><p>libsfml-graphics-d.a</p></li>
+
+<li><p>libsfml-window-d.a</p></li>
+
+<li><p>libsfml-system-d.a</p></li>
+</ul>
+
+<blockquote>
+<p>These are the bare minimum files. <strong>If you use audio, you need to add
+the libsfml-audio-d.a</strong> file, if you use network, add the file for
+network and so on.</p>
+
+<p>Now it should look something like this:</p>
+</blockquote>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image11.png" alt="" /></p>
+
+<p>Now select <strong>Release</strong> under your project.</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image12.png" alt="" /></p>
+
+<p>Go to <strong>Linker Settings.</strong></p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image10.png" alt="" /></p>
+
+<p>Now <strong>this is for RELEASE,</strong> so the files will <strong>NOT have a –d</strong> in the
+end.
+Add the files</p>
+
+<ul>
+<li><p>libsfml-graphics.a</p></li>
+
+<li><p>libsfml-window.a</p></li>
+
+<li><p>libsfml-system.a</p></li>
+</ul>
+
+<blockquote>
+<p>These are the bare minimum files. <strong>If you use audio, you need to add
+the libsfml-audio.a</strong> file, if you use network, add the file for
+network and so on.</p>
+</blockquote>
+
+<p>Now it should look something like this:</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image13.png" alt="" /></p>
+
+<h2 id="linking-the-dlls-important:7fed918ca7c4cf4cd322c46c5af333c5">Linking the DLLS (Important!)</h2>
+
+<p>Now comes the tricky part.
+This is the part most people seem to miss and get frustrated. We need to
+link the DLL files of the SFML library to our project. There are two
+ways to do this, STATIC and DYNAMIC.</p>
+
+<p>We will be using the DYNAMIC way as it is easier to use and update.</p>
+
+<p>We need to go to our SFML 2.3.2 folder and go inside the <strong>bin</strong>
+folder..</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image14.png" alt="" /></p>
+
+<p>Copy <strong>ALL</strong> the dll files, and paste them to on your project folder.</p>
+
+<p><img src="http://sohanchy.github.io/blog/images/guides-tuts/how-to-setup-sfml-232-with-codeblocks/image15.png" alt="" /></p>
+
+<p>Finally, you are DONE!!!</p>
+
+<p>Try a sample SFML code from below or any code from the SFML website and
+have a blast.</p>
+
+<pre><code>#include SFML/Graphics.hpp
+
+int main()
+
+{
+
+// create the window
+
+sf::RenderWindow window(sf::VideoMode(800, 600), &quot;My window&quot;);
+
+//create a simple circle shape
+
+sf::CircleShape shape(50);
+
+// set the shape color to green
+
+shape.setFillColor(sf::Color(100, 250, 50));
+
+// run the program as long as the window is open
+
+while (window.isOpen())
+
+{
+
+// check all the window's events that were triggered since the last
+iteration of the loop
+
+sf::Event event;
+
+while (window.pollEvent(event))
+
+{
+
+// &quot;close requested&quot; event: we close the window
+
+if (event.type == sf::Event::Closed)
+
+window.close();
+
+}
+
+// clear the window with black color
+
+window.clear(sf::Color::White);
+
+// draw everything here...
+
+// window.draw(...);
+
+//draw the shape
+
+window.draw(shape);
+
+// end the current frame
+
+window.display();
+
+}
+
+return 0;
+
+}
+</code></pre>
+
+
+
+        </div>
+
+
+        <aside>
+
+                
+                <div class="section">
+                
+                <h4>Related Post:</h4>
+                    
+                    
+                    
+                    
+
+                                    
+                    
+                    
+                
+                    
+
+                                    
+                    
+                    
+                
+                    
+
+                                    
+                    
+                    
+                
+                    
+
+                                    
+                    
+                    
+                
+                    
+
+                                    
+                    
+                    
+                
+                    
+
+                                    
+                    
+                    
+                
+                
+                </div>
+
+
+          <div class="section">
+          <h4 style="margin-bottom:3px;">This post is tagged: </h4>
+          <div class="well">
+          <a style="text-decoration: none;" class="btn btn-default btn-md" href="http://sohanchy.github.io/blog/tags/%20C%20" class="tag"> C </a> </div>
+          </div>
+
+          <div class="section share">
+            <a href="http://www.facebook.com/sharer.php?src=bm&u=http%3a%2f%2fsohanchy.github.io%2fblog%2fguides-tuts%2fhow-to-setup-sfml-232-with-codeblocks%2f&t=How%20to%20setup%20latest%20SFML%202.3.2%20with%20Codeblocks" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-facebook"></i></a>
+            <a href="http://twitter.com/intent/tweet?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fguides-tuts%2fhow-to-setup-sfml-232-with-codeblocks%2f&text=How%20to%20setup%20latest%20SFML%202.3.2%20with%20Codeblocks&tw_p=tweetbutton" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-twitter"></i></a>
+            <a href="https://plus.google.com/share?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fguides-tuts%2fhow-to-setup-sfml-232-with-codeblocks%2f" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-google-plus"></i></a>
+            <a href="http://getpocket.com/edit?url=http%3a%2f%2fsohanchy.github.io%2fblog%2fguides-tuts%2fhow-to-setup-sfml-232-with-codeblocks%2f&title=How%20to%20setup%20latest%20SFML%202.3.2%20with%20Codeblocks" onclick="window.open(this.href, 'PCwindow', 'width=550, height=350, menubar=no, toolbar=no, scrollbars=yes'); return false;"><i class="fa fa-get-pocket"></i></a>
+          </div>
+
+
+          <div id="disqus_thread"></div>
+			<script type="text/javascript">
+
+			(function() {
+			    
+			    
+			    if (window.location.hostname == "localhost")
+			        return;
+
+			    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			    var disqus_shortname = 'sohansblog';
+			    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        </aside>
+
+      </article>
+    </div>
+
+    <div class="col-sm-3">
+      <aside id="stickwithme" class="site">
+
+  
+  <div class="section menu">
+    <header><div class="title">Categories / Sections</div></header>
+
+    
+    <ul>
+      
+      <li>
+        
+      <li><a href="http://sohanchy.github.io/blog/code/"> Code</a></li>
+      
+      
+      <li>
+        
+      <li><a href="http://sohanchy.github.io/blog/guides-tuts/"> Guides tuts</a></li>
+      
+      
+      <li>
+        
+      <li><a href="http://sohanchy.github.io/blog/journal/"> Journal</a></li>
+      
+      
+      <li>
+        
+      <li><a href="http://sohanchy.github.io/blog/projects/"> Projects</a></li>
+      
+      
+    </ul>
+    
+
+  </div>
+  
+
+  <div class="section">
+    <header><div class="title">LatestPosts</div></header>
+    <div class="content">
+      
+      <div class="sm"><article class="li">
+  <a href="http://sohanchy.github.io/blog/guides-tuts/how-to-setup-sfml-232-with-codeblocks/" class="clearfix">
+    <div class="image" style="background-image: url(http://sohanchy.github.io/blog/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Sat, Feb 13, 2016</time>
+      <h2 class="title">How to setup latest SFML 2.3.2 with Codeblocks</h2>
+      <div class="summary">This post is for beginners who want use the Simple Fast Media Library(SFML) for C++ in the popular IDE CodeBlocks. It is a simple step by step guide with screenshots that covers from downloading, creating a project, setting it up with SFML and then linking the DLLs to running your first SFML code. Downloading: First head over to http://www.sfml-dev.org/download.php and download the latest stable version of SFML. As I am writing this, the latest stable version is SFML 2.3.2.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://sohanchy.github.io/blog/projects/SPV-A-port-of-C-plus-plus-STL-vectors-for-C/" class="clearfix">
+    <div class="image" style="background-image: url(http://sohanchy.github.io/blog/images/projects/spvforC.png);"></div>
+    <div class="detail">
+      <time>Fri, Jan 22, 2016</time>
+      <h2 class="title">SPV - A port of C&#43;&#43; STL vectors for C</h2>
+      <div class="summary">I tried to port the vector container from C++ STL to C. Its just a header file called spv.h and almost all features of C++ vectors can now be used in C just by including it. SPV arrays support resize, insert, remove, push_back, push_front, pop_back, pop_front, sort , swap, etc. For more information visit the project page at http://sohanchy.github.io/SPV-for-C/</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+      <div class="sm"><article class="li">
+  <a href="http://sohanchy.github.io/blog/code/how-to-write-a-program-to-check-prime-numbers-in-c/" class="clearfix">
+    <div class="image" style="background-image: url(http://sohanchy.github.io/blog/images/default.jpg);"></div>
+    <div class="detail">
+      <time>Sun, Jul 26, 2015</time>
+      <h2 class="title">How to write a simple program to check prime numbers in C</h2>
+      <div class="summary">I find Prime finding &amp; prime checking interesting because it introduces the concept of translating mathematical logic to programming logic. While writing this you also learn by hand how to do little tweaks and improvements to make a program better. After seeing this program, anyone who wishes to learn more should write a program to print all prime numbers from 1-n by adapting the logic used in this program in a loop.</div>
+    </div>
+  </a>
+</article>
+</div>
+      
+    </div>
+  </div>
+
+  
+  <div class="section taxonomies">
+    <header><div class="title">tag</div></header>
+    <div class="content" id="taxon-tags-cats">
+      <a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/c">c</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/gists">gists</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/ramblings">ramblings</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/self">self</a><a class="btn btn-default btn-xs" href="http://sohanchy.github.io/blog/tags/motivation">motivation</a>
+    </div>
+  </div>
+  
+
+</aside>
+
+    </div>
+
+  </div>
+
+      </div>
+
+    <footer class="site">
+    <div class="col-sm-9" id="footer-main">
+      <div class="col-sm-9" id="footer-left-portion">
+      <p>&copy; 2016 Sohan Chowdhury, all rights reserved.</p>
+      </div>
+      <div class="col-sm-3" id="footer-right-portion">
+      <p>Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>,</p>
+      </div>
+      <div class="col-sm-3" id="footer-right">
+      </div>
+    </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script type="text/javascript">
+        $('#stickwithme').affix({
+        offset: {
+          top: $('#stickwithme').offset().top
+        }
+      });
+
+    </script>
+
+    
+
+  </body>
+</html>
+
+</div>

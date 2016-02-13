@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Sohans Blog </title>
+    <title>Self on Sohans Blog</title>
     <link>http://sohanchy.github.io/blog/tags/self/</link>
+    <description>Recent content in Self on Sohans Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <author>Sohan Chowdhury</author>
-    <rights>(C) 2015</rights>
-    <updated>2015-06-23 00:00:00 &#43;0000 UTC</updated>
-
+    <copyright>&amp;copy; 2016 Sohan Chowdhury, all rights reserved.</copyright>
+    <lastBuildDate>Tue, 23 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://sohanchy.github.io/blog/tags/self/index.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Prologue</title>
+      <link>http://sohanchy.github.io/blog/journal/prologue/</link>
+      <pubDate>Tue, 23 Jun 2015 00:00:00 +0000</pubDate>
       
-    
+      <guid>http://sohanchy.github.io/blog/journal/prologue/</guid>
+      <description>&lt;p&gt;I started poking around HTML since I was in 7th grade.
+I wanted to make my own web pages so I was snooping around Google to see how that was possible. The first few lines of HTML that I wrote were most probably a link with a a:hover effect, When I opened my page on a browser and the mouseover effect worked, I remember being excited like the little kid I was, and even showing my brother what I had accomplished. I really started having fun when I started learning php and jquery,&lt;/p&gt;
 
+&lt;p&gt;What started out as a curiosity turned into me typing away at my keyboard hours on end, night would come, bedtime would pass and I wouldn&amp;rsquo;t even notice.
+I had to kill off my coding interests from grade 10 through 12 because of  the way our education system is. Everything, the future of your life basically depends on these 4 grades and you have to kill anything else but study from your mind.&lt;/p&gt;
+
+&lt;p&gt;Which I tried to do but still didn&amp;rsquo;t succeed in becoming one of the BUET,CUET,&amp;hellip;IAN&amp;rsquo;S.
+Yeah, in that sense, I am a failure. But whatever, IDGAF. At least not anymore.&lt;/p&gt;
+
+&lt;p&gt;Benjamin Franklin said &amp;ldquo;Some people die at 25 and aren&amp;rsquo;t buried until 75.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;People search for a passion all their life. I think I have found mine. So I&amp;rsquo;m going to try my best to pursue it. I&amp;rsquo;m getting back to doing stuff that I actually have an interest in.
+I&amp;rsquo;m learning more low level languages, starting with C. Brushing up my rusted Web Development skills. Trying to stay focused, and waiting to see where that takes me. :)&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

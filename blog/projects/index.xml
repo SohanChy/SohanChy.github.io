@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Sohans Blog</title>
+    <link>http://sohanchy.github.io/blog/projects/</link>
+    <description>Recent content in Projects on Sohans Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Sohan Chowdhury, all rights reserved.</copyright>
+    <lastBuildDate>Fri, 22 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://sohanchy.github.io/blog/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SPV - A port of C&#43;&#43; STL vectors for C</title>
+      <link>http://sohanchy.github.io/blog/projects/SPV-A-port-of-C-plus-plus-STL-vectors-for-C/</link>
+      <pubDate>Fri, 22 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://sohanchy.github.io/blog/projects/SPV-A-port-of-C-plus-plus-STL-vectors-for-C/</guid>
+      <description>&lt;p&gt;I tried to port the vector container from C++ STL to C.
+Its just a header file called spv.h and almost all features of C++ vectors can now be used in C just by including it.
+SPV arrays support resize, insert, remove, push_back, push_front, pop_back, pop_front, sort , swap, etc.&lt;/p&gt;
+
+&lt;p&gt;For more information visit the project page at &lt;a href=&#34;http://sohanchy.github.io/SPV-for-C/&#34;&gt;http://sohanchy.github.io/SPV-for-C/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

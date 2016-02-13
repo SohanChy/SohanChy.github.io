@@ -3,8 +3,18 @@
   
   <url>
     <loc>http://sohanchy.github.io/blog/</loc>
-    <lastmod>2015-07-26T00:00:00+00:00</lastmod>
+    <lastmod>2016-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sohanchy.github.io/blog/guides-tuts/how-to-setup-sfml-232-with-codeblocks/</loc>
+    <lastmod>2016-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sohanchy.github.io/blog/projects/SPV-A-port-of-C-plus-plus-STL-vectors-for-C/</loc>
+    <lastmod>2016-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>

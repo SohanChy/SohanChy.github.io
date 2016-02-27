@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tuts on Sohan&#39;s Blog</title>
+    <link>http://sohanchy.github.io/blog/tags/tuts/</link>
+    <description>Recent content in Tuts on Sohan&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016 Sohan Chowdhury, all rights reserved.</copyright>
+    <lastBuildDate>Sat, 27 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://sohanchy.github.io/blog/tags/tuts/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>প্রোগ্রামিং - এবং গুগল সার্চ এর কালো জাদু</title>
+      <link>http://sohanchy.github.io/blog/bangla-posts/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AE%E0%A6%BF%E0%A6%82-%E0%A6%8F%E0%A6%AC%E0%A6%82-%E0%A6%97%E0%A7%81%E0%A6%97%E0%A6%B2-%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%9A-%E0%A6%8F%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%B2%E0%A7%8B-%E0%A6%9C%E0%A6%BE%E0%A6%A6%E0%A7%81/</link>
+      <pubDate>Sat, 27 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://sohanchy.github.io/blog/bangla-posts/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AE%E0%A6%BF%E0%A6%82-%E0%A6%8F%E0%A6%AC%E0%A6%82-%E0%A6%97%E0%A7%81%E0%A6%97%E0%A6%B2-%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%9A-%E0%A6%8F%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%B2%E0%A7%8B-%E0%A6%9C%E0%A6%BE%E0%A6%A6%E0%A7%81/</guid>
+      <description>&lt;p&gt;আমি নিজে এখনো নুব প্রোগ্রামার দেখেই সম্ভবত প্রায় সময় অনেককে পাই,
+যারা ভাল প্রোগ্রামিং শিখতে চায়, কিন্তু &amp;ldquo;পারছে না&amp;rdquo;। তাদের নানান সমস্যা, প্রশ্ন।&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;কিভাবে প্রোগ্রামিং এ ভাল হওয়া যায়?&lt;br /&gt;
+ওমুক কনসেপ্টটা বুঝছিনা, একটু বুঝিয়ে দিবা?
+কোড লিখেছি কিন্তু কম্পাইল হয়না কেন বুঝিনা।
+আমার লজিক ঠিকাছে, প্রোগ্রাম ও রান হয় কিন্তু রেসাল্ট ঠিকমত আসেনা।
+&amp;hellip; &amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;এ ধরনের ঝাপসা প্রশ্ন থেকে শুরু করে অনেক স্পেসিফিক প্রশ্ন যেমন,&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;একটা মেইন ক্লাস থেকে দুটো ক্লাস ইনহেরিট করে আবার আরেকটা ক্লাসে সেই
+দুটো ক্লাসকে ইনহেরিট করলে প্রোগ্রাম রান হচ্ছেনা &lt;a href=&#34;https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem&#34;&gt;কেন?&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;এসব প্রশ্নের উত্তরে আমার মুখে সবার প্রথমেই যেটা আসে সেটা হলোঃ
+গুগল করে দেখেছেন কি?&lt;/p&gt;
+
+&lt;p&gt;প্রোগ্রামিং শিখতে গিয়ে আর কিছু শিখি বা না শিখি, প্রোগ্রামিং এর একটা প্রধান ওপেন সিকরেট আমি শিখেছি।
+স্ট্রাকচার, সিনটেক্স, লজিক এবং ফ্লো শিখার সাথে প্রোগ্রামিং শিখার এর অন্যতম গুরুত্বপূর্ন একটা অংশ হলো &lt;strong&gt;ভাল গুগল করতে শিখা&lt;/strong&gt;।&lt;/p&gt;
+
+&lt;p&gt;গুগল সার্চ সবাই করতে পারে।
+কিন্তু দশবার দশরকম কিওয়ার্ড লিখে সার্চ করে তারপর কোন এক আট বছর পুরনো ব্লগের আউটডেটেড সমাধান পাওয়া,
+আর সঠিক কিওয়ার্ড ব্যাবহার করে খুব সময়ে স্ট্যাকওভারফ্লো কিংবা ল্যাংগুয়েজের ম্যান পেজ থেকে পার্ফেক্ট সমাধানটা করা, এই দুইটার মধ্যে স্কিলের বেশ ভাল দূরত্ব আছে।
+যেটাকে বলা হচ্ছে &lt;a href=&#34;http://lmgtfy.com/?q=google%20foo&#34;&gt;Google Foo&lt;/a&gt; বা The Art of Googling।
+আমি এটাকে বলবো &lt;strong&gt;গুগল সার্চের কালো জাদু&lt;/strong&gt;।&lt;/p&gt;
+
+&lt;p&gt;একটা প্রবলেম বেশ কয়েকবার গুগল করে &amp;ldquo;কোন সমাধান নাই&amp;rdquo; বলে হতাশ হওয়া কেউ&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png&#34; alt=&#34;Wisdom of the ancients&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;যখন দেখবে যে একই সমস্যা গুগল সার্চ করে প্রথম বারেই টু দ্যা পয়েন্ট সঠিক উত্তর পাওয়া সম্ভব,
+তখন সেটা তার কাছে কালো জাদু মনে হওয়াটা অস্বাভাবিক কিছু না।&lt;/p&gt;
+
+&lt;p&gt;গুগল, &lt;a href=&#34;http://blog.stackoverflow.com/2008/10/a-question-about-questions/&#34;&gt;স্ট্যাক ওভারফ্লো&lt;/a&gt; এবং ল্যাংগুয়েজের ম্যান পেজ হলো প্রোগ্রামিং শেখার সময় সবচেয়ে বড় বন্ধু।
+পৃথিবীতে এখন এত বেশী মানুষ প্রোগ্রামিং করছে যে এটা প্রায় গ্যারান্টি দিয়েই বলা যায় যে ঠিক আপনার সমস্যাটা এর আগে অন্য অনেকে ফেস করেছে, এবং কেউ সমাধানও করেছে। আপনার দায়িত্ব চাকা পুনরায় আবিস্কার করার চেস্টা না করে সেই সমাধানটা খুজে বের করা। এরপর সেই সমাধান কপি পেস্ট না করে নিজে বোঝার চেস্টা করা।
+না বুঝলে যেটা বুঝেন নি সেটা আবার গুগল সার্চ করা।
+এবং একবার সমস্যাটা বুঝেছেন মনে হলেই সেই সমাধানটা &lt;strong&gt;নিজে&lt;/strong&gt; কোড করে ফেলা।&lt;/p&gt;
+
+&lt;p&gt;গুগল সার্চকে কালো জাদু বলার আরো একটা কারন আছে।
+নতুন প্রোগ্রামিং শিখার সময়ের প্রবলেম, এক্সেসাইজ, এসাইনমেন্টগুলো বেশ কমন,
+গুগল করলে পুরোটারই হুবহু সমাধান পাওয়া যায়।
+সমাধানটা পেয়ে যাওয়ার পর, নিজে সেটা বুঝে, সমাধান করে,
+&amp;ldquo;ইয়েস&amp;rdquo; বলে উঠার মূহর্তটা অর্জন করার পরিশ্রমটার চাইতে কপি পেস্ট করে চিটিং করাটাই বেশী লোভনীয়। কিন্তু আপনার যদি লক্ষ্য হয় &amp;ldquo;শিখা&amp;rdquo; তাহলে এই লোভ জয় করতে ইচ্ছাশক্তি ছাড়া আর কিছুই লাগেনা।&lt;/p&gt;
+
+&lt;p&gt;প্রোগ্রামিং এ একই সমস্যা অনেকবার ফেস করতে হয়,
+একটা বিশাল কমপ্লেক্স প্রোগ্রামের কোর লজিক ভাংতে শুরু করলে সেগুলো বেশ সিম্পলই।
+একই সমস্যার সমাধান বারবার গুগল যাতে না করতে হয়, তার সমাধান হলো প্রথমবারেই সমাধানটা বুঝে নেয়া।&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Even Google employees use Google when they are stuck.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/R8EsjIK.png&#34; alt=&#34;Smart people use Google&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;প্রোগ্রামিং করতে গিয়ে আটকে গেছেন?&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;কোন একটা কনসেপ্ট বুঝছেন না?&lt;/li&gt;
+&lt;li&gt;কিভাবে আগাতে হবে আইডিয়া আসছে না?&lt;/li&gt;
+&lt;li&gt;কাউকে জিজ্ঞেস করা দরকার?&lt;br /&gt;
+যদি আসলেই শিখতে চানঃ&lt;br /&gt;
+&lt;strong&gt;আগে অন্তত ৭ বার গুগল করুন।&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

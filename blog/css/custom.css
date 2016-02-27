@@ -2,6 +2,14 @@ img {
     width: auto;
 }
 
+body > div > div > div > div.col-sm-9 > article > header > time {
+    line-height:3;
+}
+
+article.single .article-body blockquote p {
+   line-height: 1.8; 
+}
+
 @media (min-width: 900px) {
     #stickwithme {
  	width: 255.5px;

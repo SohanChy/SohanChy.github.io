@@ -1,5 +1,6 @@
 img {
     width: auto;
+    max-width: 100%;
 }
 
 body > div > div > div > div.col-sm-9 > article > header > time {

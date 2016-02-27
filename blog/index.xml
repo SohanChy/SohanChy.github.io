@@ -11,11 +11,11 @@
     <atom:link href="http://sohanchy.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>প্রোগ্রামিং - এবং গুগল সার্চ এর কালো জাদু</title>
-      <link>http://sohanchy.github.io/blog/bangla-posts/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AE%E0%A6%BF%E0%A6%82-%E0%A6%8F%E0%A6%AC%E0%A6%82-%E0%A6%97%E0%A7%81%E0%A6%97%E0%A6%B2-%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%9A-%E0%A6%8F%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%B2%E0%A7%8B-%E0%A6%9C%E0%A6%BE%E0%A6%A6%E0%A7%81/</link>
+      <title>প্রোগ্রামিং শিখা, এবং গুগল সার্চ এর জাদুবিদ্যা</title>
+      <link>http://sohanchy.github.io/blog/bangla/2016-02-27-programming-and-google-foo/</link>
       <pubDate>Sat, 27 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://sohanchy.github.io/blog/bangla-posts/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A7%8B%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AE%E0%A6%BF%E0%A6%82-%E0%A6%8F%E0%A6%AC%E0%A6%82-%E0%A6%97%E0%A7%81%E0%A6%97%E0%A6%B2-%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%9A-%E0%A6%8F%E0%A6%B0-%E0%A6%95%E0%A6%BE%E0%A6%B2%E0%A7%8B-%E0%A6%9C%E0%A6%BE%E0%A6%A6%E0%A7%81/</guid>
+      <guid>http://sohanchy.github.io/blog/bangla/2016-02-27-programming-and-google-foo/</guid>
       <description>&lt;p&gt;আমি নিজে এখনো নুব প্রোগ্রামার দেখেই সম্ভবত প্রায় সময় অনেককে পাই,
 যারা ভাল প্রোগ্রামিং শিখতে চায়, কিন্তু &amp;ldquo;পারছে না&amp;rdquo;। তাদের নানান সমস্যা, প্রশ্ন।&lt;/p&gt;
 
@@ -44,14 +44,14 @@
 কিন্তু দশবার দশরকম কিওয়ার্ড লিখে সার্চ করে তারপর কোন এক আট বছর পুরনো ব্লগের আউটডেটেড সমাধান পাওয়া,
 আর সঠিক কিওয়ার্ড ব্যাবহার করে খুব সময়ে স্ট্যাকওভারফ্লো কিংবা ল্যাংগুয়েজের ম্যান পেজ থেকে পার্ফেক্ট সমাধানটা করা, এই দুইটার মধ্যে স্কিলের বেশ ভাল দূরত্ব আছে।
 যেটাকে বলা হচ্ছে &lt;a href=&#34;http://lmgtfy.com/?q=google%20foo&#34;&gt;Google Foo&lt;/a&gt; বা The Art of Googling।
-আমি এটাকে বলবো &lt;strong&gt;গুগল সার্চের কালো জাদু&lt;/strong&gt;।&lt;/p&gt;
+আমি এটাকে বলবো &lt;strong&gt;গুগল সার্চের জাদুবিদ্যা&lt;/strong&gt;।&lt;/p&gt;
 
 &lt;p&gt;একটা প্রবলেম বেশ কয়েকবার গুগল করে &amp;ldquo;কোন সমাধান নাই&amp;rdquo; বলে হতাশ হওয়া কেউ&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://imgs.xkcd.com/comics/wisdom_of_the_ancients.png&#34; alt=&#34;Wisdom of the ancients&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;যখন দেখবে যে একই সমস্যা গুগল সার্চ করে প্রথম বারেই টু দ্যা পয়েন্ট সঠিক উত্তর পাওয়া সম্ভব,
-তখন সেটা তার কাছে কালো জাদু মনে হওয়াটা অস্বাভাবিক কিছু না।&lt;/p&gt;
+তখন সেটা তার কাছে কালো জাদু(ব্ল্যাক ম্যাজিক) মনে হওয়াটা অস্বাভাবিক কিছু না।&lt;/p&gt;
 
 &lt;p&gt;গুগল, &lt;a href=&#34;http://blog.stackoverflow.com/2008/10/a-question-about-questions/&#34;&gt;স্ট্যাক ওভারফ্লো&lt;/a&gt; এবং ল্যাংগুয়েজের ম্যান পেজ হলো প্রোগ্রামিং শেখার সময় সবচেয়ে বড় বন্ধু।
 পৃথিবীতে এখন এত বেশী মানুষ প্রোগ্রামিং করছে যে এটা প্রায় গ্যারান্টি দিয়েই বলা যায় যে ঠিক আপনার সমস্যাটা এর আগে অন্য অনেকে ফেস করেছে, এবং কেউ সমাধানও করেছে। আপনার দায়িত্ব চাকা পুনরায় আবিস্কার করার চেস্টা না করে সেই সমাধানটা খুজে বের করা। এরপর সেই সমাধান কপি পেস্ট না করে নিজে বোঝার চেস্টা করা।

@@ -7,8 +7,168 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sohan Chowdhury, all rights reserved.</copyright>
-    <lastBuildDate>Sat, 27 Feb 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Mar 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://sohanchy.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why I have a Javascript allergy and hate its popularity so much.</title>
+      <link>http://sohanchy.github.io/blog/journal/Why-I-have-a-Javascript-allergy-and-hate-its-damned-popularity/</link>
+      <pubDate>Thu, 10 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://sohanchy.github.io/blog/journal/Why-I-have-a-Javascript-allergy-and-hate-its-damned-popularity/</guid>
+      <description>&lt;p&gt;This is 2016, and if you aren&amp;rsquo;t aboard the Javascript bullet train,  you aren&amp;rsquo;t doing it right.&lt;br /&gt;
+I am writing this mostly as a rant, and this isn&amp;rsquo;t written for JS Ninjas, its for people like me who are coming to JS from C++, Java,etc and feeling very confused and lost.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/DwFCt8l.png&#34; alt=&#34;enter image description here&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In a world where we proud ourselves in creating something in HTML5+JS,
+that runs on a modern quad-core system while delivering the
+performance that existed on 16-bit or even 8-bit systems with less
+than 10 MHz CPU&amp;rsquo;s &amp;ndash; well in this world JS is going to stick around
+for a long time. And I fear things are going to get much shittier than
+this.  - Redditor /u/narancs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The explosion of JS in both front-end and back-end has forced me to start trying to learn the damn thing. Even though I&amp;rsquo;ve been acquainted with JS for some time now, my past feeling  towards it resembled something along the lines of a skin allergy that causes itching in the whole body.
+Before you bring out your chainsaws written in Node.js and cut me in half before I can even react.js, let me explain myself first.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Many of javascripts simplest designs are very counter intuitive and can be very confusing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var x = &amp;quot;5&amp;quot;;
+x = x + 1;
+console.log(x);    // x is 51
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You may be thinking, hey you dumbass, you initialized x as a string.
+Of course it concatenated.
+Well now lets try,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var x = &amp;quot;5&amp;quot;;
+x = x - 1;
+console.log(x);    // x is 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Basically the + operator treats it as a string, while the - operator typecasts it into a integer and subtracts.
+This is just wonderful and not confusing at all!&lt;/p&gt;
+
+&lt;p&gt;In javascript,
+You can declare global variables inside functions, by mistake.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function doStuff()
+{
+   x = 5;  // x is now a global variable
+}
+
+doStuff();
+
+console.log(x);    //outputs 5
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you pass a variable to a function and change it, it will change only within the function.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function addFive(x)
+{
+    x = x + 5;
+}
+
+var num = 4;
+addFive(num);
+console.log(num);    //output is 4;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Expected, right?
+But&amp;hellip; if you pass an object, it is automatically passed by reference, and any change done inside is also changed on the outside.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function addFive(x)
+    {
+        x.value = x.value + 5;
+    }
+var num = {};
+num.value = 4;
+
+addFive(num);
+console.log(num.value);    //output is 9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And guess what, you can&amp;rsquo;t pass a variable by reference even if you want to. What is the solution? Convert it to a object, pass it, do stuff, then again change it back to a variable.
+That&amp;rsquo;s Just. Freaking. Awesome.&lt;/p&gt;
+
+&lt;p&gt;The first thing almost every guide says is that Javascript is an object oriented programming(OOP) language,
+If you already have experience with C++/Java or some other OOP language, you might be thinking WoHoo!
+But stop, don&amp;rsquo;t be so happy.&lt;/p&gt;
+
+&lt;p&gt;JS is OOP alright, but there&amp;rsquo;s a strong possibility that its not exactly what you are expecting&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;What most people understand by Object Oriented Programming is this:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You have Classes, they are like blueprints.&lt;/li&gt;
+&lt;li&gt;Classes have objects, like blueprints have Cars.&lt;/li&gt;
+&lt;li&gt;Classes can inherit other Classes and add stuff.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Even though each car can have different colors, different speeds, etc; they still have the same blueprint, only their implementation changes. If a car blueprint does not have wings in it, a car made from that blueprint can not have wings. Common sense right?&lt;/p&gt;
+
+&lt;p&gt;NOPE. What you are thinking about is Class based OOP,
+But Javascript is a &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model#Class-based_vs._prototype-based_languages&#34;&gt;Prototype based OOP language&lt;/a&gt;,
+In fact, it&amp;rsquo;s the only popular or widely used language that uses Prototype based OOP.&lt;/p&gt;
+
+&lt;p&gt;This means that in Javascript, &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Working_with_Objects#Objects_and_properties&#34;&gt;there are no Classes&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;All you have is objects. And objects are made from functions or other
+objects.&lt;/li&gt;
+&lt;li&gt;Objects inherit other objects and add stuff to them.&lt;/li&gt;
+&lt;li&gt;Objects made from the same parent object can have different&lt;br /&gt;
+members, different functions, and these can be added to any distinct
+object on the fly and without any effect on other objects of
+the same type.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Basically, a car is not made from a blueprint, but it&amp;rsquo;s made from another car. And even though many cars are created from the same parent car, one of them can have wings and another may have 9 wheels instead of 4.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Do you still feel that &amp;ldquo;Wohoo&amp;rdquo; ?&lt;/p&gt;
+
+&lt;p&gt;Objects can be objects and objects can be functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var x = [41];
+var y = function(){
+//do some stuff
+return 41;
+};
+
+var z = function(){
+//do some stuff
+return 41;
+}();
+
+console.log(x);    //shows Array [ 41 ]
+console.log(y);    //shows function y()
+console.log(z);    //shows 41
+console.log(y());  //shows 41
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I know this also exists in some other languages, but that doesn&amp;rsquo;t mean I have to like the kind of readability problems and unpredictable
+debugging horrors it can bring.&lt;/p&gt;
+
+&lt;p&gt;I can go on and on about things like these, but I won&amp;rsquo;t. Halfway through writing this, I googled and found many blogs written by people much more knowledgeable than me, pointing out a lot of the issues I have with JS and many many more.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;In my opinion, Javascript is a shitty nonsense language. It should have died sometime between 2004 to 2006 and it should have been replaced with something much much better, but it wasn&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;But since dreams are only dreams, it didn&amp;rsquo;t die, and instead became more widely used,  Javascript obviously must have it&amp;rsquo;s place.
+And what I can only hope is that:
+&amp;gt; Javascript - when used with the understanding of how ridiculous it is - can become a extremely useful tool.&lt;/p&gt;
+
+&lt;p&gt;And if you are in the same boat as me, you should stop your whining, head over to the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide&#34;&gt;MDN JS Guide&lt;/a&gt;, and get on board the JS train as soon as you can, because this shit is here to stay, and it wont be going away any soon.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>প্রোগ্রামিং শিখা, এবং গুগল সার্চ এর জাদুবিদ্যা</title>

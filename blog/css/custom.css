@@ -3,6 +3,13 @@ img {
     max-width: 100%;
 }
 
+article.single .article-body p > img
+{
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
 body > div > div > div > div.col-sm-9 > article > header > time {
     line-height:3;
 }

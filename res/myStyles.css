@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0px;
+  background-color: #2196F3;
+  background: linear-gradient(141deg, #158ae7 0%, #2196F3 61%, #0e89eb 75%);
+  font-family: 'Roboto',sans-serif,Helvetica,Arial,Sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: #161826;
+  text-decoration: none;
+}
+.container-firstImpression {
+  width:100%;
+  height: 100%;
+  text-align: center;
+}
+
+.rightCover, .leftCover {
+  height: auto;
+  width:100%;
+  padding-bottom: 15px;
+}
+
+
+.vmid {
+}
+
+.columnBehaviour  {
+  float: left;
+}
+
+.bigText {
+  font-size: 3em;
+  font-weight: 100;
+  text-shadow: 0 0 6px #727272;
+  margin: 10px;
+}
+
+.whiteText {
+  text-shadow: 0 0 2px #727272;
+  color: #FFF;
+}
+
+.descMe {
+  font-size: 1.3em;
+  margin-left: 30px;
+  margin-right: 30px;
+  color: #ededed;
+}
+
+
+#cardContainer {
+  height: 50%;
+  margin-top: 5%;
+  padding-bottom: 8%;
+  padding: 10px;
+}
+
+.links-p {
+  margin: 5px;
+  min-height: 80%;
+  margin-top: 3%;
+}
+
+.mypic {
+  margin: 0;
+  height: 150px;
+  width: 150px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+
+.buttonWhite {
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #0070c9;
+  background-color: #f1f1f1;
+  background-color: rgba(238, 238, 238, 0.8);
+  display: inline-block;
+  padding: 10px;
+  margin: 8px 8px;
+  cursor:pointer;
+  min-width: 130px;
+  min-height: 48px;
+
+  -webkit-transition: all 150ms ease-in;
+  -webkit-transform: scale(1);
+  -ms-transition: all 150ms ease-in;
+  -ms-transform: scale(1);
+  -moz-transition: all 150ms ease-in;
+  -moz-transform: scale(1);
+  transition: all 150ms ease-in;
+  transform: scale(1);
+
+}
+.buttonWhite:hover, .buttonWhite:focus {
+  background-color: #f1f1f1;
+  -webkit-transition: all 150ms ease-in;
+  -webkit-transform: scale(1.1);
+  -ms-transition: all 150ms ease-in;
+  -ms-transform: scale(1.1);
+  -moz-transition: all 150ms ease-in;
+  -moz-transform: scale(1.1);
+  transition: all 150ms ease-in;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 150px #d4d4d4;
+}
+
+
+.tile {
+  width: 47%;
+  cursor:pointer;
+  margin: 3px 0px 0px 3px;
+  padding: 5%;
+  background-color: #f1f1f1;
+  box-shadow: 0px 0px 2px #d4d4d4;
+  font-weight: 400;
+  font-size: 1.4em;
+  color: #0070c9;
+  min-width: 120px;
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, #e0e0e0 50%, #ffffff 50%);
+  transition: background-position 0.7s;
+  -webkit-transition: background-position 0.7s;
+-moz-transition: background-position 0.7s;
+}
+
+.tile:hover {
+  box-shadow: 0px 0px 80px #e0e0e0;
+  background-color: #f1f1f1;
+  background-position: 0 100%;
+}
+
+#education {
+  width: 95%;
+}
+
+.topNarrator{
+  font-weight: 400;
+  font-size: 1.3em;
+margin-top: 3%;
+margin-bottom: 5px;
+}
+
+
+@media (min-width: 200px) {
+
+  .rightBorder {
+    border-left: 2px solid rgba(199, 199, 199, 0.67);
+  }
+
+  #topNarrator {
+    display: none;
+  }
+
+.bodyPad {
+  width: 90%;
+}
+
+}
+
+@media (max-width: 400px) {
+  .rightCover, .leftCover {
+    background-color: #2196F3;
+    background: linear-gradient(141deg, #158ae7 0%, #2196F3 61%, #0e89eb 75%);
+  }
+
+}
+
+@media (min-width: 768px) {
+
+  .rightCover, .leftCover {
+    height: 100%;
+    width:50%;
+  }
+
+  #BioHolder {
+    margin-top: 20px;
+  }
+
+  #cardContainer {
+    margin-top: 25%;
+  }
+
+}
+
+@media (min-width: 1000px) {
+
+  .bodyPad {
+    width: 70%;
+  }
+
+  #topNarrator {
+    display: block;
+  }
+
+  #aboutme {
+    width: 44%;
+  }
+
+  #myskills {
+    width: 54%;
+  }
+  #projects {
+    width: 39%;
+  }
+  #github {
+    width: 25%;
+  }
+
+  #education {
+    width: 34%
+  }
+}
+
+.blink_me {
+  animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+  50% { opacity: 0.0; }
+}
+
+
+.downTown {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #2ECC71;
+  background: linear-gradient(141deg, #2ECC71 0%, #10c95f 61%, #2ECC71 75%);
+  width:100%;
+  text-align: center;
+
+}
+
+.bodyPad {
+  background: #ECF0F1;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 20px;
+}
+
+#mypic {
+  border: 2px solid white;
+}
+
+
+h2 {
+  font-weight: normal;
+    color: #111111;
+    border-bottom: 2px solid #d7d7d7;
+}
+.txt {
+  text-align: left;
+  margin: 0;
+  margin-top: 10px;
+  color: #111111;
+  font-size: 1.4em;
+  line-height: 1.5em;
+}
+
+.landgraph {
+  background:url(skillgraph.png) no-repeat;
+  background-size:contain;
+  margin: auto;
+  min-height:400px;
+  min-width:550px;
+  max-width:90%;
+  display: block;
+}
+
+.goUp {
+  margin-top: 10px;
+  width: 100%;
+  text-align: right;
+  line-height: 1.5em;
+}
+
+.goUp a {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #e7e7e7;
+  background: #2ECC71;
+  padding: 7px;
+}

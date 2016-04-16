@@ -1,2 +1,3 @@
 # SohanChy.github.io
-My personal website and index with a blog.
+My personal website and index,
+redesigned minimally @ 17.4.16.

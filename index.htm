@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sohan Chowdhury</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' href='res/myStyles.css' type='text/css' media='all' />
+  <script type="text/javascript">
+  function tileMouseOver(cs)
+  {
+    if(cs=='aboutme')
+    {
+      document.getElementById('topNarrator').innerHTML = "Who am I?";
+    }
+    else if(cs=='myskills')
+    {
+      document.getElementById('topNarrator').innerHTML = "Things I'm good at";
+    }
+    else if(cs=='projects')
+    {
+      document.getElementById('topNarrator').innerHTML = "Things I've made, my Github";
+    }
+    else if(cs=='github')
+    {
+      document.getElementById('topNarrator').innerHTML = "My code snippets";
+    }
+    else if(cs=='education')
+    {
+      document.getElementById('topNarrator').innerHTML = "Stuff I've learned";
+    }
+
+  }
+  function tileMouseOut()
+  {
+    document.getElementById('topNarrator').innerHTML = '<span class="blink_me">...</span>';
+  }
+
+  </script>
+</head>
+<body>
+
+  <div id="firstImpression" class="container-firstImpression">
+
+    <div class="leftCover columnBehaviour">
+
+      <div id="cardContainer" class="vmid">
+        <div id="BioHolder">
+          <h1 id="imSohan" class="whiteText bigText stretchRight">
+            I'm Sohan.
+          </h1>
+          <span class="descMe whiteText">A sardonic pseudo-intellectual programmer who loves music, movies, science and tv shows; likes to create gui interfaces in visual basic to track ip addresses of criminals.</span>
+        </div>
+        <div class="links-p">
+          <a href="http://sohan.cf/blog" class="buttonWhite">Blog</a>
+          <a href="http://sohan.cf/fb" class="buttonWhite">Facebook</a>
+          <a href="http://sohan.cf/twitter" class="buttonWhite">Twitter</a>
+          <a href="http://sohan.cf/cloud" class="buttonWhite">Cloud</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="rightCover columnBehaviour">
+      <div id="cardContainer" class="vmid rightBorder">
+        <div id="topNarrator" class="topNarrator descMe">
+          <span class="">...</span>
+        </div>
+
+        <div class="links-p">
+
+          <div>
+
+            <a class=scroll href="#about_me_section">
+              <div id="aboutme" class="columnBehaviour tile" onmouseover="tileMouseOver('aboutme');" onmouseout="tileMouseOut();">
+                About Me
+              </div>
+            </a>
+
+            <a class=scroll href="#my_skills_section">
+              <div id="myskills" class="columnBehaviour tile" onmouseover="tileMouseOver('myskills');" onmouseout="tileMouseOut();">
+                My Skills
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="http://sohan.cf/code">
+              <div id="projects" class="columnBehaviour tile" onmouseover="tileMouseOver('projects');" onmouseout="tileMouseOut();">
+                Projects
+              </div>
+            </a>
+
+            <a href="http://sohan.cf/gists">
+              <div id="github" class="columnBehaviour tile" onmouseover="tileMouseOver('github');" onmouseout="tileMouseOut();">
+                Gists
+              </div>
+            </a>
+
+            <a class=scroll href="#my_education_section">
+              <div id="education" class="columnBehaviour tile" onmouseover="tileMouseOver('education');" onmouseout="tileMouseOut();">
+                Education
+              </div>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="downTown">
+
+    <div class="bodyPad" id="about_me_section">
+      <img name="goto_home" id="mypic" src="res/mypic.jpg">
+
+
+      <h2> Things to know "about me" </h2>
+
+      <p class="descMe txt">
+        I'm Sohan Chowdhury, a CS student from Bangldesh. <br />
+        I have a thing for minimalism, this webpage weighs only 11.8 KilloBytes. <br />
+        I technology, a LOT... I'm basically a tech geek. <br />
+        I love to read & watch science fiction, have a passionate interest in science. <br />
+        I code in C, C++, Java, script in PHP, JS.
+        and know my way around HTML,CSS & bootstrap. </br>
+      </br >
+      I spend a lot of time on my trusty Asus X550 running Ubuntu, my text editor of choice is Atom and my default web browser is Chrome. <br />
+
+      <br /> My hobbies include reading, obsessing over Tv Shows, writing random stuff on my blog and facebook,  and tasting different bargain foods around the city.
+</p>
+    <br/> <h2>Contact:</h2>
+    <p class="descMe txt">
+    You can email me at <a href="mailto:sifat3d@gmail.com">sifat3d@gmail.com</a> , I usually reply within 4-6 hours.
+    </p>
+
+    <div class="goUp">
+      <a class="scroll" href="#firstImpression"> [Up] </a>
+    </div>
+
+
+  </div>
+
+  <div class="bodyPad" id="my_skills_section">
+    <h2 class="descMe txt">
+      Here's a rough self estimation of my skills:
+    </h2>
+    <div id="landgraph" class="landgraph"></div>
+
+    <div class="goUp">
+      <a class="scroll" href="#firstImpression"> [Up] </a>
+    </div>
+
+  </div>
+
+  <div class="bodyPad" id="my_education_section">
+    <h2 class="descMe txt">
+      Education:
+    </h2>
+    <p class="descMe txt">
+      I am currently studying CSSE (Computer Science & Software Engineering) at AIUB.
+      <br />
+      I do a lot of MOOCs or online courses on platforms like edx, coursera and udemy. Although I have a tendency of only going through parts that interest me and skipping the rest.
+      <br />
+      One of my favourite courses online is Harvards CS50, which sadly I have not yet fully completed.
+    </p>
+    <div class="goUp">
+      <a class="scroll" href="#firstImpression"> [Up] </a>
+    </div>
+
+  </div>
+
+  <div class="bodyPad" id="my_skills_section">
+    <p class="descMe txt">
+      This page is not yet complete, I just took down my old site and put this one up.
+    </p>
+
+    <div class="goUp">
+      <a class="scroll" href="#firstImpression"> [Up] </a>
+    </div>
+
+  </div>
+
+
+</div>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded",function(){var e=function(){if("scrollingElement"in document)return document.scrollingElement;var a=document.documentElement,b=a.scrollTop;a.scrollTop=b+1;var c=a.scrollTop;a.scrollTop=b;return c>b?a:document.body}(),g=function(a){var b=e.scrollTop;if(2>a.length)a=-b;else if(a=document.querySelector(a)){a=a.getBoundingClientRect().top;var c=e.scrollHeight-window.innerHeight;a=b+a<c?a:c-b}else a=void 0;if(a)return new Map([["start",b],["delta",a]])},h=function(a){var b=
+  a.getAttribute("href"),c=g(b);if(c){var d=new Map([["duration",900]]),k=performance.now();requestAnimationFrame(function l(a){d.set("elapsed",a-k);a=d.get("duration");var f=d.get("elapsed"),g=c.get("start"),h=c.get("delta");e.scrollTop=Math.round(h*(-Math.pow(2,-10*f/a)+1)+g);d.get("elapsed")<d.get("duration")?requestAnimationFrame(l):(history.pushState(null,null,b),e.scrollTop=c.get("start")+c.get("delta"))})}},f=document.querySelectorAll("a.scroll");(function b(c,d){var e=c.item(d);e.addEventListener("click",
+  function(b){b.preventDefault();h(e)});if(d)return b(c,d-1)})(f,f.length-1)});
+  </script>
+</body>
+</html>

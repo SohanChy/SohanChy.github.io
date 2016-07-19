@@ -11,7 +11,15 @@ permalink: /404.html
 <script>
 
 var myLoc = window.location.href;
+
+
+/*
+Extracting filename code from:
+http://stackoverflow.com/questions/423376/how-to-get-the-file-name-from-a-full-path-using-javascript
+*/
+
 var requestWas = myLoc.replace(/^.*[\\\/]/, '');
+requestWas = requestWas.toLowerCase();
 
 console.log(requestWas);
 console.log(redirectorDB.hasOwnProperty(requestWas));

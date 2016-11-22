@@ -12,6 +12,9 @@ var redirectorDB = {
 "cloud" : 'https://drive.google.com/folderview?id=0B6K4wLxlfQugdWVGTUJnakd5WTA&usp=sharing',
 "ea"    : 'https://drive.google.com/folderview?id=0B6K4wLxlfQugOU5Jd19XSFVpYXc&usp=sharing',
 
+"pscookbook" : 'https://docs.google.com/document/d/1HE1NVEGxx8mScyQp4qrhwsAIVtRV1XnfggxPWJ38Cu0/edit?usp=sharing',
+
+"cn" : 'https://drive.google.com/drive/folders/0B6K4wLxlfQugMDEybm1NTXlfUUk',
 "cbwin" : 'http://sourceforge.net/projects/codeblocks/files/Binaries/13.12/Windows/codeblocks-13.12mingw-setup.exe/download',
 
 "ks" : 'http://172.27.27.83/home/index.php',

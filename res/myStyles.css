@@ -179,10 +179,10 @@ margin-bottom: 5px;
     display: none;
   }
 
-.bodyPad {
-  border-radius: 2px;
-  width: 90%;
-}
+	.bodyPad {
+	  border-radius: 2px;
+	  width: 90%;
+	}
 
 }
 
@@ -191,7 +191,6 @@ margin-bottom: 5px;
     background-color: #2196F3;
     background: linear-gradient(141deg, #158ae7 0%, #2196F3 61%, #0e89eb 75%);
   }
-
 }
 
 @media (min-width: 768px) {
@@ -259,6 +258,10 @@ margin-bottom: 5px;
 
 }
 
+.txt-center {
+	text-align: center !important;
+}
+
 .bodyPad {
   background: #FAFAFA;
   margin: auto;
@@ -278,14 +281,19 @@ margin-bottom: 5px;
   vertical-align:left;
 }
 
-.left-col {
-	margin: 0; 
-	width: 25%;
-	float:left;
-}
-.right-col {
-	margin: 0;
-	overflow:hidden;
+
+@media (min-width: 768px) {
+
+	.left-col {
+		margin: 0; 
+		width: 25%;
+		float:left;
+	}
+	.right-col {
+		margin: 0;
+		overflow:hidden;
+	}
+
 }
 
 h2 {
@@ -306,10 +314,17 @@ h2 {
   background:url(skillgraph.png) no-repeat;
   background-size:contain;
   margin: auto;
-  min-height:400px;
-  min-width:550px;
+  min-height:150px;
   max-width:90%;
   display: block;
+}
+
+@media (min-width: 768px) {
+	.landgraph {
+	  min-height:400px;
+  	  min-width:550px;
+	}
+
 }
 
 .goUp {

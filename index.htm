@@ -2,9 +2,14 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Sohan Chowdhury</title>
+  <title>Sohan Chowdhury - Programmer, Science Geek, Traveler & Tech Enthusiast</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="http://sohanchy.com" />
+  <meta name="description" content="I am a Computer Science student & Programmer from Bangladesh. I love to travel, obsess about new tech; heavily enjoy science fiction and comedy.">
+  <meta name="keywords" content="Sohan,Chowdhury,About,Who,Is,Bangladesh,CS,Programmer">
+  <meta name="author" content="Sohan Chowdhury">
+
+
   <link href='http://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='res/myStyles.css' type='text/css' media='all' />
   <script type="text/javascript">
@@ -26,7 +31,7 @@
     }
     else if(cs=='projects')
     {
-      document.getElementById('topNarrator').innerHTML = "Things I've made, my Github";
+      document.getElementById('topNarrator').innerHTML = "Things I've made & worked on, my Github";
     }
     else if(cs=='github')
     {
@@ -44,6 +49,23 @@
   }
 
   </script>
+
+  <!-- BOOO... Google Analytics!
+  I know, I'm sorry but its a necessary evil.
+-->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-37749531-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
 </head>
 <body>
 
@@ -126,7 +148,7 @@
     <div class="bodyPad" id="about_me_section">
 
 
-      <h2><em> "about me" </em></h2>
+      <h2><em> "who is this guy?" </em></h2>
       <div class="left-col">
       <img name="goto_home" id="mypic" src="res/mypic.jpg">
       <br />
@@ -155,12 +177,12 @@
       </p>
       </div>
       <br/> 
-      <h2><em>"contact"</em></h2>
+      <h2><em>"get in touch"</em></h2>
 
-
-      <p class="descMe txt">
+      <div class="txt-center descMe txt">
       You can email me at <a href="mailto:sifat3d@gmail.com">sifat3d@gmail.com</a> , I usually reply within 4-6 hours.
-      </p>
+      </div>
+
 
       <div class="goUp">
         <a class="scroll" href="#firstImpression"> [Up] </a>
@@ -175,10 +197,11 @@
   <h2><em> "my skills" </em></h2>
     <h2 class="descMe txt">
       <s>Here's a rough self estimation of my skills:</s> <br />
-      <em>PS: This bar graph is <span style="color:#c0392b">almost 1 years outdated</span>, since then
-      I've learned new things, improved in many places and lost touch with some others.
+      <em>PS: This bar graph is <span style="color:#c0392b">almost 1.5 years outdated</span>, since then
+      I've learned new things like Java, JavaFX, Laravel(php), Python, etc and improved in many places  and lost touch with some others.
       </em>
     </h2>
+    <br />
     <div id="landgraph" class="landgraph"></div>
 
     <div class="goUp">
@@ -205,8 +228,8 @@
   <div class="bodyPad" id="my_skills_section">
     <p class="descMe txt">
       <blockquote>
-      "Two roads diverged in the woods,<br/>
-       I took the road less travelled."<br/>
+      "Two roads diverged in a yellow wood,<br/>
+       and I took the road less travelled."<br/>
        </blockquote>
        and It hurt man!<br/>
        NOT COOL Robert Frost.<br/>
@@ -226,5 +249,7 @@ document.addEventListener("DOMContentLoaded",function(){var e=function(){if("scr
   a.getAttribute("href"),c=g(b);if(c){var d=new Map([["duration",900]]),k=performance.now();requestAnimationFrame(function l(a){d.set("elapsed",a-k);a=d.get("duration");var f=d.get("elapsed"),g=c.get("start"),h=c.get("delta");e.scrollTop=Math.round(h*(-Math.pow(2,-10*f/a)+1)+g);d.get("elapsed")<d.get("duration")?requestAnimationFrame(l):(history.pushState(null,null,b),e.scrollTop=c.get("start")+c.get("delta"))})}},f=document.querySelectorAll("a.scroll");(function b(c,d){var e=c.item(d);e.addEventListener("click",
   function(b){b.preventDefault();h(e)});if(d)return b(c,d-1)})(f,f.length-1)});
   </script>
+
+
 </body>
 </html>

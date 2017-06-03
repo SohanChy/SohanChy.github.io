@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <title>AIUB Room Mapper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="">
+    <style>
+    /* Desktops and laptops ----------- */
+	@media only screen and (min-width: 1000px) {
+  		body {
+    		margin-top: 12%;
+    	}    	
+	}
+    	body {
+    		background-color: #D9EDF7;
+    		text-align: center;
+    		line-height: 35px;
+    	}
+    	input,button {
+    		font-size: 22px;
+    	}
+    	select,div,option {
+    		font-size: 20px;
+    	}
+    	h2,h3 {
+    		color: #004EA8;
+    	}
+    </style>
+  </head>
+  <body>
+  <h2>AIUB Old Campus to New Campus Room Mapper</h2>
+  	<div>
+  	For Numbered Rooms, Enter Old Room Number:
+  	<input id="input" type="text" oninput="roomSwap()">
+  	<button style="width:100px;" onclick="roomSwap()"> Go </button>
+  	<h3 id="output"></h3>
+  	<br />
+	For Named Rooms, Select Old Room Name:
+  	<select id="oldNamesSelect" onchange="nameSwap()"></select><h3 id="output2"></h3>
+
+  	</div>
+
+
+    <script type="text/javascript">
+    	var xhReq = new XMLHttpRequest();
+		xhReq.open("GET", "room-map.json", false);
+		xhReq.send(null);
+		var jsonRoomMap = JSON.parse(xhReq.responseText);
+
+		function roomSwap() {
+			inputVal = document.getElementById('input').value;
+			output = document.getElementById('output');
+
+			if(jsonRoomMap[inputVal] != null){
+				output.innerHTML = "New Room: "+jsonRoomMap[inputVal][0]["new"];				
+			}
+			else {
+				output.innerHTML = "No match found";
+			}
+		}
+
+
+		var oldNames = ["Admin Office","Animation/ Media Lab","Computer Lab 01","Computer Lab 02","Computer Lab 03","Computer Lab 04","Computer Lab 05","Computer Lab 06","Computer Lab 07","Computer Lab 08","Computer Lab 09","Computer Lab 10","Chemistry Lab","Class Room","Computer Lab 11","Computer Lab 12","Design Studio 01","Design Studio 02","Design Studio 03","Design Studio 04","Design Studio 05","Design Studio 06","Design Studio 07","Design Studio 08","Design Studio 09","Design Studio 10","Design Studio 11","Design Studio 12","EEE LAB 01","EEE LAB 02","EEE LAB 03","EEE LAB 04","EEE LAB 05","EEE LAB 06","EEE LAB 07","EEE LAB 08","EEE LAB 09","EEE LAB 10","EEE LAB 11","EEE LAB 12","EEE LAB 13","EEE LAB 14","EEE LAB 15","Faculty Room","Faculty Room","Library","Mac Lab","Physics Lab 01","Physics Lab 02"];
+		var newNames = ["1125","2204","3201","3202","3203","3204","3205","3206","3207","3208","3209","3210","6101","2209 - 2214 - 5116 - 6102 - 6104 - 6106 - 6107 - 6108 - 6109 - 6110 - 6111 - 6112 - 6113 - 6114 - 6116","2201","2202","6201","6202","6203","6204","6205","6206","6207","6208","6209","6210","6212","6214","2101","2102","2103","2104","2105","2106","2107","2108","2109","2110","2111","2112","2113","2114","2115","4101","4201","2205 & 2207","2203","6103","6105"];
+
+		var sel = document.getElementById('oldNamesSelect');
+		for(var i = 0; i < oldNames.length; i++) {
+		    var opt = document.createElement('option');
+		    opt.innerHTML = oldNames[i];
+		    opt.value = i;
+		    sel.appendChild(opt);
+		}
+
+		function nameSwap(){
+			document.getElementById('output2').innerHTML = "New Room: " + newNames[sel.selectedIndex];
+		}
+
+
+    </script>
+  </body>
+</html>

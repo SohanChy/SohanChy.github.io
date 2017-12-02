@@ -285,10 +285,11 @@ margin-bottom: 5px;
 @media (min-width: 768px) {
 
 	.left-col {
-		margin: 0; 
+		margin: 35px 0; 
 		width: 25%;
 		float:left;
 	}
+	
 	.right-col {
 		margin: 0;
 		overflow:hidden;

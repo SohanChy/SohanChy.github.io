@@ -315,15 +315,15 @@ h2 {
   background:url(skillgraph.png) no-repeat;
   background-size:contain;
   margin: auto;
-  min-height:150px;
+  min-height:180px;
   max-width:90%;
   display: block;
 }
 
 @media (min-width: 768px) {
 	.landgraph {
-	  min-height:400px;
-  	  min-width:550px;
+	  min-height:440px;
+  	min-width:550px;
 	}
 
 }
@@ -338,7 +338,7 @@ h2 {
 .goUp a {
   font-weight: bold;
   font-size: 1.4em;
-  color: #e7e7e7;
+  color: #fdfdfd;
   background: #2ECC71;
   padding: 7px;
 }

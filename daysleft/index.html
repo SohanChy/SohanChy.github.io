@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Days Left Of Your Life</title>
+
+    <link rel="stylesheet" href="bootstripped.min.css">
+    
+
+    <style type="text/css">
+        body, .smooth-container { scroll-behavior: smooth }
+        body {
+            font-family: Helvetica, sans-serif;
+            margin: 40px auto;
+            max-width: 650px;
+            line-height: 1.6;
+            color: #444;
+            padding: 0 10px
+        }
+        header {
+            text-align: center;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2
+        }
+
+        .gridbox {
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .leftdays{
+            color: #27ae60;
+        }
+        .gonedays{
+            color: #7f8c8d;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Enter Your Birthday</h1>
+        <input type="date" id="bday"><button onclick="bdayEntered()" type="button">Save</button>
+
+        <h2 id="main">Days Left Of Your Life</h1>
+        <h2 id="leftDaysCounter"></h2>
+    </header>
+
+    <div id="gridCalendar" class="gridbox">
+    </div>
+    
+    <script src="zenscroll-min.js"></script>
+    <script>
+        var bday = null;
+        
+        function bdayEntered(){
+            bday = document.getElementById("bday").value;
+
+            if(bday != ""){
+
+                // Check browser support
+                if (typeof(Storage) !== "undefined") {
+                    localStorage.setItem("bday", bday);
+
+                    generateGrid(bday);
+                } else {
+                    document.getElementById("main").innerHTML = "Sorry, your browser does not support Web Storage...";
+                }
+
+            }
+        }
+
+        // Check browser support
+        if (typeof(Storage) !== "undefined") {
+                    var bdayStr = localStorage.getItem("bday");
+
+                    if(bdayStr != null){
+                        bday = new Date(bdayStr);
+                        document.getElementById("bday").value = bday.toISOString().substr(0, 10);
+                        generateGrid(bday);
+                    }
+        } 
+
+        function calcLastDate(bday,todayDate){
+            var lifeExpectancy = 65;
+
+            var year = bday.getFullYear();
+            var month = bday.getMonth();
+            var day = bday.getDate();
+
+            var calcYear = year + (todayDate.getFullYear() - year) + lifeExpectancy;
+            
+
+            var lastDate = new Date(calcYear , month, day)
+
+            
+            return lastDate;
+        }
+
+        function generateGrid(bday){
+
+            var bdayDate = new Date(bday);
+            var todayDate = new Date();
+            var lastDate = calcLastDate(bdayDate,todayDate);
+
+            var text = "<span class='gonedays'>";
+            var symbol = "🗹";
+
+            var i = 1;
+            var iNow = i;
+            
+          
+            for (var d = new Date(bdayDate); d <= lastDate; i++) {
+                d.setDate(d.getDate() + 1);
+          
+                text += symbol;
+
+                if(i%7 == 0){
+                    text += " ";
+                }
+
+                if(i%21 == 0){
+                    text += "<br>";
+                }
+
+                if(i%365 == 0){
+                    text += "<hr>";
+                }
+                
+                d.setHours(0,0,0,0);
+                todayDate.setHours(0,0,0,0);
+                
+                if(d.getTime() == todayDate.getTime()){
+                    symbol = "☐";
+                    text = text + "</span><span id='leftDays' class='leftdays'>";
+                    iNow = i;
+                } 
+                
+
+            }
+
+
+            text = text + "</span>";
+
+            document.getElementById("gridCalendar").innerHTML = text;
+            document.getElementById("leftDaysCounter").innerHTML = i - iNow;
+            
+            setTimeout(function(){
+                zenscroll.intoView(document.getElementById("leftDays"));
+            }, 1000);
+        
+        }
+        
+       
+        
+    </script>
+
+
+</body>
+
+</html>

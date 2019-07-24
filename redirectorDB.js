@@ -3,15 +3,16 @@
 //redirectorDB is just a javascript object so js syntax applies but be consistent.
 
 var redirectorDB = {
-"git"   : 'https://github.com/SohanChy?tab=repositories',
-"code"  : 'https://github.com/SohanChy?tab=repositories',
+"git"     : 'https://github.com/SohanChy?tab=repositories',
+"code"    : 'https://github.com/SohanChy?tab=repositories',
 "gists"   : 'https://gist.github.com/SohanChy',
-"fb"    : 'https://fb.me/sifat3d',
+"fb"      : 'https://fb.me/sifat3d',
 "twitter" : 'https://twitter.com/iam_sohan',
-"blog" : 'https://blog.sohanchy.com',
-"cloud" : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugdWVGTUJnakd5WTA#grid',
-"tpus" : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugQVFhNHFycjl5YzQ#grid',
-"ea"    : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugOU5Jd19XSFVpYXc#grid',
+"blog"    : 'https://blog.sohanchy.com',
+"cloud"   : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugdWVGTUJnakd5WTA#grid',
+"tpus"    : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugQVFhNHFycjl5YzQ#grid',
+"ea"      : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugOU5Jd19XSFVpYXc#grid',
+"cv"      : 'https://drive.google.com/file/d/1OX57dwpCK7NaVEH3lljdZ9Gw0tCN-g7m/view?usp=sharing',  
 
 "pscookbook" : 'https://docs.google.com/document/d/1HE1NVEGxx8mScyQp4qrhwsAIVtRV1XnfggxPWJ38Cu0/edit?usp=sharing',
 

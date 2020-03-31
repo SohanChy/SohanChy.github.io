@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Your Online Fingerpint</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style type="text/css">
+        body {
+            margin: 40px auto;
+            max-width: 650px;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #444;
+            padding: 0 10px
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2
+        }
+    </style>
+    <script src="fp.min.js"></script>
+
+
+    <script>
+        var options = {
+            excludes: {
+                userAgent: true,
+                canvas: true,
+                webgl: true,
+                customEntropyFunction: true,
+                enumerateDevices: true,
+                sessionStorage: true,
+                localStorage: true,
+                indexedDb: true,
+                addBehavior: true,
+                openDatabase: true,
+                doNotTrack: true,
+                plugins: true,
+                adBlock: true,
+                fonts: true,
+                audio: true
+            }
+        }
+
+        if (window.requestIdleCallback) {
+            requestIdleCallback(function () {
+                Fingerprint2.get(options, function (components) {
+                    var values = components.map(function (component) {
+                        return component.value
+                    })
+                    var murmur = Fingerprint2.x64hash128(values.join(''), 31)
+                    document.getElementById("fp").textContent = murmur;
+                })
+            })
+        } else {
+            setTimeout(function () {
+                Fingerprint2.get(options, function (components) {
+                    var values = components.map(function (component) {
+                        return component.value
+                    })
+                    var murmur = Fingerprint2.x64hash128(values.join(''), 31);
+                    document.getElementById("fp").textContent = murmur;
+                })
+            }, 500)
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <div style="text-align: center;">
+        <h1>Hi! <br /> <em>This</em> is your online fingerprint.</h1>
+        <h3><strong id='fp' style="color:#0a3d62"></strong></h3>
+    </div>
+    <aside>And it's creepy how it can remain unchanged even if you:</aside>
+    <ul>
+        <li>Reload the tab</li>
+        <li>Close and open the browser and reload</li>
+        <li>Open this page in Incognito</li>
+        <li>Open this page in Incognito using a VPN</li>
+        <li>Even if you change your Browser<br />(90% of the time)</li>
+    </ul>
+    <div style="text-align: center;">
+        <h2>Seriously, it takes minimal effort to uniquely fingerprint and track you.</h2>
+        <p><strong>So, no matter how many adblocks or VPN's you use, you are never truly anonymous, are you?</strong>
+    </div>
+</body>
+
+</html>

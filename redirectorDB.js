@@ -13,6 +13,7 @@ var redirectorDB = {
 "tpus"    : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugQVFhNHFycjl5YzQ#grid',
 "ea"      : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugOU5Jd19XSFVpYXc#grid',
 "cv"      : 'https://drive.google.com/file/d/1OX57dwpCK7NaVEH3lljdZ9Gw0tCN-g7m/view?usp=sharing',  
+"research-cv": 'https://drive.google.com/file/d/1vw_-ySO6RKhYYK4NaENhtNssYjx1l_vS/view?usp=sharing',
 
 "pscookbook" : 'https://docs.google.com/document/d/1HE1NVEGxx8mScyQp4qrhwsAIVtRV1XnfggxPWJ38Cu0/edit?usp=sharing',
 

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  <title>Sohan Chowdhury - Programmer, Science Geek, Traveler & Tech Enthusiast</title>
+  <title>Sohan Chowdhury - Software Engineer, Hobbyist Landscape Photographer, Computer Vision Enthusiast & Traveler
+  </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="http://sohanchy.com" />
-  <meta name="description" content="I am a Computer Science student & Programmer from Bangladesh. I love to travel, obsess about new tech; heavily enjoy science fiction and comedy.">
+  <link rel="canonical" href="https://sohanchy.com" />
+  <meta name="description"
+    content="I am a Software Engineer & Computer Vision Enthusiast from Bangladesh. I love taking landscape photographs and obsess about new technology.">
   <meta name="keywords" content="Sohan,Chowdhury,About,Who,Is,Bangladesh,CS,Programmer">
   <meta name="author" content="Sohan Chowdhury">
 
@@ -13,41 +16,28 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='res/myStyles.css' type='text/css' media='all' />
   <script type="text/javascript">
-  
-  if (window.location.href.indexOf('http://sohanchy.github.io') === 0)
-    {
-    window.location.href = 'http://sohanchy.com';
-    }
-  
-  function tileMouseOver(cs)
-  {
-    if(cs=='aboutme')
-    {
-      document.getElementById('topNarrator').innerHTML = "Who am I?";
-    }
-    else if(cs=='myskills')
-    {
-      document.getElementById('topNarrator').innerHTML = "Things I'm good at";
-    }
-    else if(cs=='projects')
-    {
-      document.getElementById('topNarrator').innerHTML = "Things I've made & worked on, my Github";
-    }
-    else if(cs=='github')
-    {
-      document.getElementById('topNarrator').innerHTML = "My code snippets";
-    }
-    else if(cs=='education')
-    {
-      document.getElementById('topNarrator').innerHTML = "Stuff I've learned";
+    if (window.location.href.indexOf('https://sohanchy.github.io') === 0) {
+      window.location.href = 'https://sohanchy.com';
     }
 
-  }
-  function tileMouseOut()
-  {
-    document.getElementById('topNarrator').innerHTML = '<span class="blink_me">...</span>';
-  }
+    function tileMouseOver(cs) {
+      if (cs == 'aboutme') {
+        document.getElementById('topNarrator').innerHTML = "Who am I?";
+      } else if (cs == 'myskills') {
+        document.getElementById('topNarrator').innerHTML = "Programming Languages I'm good at";
+      } else if (cs == 'code') {
+        document.getElementById('topNarrator').innerHTML = "My Github, stuff I've made & worked on";
+      } else if (cs == 'research') {
+        document.getElementById('topNarrator').innerHTML = "My research CV";
+      } else if (cs == 'education') {
+        document.getElementById('topNarrator').innerHTML = "Stuff I've learned";
+      }
 
+    }
+
+    function tileMouseOut() {
+      document.getElementById('topNarrator').innerHTML = '<span class="blink_me">...</span>';
+    }
   </script>
 
   <!-- BOOO... Google Analytics!
@@ -55,18 +45,25 @@
 -->
 
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-37749531-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    ga('create', 'UA-37749531-3', 'auto');
+    ga('send', 'pageview');
+  </script>
 
 
 </head>
+
 <body>
 
   <div id="firstImpression" class="container-firstImpression">
@@ -78,13 +75,14 @@
           <h1 id="imSohan" class="whiteText bigText stretchRight">
             I'm Sohan.
           </h1>
-          <span class="descMe whiteText">I write code as a hobby and make lame jokes as a lifestyle.</span>
+          <span class="descMe whiteText">Software Engineer · Computer Vision Enthusiast · Hobbyist Landscape
+            Photographer</span>
         </div>
         <div class="links-p">
-          <a href="http://sohanchy.com/blog" class="buttonWhite">Blog</a>
-          <a href="http://sohanchy.com/fb" class="buttonWhite">Facebook</a>
-          <a href="http://sohanchy.com/twitter" class="buttonWhite">Twitter</a>
-          <a href="http://sohanchy.com/cloud" class="buttonWhite">Cloud</a>
+          <a href="https://sohanchy.com/blog" class="buttonWhite">Blog</a>
+          <a href="https://sohanchy.com/fb" class="buttonWhite">FB</a>
+          <a href="https://www.instagram.com/sohanchy/" class="buttonWhite">Photography</a>
+          <a href="https://www.youtube.com/channel/UCLYGw6Jfg6qvax4AXmHE7DA" class="buttonWhite">Youtube</a>
         </div>
 
       </div>
@@ -102,36 +100,43 @@
           <div>
 
             <a class=scroll href="#about_me_section">
-              <div id="aboutme" class="columnBehaviour tile" onmouseover="tileMouseOver('aboutme');" onmouseout="tileMouseOut();">
+              <div id="aboutme" class="columnBehaviour tile" onmouseover="tileMouseOver('aboutme');"
+                onmouseout="tileMouseOut();">
                 About Me
               </div>
             </a>
 
             <a class=scroll href="#my_skills_section">
-              <div id="myskills" class="columnBehaviour tile" onmouseover="tileMouseOver('myskills');" onmouseout="tileMouseOut();">
+              <div id="myskills" class="columnBehaviour tile" onmouseover="tileMouseOver('myskills');"
+                onmouseout="tileMouseOut();">
                 My Skills
               </div>
             </a>
           </div>
 
           <div>
-            <a href="http://sohanchy.com/code">
-              <div id="projects" class="columnBehaviour tile" onmouseover="tileMouseOver('projects');" onmouseout="tileMouseOut();">
-                Projects
-              </div>
-            </a>
-
-            <a href="http://sohanchy.com/gists">
-              <div id="github" class="columnBehaviour tile" onmouseover="tileMouseOver('github');" onmouseout="tileMouseOut();">
-                Gists
+            <a href="https://sohanchy.com/code">
+              <div id="code" class="columnBehaviour tile" onmouseover="tileMouseOver('code');"
+                onmouseout="tileMouseOut();">
+                Code
               </div>
             </a>
 
             <a class=scroll href="#my_education_section">
-              <div id="education" class="columnBehaviour tile" onmouseover="tileMouseOver('education');" onmouseout="tileMouseOut();">
+              <div id="education" class="columnBehaviour tile" onmouseover="tileMouseOver('education');"
+                onmouseout="tileMouseOut();">
                 Education
               </div>
             </a>
+
+            <a href="https://sohanchy.com/research-cv">
+              <div id="research" class="columnBehaviour tile" onmouseover="tileMouseOver('research');"
+                onmouseout="tileMouseOut();">
+                Research
+              </div>
+            </a>
+
+
 
           </div>
 
@@ -148,114 +153,179 @@
     <div class="bodyPad" id="about_me_section">
 
 
-      <h2><em> "who is this guy?" </em></h2>
+      <h2><em> "about me" </em></h2>
       <div class="left-col">
-      <img name="goto_home" id="mypic" src="res/mypic.jpg">
-      <br />
-      Sohan Chowdhury <br />
-      &#183; Computer Science Student<br />
-      &#183; Programmer &#183; Traveller <br />
-      &#183; Science Geek &#183;Tech Enthusiast
+        <img name="goto_home" id="mypic" src="res/mypic.jpg">
+        <br />
+        Sohan Chowdhury <br />
+        &#183; Software Engineer<br />
+        &#183; Computer Vision Enthusiast &#183;<br />
+        &#183; Hobbyist Landscape Photographer
       </div>
-      
+
 
       <div class="right-col">
 
 
-      <p class="descMe txt">
-        I'm Sohan, I love to hike & camp, obsess about new tech; enjoy science fiction and comedy.
-        <br />
-        <br />
+        <p class="descMe txt">
+          I'm a Software Engineer & Computer Vision enthusiast from Bangladesh.
+          I like to write code, go on hikes in the mountains & take landscape photographs. I'm also obsessed about new
+          tech. I enjoy science fiction and comedy.
+          <br />
+          <br />
+          I've been developing the backends of websites, apps, REST Apis for some years now.
+          Most of my time is spent writing code in <b>PHP(Laravel)</b>, <b>Python</b> & <b>Javascript(React)</b>.
+          When I am not writing business centric code, I like to learn about <b>teaching computers to see.</b>
+          </br>
+          </br>
+          I prefer to write clean code that is well structured and follows standards, although deadlines do not always
+          permit this.
+          I learn fast, adapt to new technologies quickly and try to keep a fresh and open mind.
+          </br>
+          </br>
+          Minimalistm and Flatnesss, YAGNI and KISS are my favourite mottos.
+          For instance, this page weighs only 13KB, and if you include the images, its only 85KB!
 
-        I've been developing the backends of websites, apps, REST Apis for some years now.
-        Most of my time is spent writing code in <b>PHP(Laravel)</b>, <b>Java(JavaFX)</b> and <b>Python</b>.
-        </br >
-        </br >
-        I prefer to write clean code that is well structured and follows standards, although deadlines do not always permit this.  
-        I learn fast, adapt to new technologies quickly and try to keep a fresh and open mind. 
-        </br >
-        </br >
-        Minimalistm and Flatnesss, YAGNI and KISS are my favourite mottos.
-        For instance, this page weighs only 13KB, and if you include the images, its only 85KB!
-        
-      </br >
-      </br >
-      My primary OS is Linux(Kubuntu), 
-      editor of choice is <s>Sublime Text</s> VS Code,
-      favourite IDEs are from Jetbrains and my default web browser is Chrome. <br />
-      </p>
+          </br>
+          </br>
+          My primary OS's are is Macos & Linux(Kubuntu),
+          editor of choice is <s>Sublime Text</s> VS Code,
+          favourite IDEs are from Jetbrains and my default web browser is Chrome. <br />
+        </p>
       </div>
-      <br/> 
+      <br />
       <h2><em>"get in touch"</em></h2>
 
       <div class="txt-center descMe txt">
-      You can email me at <a href="mailto:sifat3d@gmail.com">sifat3d@gmail.com</a> , I usually reply within 4-6 hours.
+        You can email me at <a href="mailto:sifat3d@gmail.com">sifat3d@gmail.com</a> , I usually reply within 4-6 hours.
       </div>
 
 
       <div class="goUp">
         <a class="scroll" href="#firstImpression"> [Up] </a>
       </div>
-      
 
+
+
+
+    </div>
+
+    <div class="bodyPad" id="my_skills_section" style="background:white">
+      <h2><em> "does he know FORTRAN?"</em></h2>
+      <div class="descMe txt">
+        Here's a rough self estimation of my programming skills:
+        <br /> (Spoiler: I don't know FORTRAN.) <br />
+      </div>
+
+      <div id="landgraph" class="landgraph"></div>
+
+      <div class="goUp">
+        <a class="scroll" href="#firstImpression"> [Up] </a>
+      </div>
+
+    </div>
+
+    <div class="bodyPad" id="my_education_section">
+      <h2><em> "education" </em></h2>
+      <p class="descMe txt">
+        I've completed Computer Science & Software Engineering from American International University-Bangladesh with
+        Summa Cum Laude(Highest distinction). I also received the Vice Chancellors Award for Best Undergrad Research.
+        <br />
+        I consider myself proficient in spoken and written english.
+        <br />
+        Besides formal education,
+        One of my favourite courses online was <b>Stanford University's CS231n taught by Andrej Karpathy.</b>
+        I got most of my computer vision interest from just the way he taught, if you are into CV, look up that course,
+        its awesome.
+        <br />
+        One other favourite online course I did when starting to learn was was Harvards CS50, I still suggest any CS
+        fresher to go through at least the
+        first few weeks of this awesome course.
+      </p>
+      <div class="goUp">
+        <a class="scroll" href="#firstImpression"> [Up] </a>
+      </div>
+
+    </div>
+
+    <div class="bodyPad" id="my_skills_section">
+      <p class="descMe txt">
+        <blockquote>
+          "Two roads diverged in a yellow wood,<br />
+          and I took the road less travelled."<br />
+        </blockquote>
+        and It hurt man!<br />
+        NOT COOL Robert Frost.<br />
+
+      </p>
+
+      <div class="goUp">
+        <a class="scroll" href="#firstImpression"> [Up] </a>
+      </div>
+
+    </div>
 
 
   </div>
-
-  <div class="bodyPad" id="my_skills_section" style="background:white">
-  <h2><em> "can he do anything?" </em></h2>
-    <div class="descMe txt">
-      Here's a rough self estimation of my skills:
-    </div>
-
-    <div id="landgraph" class="landgraph"></div>
-
-    <div class="goUp">
-      <a class="scroll" href="#firstImpression"> [Up] </a>
-    </div>
-
-  </div>
-
-  <div class="bodyPad" id="my_education_section">
-    <h2><em> "education" </em></h2>
-    <p class="descMe txt">
-      I am currently at the last year of my Bsc CSSE (Computer Science & Software Engineering) at AIUB.
-      <br />
-      I consider myself proficient in spoken and written english.
-       <br />
-      One of my favourite courses online was Harvards CS50, I still suggest all cs freshers to go through at least the first few weeks of this awesome course.
-    </p>
-    <div class="goUp">
-      <a class="scroll" href="#firstImpression"> [Up] </a>
-    </div>
-
-  </div>
-
-  <div class="bodyPad" id="my_skills_section">
-    <p class="descMe txt">
-      <blockquote>
-      "Two roads diverged in a yellow wood,<br/>
-       and I took the road less travelled."<br/>
-       </blockquote>
-       and It hurt man!<br/>
-       NOT COOL Robert Frost.<br/>
-       
-    </p>
-
-    <div class="goUp">
-      <a class="scroll" href="#firstImpression"> [Up] </a>
-    </div>
-
-  </div>
-
-
-</div>
-<script type="text/javascript">
-document.addEventListener("DOMContentLoaded",function(){var e=function(){if("scrollingElement"in document)return document.scrollingElement;var a=document.documentElement,b=a.scrollTop;a.scrollTop=b+1;var c=a.scrollTop;a.scrollTop=b;return c>b?a:document.body}(),g=function(a){var b=e.scrollTop;if(2>a.length)a=-b;else if(a=document.querySelector(a)){a=a.getBoundingClientRect().top;var c=e.scrollHeight-window.innerHeight;a=b+a<c?a:c-b}else a=void 0;if(a)return new Map([["start",b],["delta",a]])},h=function(a){var b=
-  a.getAttribute("href"),c=g(b);if(c){var d=new Map([["duration",900]]),k=performance.now();requestAnimationFrame(function l(a){d.set("elapsed",a-k);a=d.get("duration");var f=d.get("elapsed"),g=c.get("start"),h=c.get("delta");e.scrollTop=Math.round(h*(-Math.pow(2,-10*f/a)+1)+g);d.get("elapsed")<d.get("duration")?requestAnimationFrame(l):(history.pushState(null,null,b),e.scrollTop=c.get("start")+c.get("delta"))})}},f=document.querySelectorAll("a.scroll");(function b(c,d){var e=c.item(d);e.addEventListener("click",
-  function(b){b.preventDefault();h(e)});if(d)return b(c,d-1)})(f,f.length-1)});
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+      var e = function () {
+          if ("scrollingElement" in document) return document.scrollingElement;
+          var a = document.documentElement,
+            b = a.scrollTop;
+          a.scrollTop = b + 1;
+          var c = a.scrollTop;
+          a.scrollTop = b;
+          return c > b ? a : document.body
+        }(),
+        g = function (a) {
+          var b = e.scrollTop;
+          if (2 > a.length) a = -b;
+          else if (a = document.querySelector(a)) {
+            a = a.getBoundingClientRect().top;
+            var c = e.scrollHeight - window.innerHeight;
+            a = b + a < c ? a : c - b
+          } else a = void 0;
+          if (a) return new Map([
+            ["start", b],
+            ["delta", a]
+          ])
+        },
+        h = function (a) {
+          var b =
+            a.getAttribute("href"),
+            c = g(b);
+          if (c) {
+            var d = new Map([
+                ["duration", 900]
+              ]),
+              k = performance.now();
+            requestAnimationFrame(function l(a) {
+              d.set("elapsed", a - k);
+              a = d.get("duration");
+              var f = d.get("elapsed"),
+                g = c.get("start"),
+                h = c.get("delta");
+              e.scrollTop = Math.round(h * (-Math.pow(2, -10 * f / a) + 1) + g);
+              d.get("elapsed") < d.get("duration") ? requestAnimationFrame(l) : (history.pushState(null, null,
+                b), e.scrollTop = c.get("start") + c.get("delta"))
+            })
+          }
+        },
+        f = document.querySelectorAll("a.scroll");
+      (function b(c, d) {
+        var e = c.item(d);
+        e.addEventListener("click",
+          function (b) {
+            b.preventDefault();
+            h(e)
+          });
+        if (d) return b(c, d - 1)
+      })(f, f.length - 1)
+    });
   </script>
 
 
 </body>
+
 </html>

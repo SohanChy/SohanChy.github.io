@@ -8,7 +8,7 @@
      */
 
     var requestedUrl = myLoc.replace(/^.*[\\\/]/, '');
-    requestedUrl = requestedUrl.toLowerCase();
+    requestedUrl = requestedUrl.toLowerCase().split("?")[0];
     if (redirectorDB.hasOwnProperty(requestedUrl)) {
         window.location.replace(redirectorDB[requestedUrl]);
     }

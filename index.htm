@@ -2,326 +2,297 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Sohan Chowdhury - Software Engineer, Hobbyist Landscape Photographer, Computer Vision Enthusiast & Traveler
-  </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://sohanchy.com" />
-  <meta name="description"
-    content="I am a Software Engineer located in British Columbia, Canada. I am a full stack engineer with strong focus on the backend. In my toolbox I have NodeJS, Python, PHP and Java.
+    <meta charset="utf-8">
+    <title>Sohan Chowdhury - Software Engineer, Hobbyist Landscape Photographer
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://sohanchy.com" />
+    <meta name="description" content="I am a Software Engineer located in British Columbia, Canada. I am a full stack engineer with strong focus on the backend. In my toolbox I have NodeJS, Python, PHP and Java.
 I love taking landscape photographs and obsess about new technologies.">
-  <meta name="keywords" content="Sohan,Chowdhury,About,Who,Is,Bangladesh,CS,Programmer">
-  <meta name="author" content="Sohan Chowdhury">
+    <meta name="keywords" content="Sohan,Chowdhury,About,Who,Is,Bangladesh,CS,Programmer">
+    <meta name="author" content="Sohan Chowdhury">
 
 
-  <link href='http://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
-  <link rel='stylesheet' href='res/myStyles.css' type='text/css' media='all' />
-  <script type="text/javascript">
-    if (window.location.href.indexOf('https://sohanchy.github.io') === 0) {
-      window.location.href = 'https://sohanchy.com';
-    }
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='res/myStyles.css' type='text/css' media='all' />
+    <script type="text/javascript">
+        if (window.location.href.indexOf('https://sohanchy.github.io') === 0) {
+            window.location.href = 'https://sohanchy.com';
+        }
 
-    function tileMouseOver(cs) {
-      if (cs == 'aboutme') {
-        document.getElementById('topNarrator').innerHTML = "Who am I?";
-      } else if (cs == 'myskills') {
-        document.getElementById('topNarrator').innerHTML = "Programming Languages I'm good at";
-      } else if (cs == 'code') {
-        document.getElementById('topNarrator').innerHTML = "My Github, stuff I've made & worked on";
-      } else if (cs == 'research') {
-        document.getElementById('topNarrator').innerHTML = "My Academic CV";
-      } else if (cs == 'education') {
-        document.getElementById('topNarrator').innerHTML = "Stuff I've learned";
-      }
+        function tileMouseOver(cs) {
+            if (cs == 'aboutme') {
+                document.getElementById('topNarrator').innerHTML = "Who am I?";
+            } else if (cs == 'myskills') {
+                document.getElementById('topNarrator').innerHTML = "Self-Assessed graph of my technical skills";
+            } else if (cs == 'code') {
+                document.getElementById('topNarrator').innerHTML = "My Github, stuff I've made & worked on";
+            } else if (cs == 'resume') {
+                document.getElementById('topNarrator').innerHTML = "My Resume";
+            } else if (cs == 'education') {
+                document.getElementById('topNarrator').innerHTML = "Stuff I've learned";
+            }
 
-    }
+        }
 
-    function tileMouseOut() {
-      document.getElementById('topNarrator').innerHTML = '<span class="blink_me">...</span>';
-    }
-  </script>
+        function tileMouseOut() {
+            document.getElementById('topNarrator').innerHTML = '<span class="blink_me">...</span>';
+        }
+    </script>
 
-  <!-- BOOO... Google Analytics!
+    <!-- BOOO... Google Analytics!
   I know, I'm sorry but its a necessary evil.
 -->
 
-  <script>
-    (function (i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function () {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-37749531-3', 'auto');
-    ga('send', 'pageview');
-  </script>
+        ga('create', 'UA-37749531-3', 'auto');
+        ga('send', 'pageview');
+    </script>
 
 
 </head>
 
 <body>
 
-  <div id="firstImpression" class="container-firstImpression">
+    <div id="firstImpression" class="container-firstImpression">
 
-    <div class="leftCover columnBehaviour">
+        <div class="leftCover columnBehaviour">
 
-      <div id="cardContainer" class="vmid">
-        <div id="BioHolder">
-          <h1 id="imSohan" class="whiteText bigText stretchRight">
-            I'm Sohan.
-          </h1>
-          <span class="descMe whiteText">Software Engineer · Computer Vision Enthusiast · Hobbyist Landscape
-            Photographer</span>
-        </div>
-        <div class="links-p">
-          <a href="https://sohanchy.com/blog" class="buttonWhite">Blog</a>
-          <a href="https://sohanchy.com/fb" class="buttonWhite">FB</a>
-          <a href="https://www.instagram.com/sohanchy/" class="buttonWhite">Photography</a>
-          <a href="https://www.linkedin.com/in/sohanchy" class="buttonWhite">Linkedin</a>
-        </div>
+            <div id="cardContainer" class="vmid">
+                <div id="BioHolder">
+                    <h1 id="imSohan" class="whiteText bigText stretchRight">
+                        I'm Sohan.
+                    </h1>
+                    <span class="descMe whiteText">Fullstack Software Engineer · Outdoors Enthusiast</span>
+                </div>
+                <div class="links-p">
+                    <a href="https://sohanchy.com/blog" class="buttonWhite">Blog</a>
+                    <a href="https://sohanchy.com/fb" class="buttonWhite">FB</a>
+                    <a href="https://www.instagram.com/sohanchy/" class="buttonWhite">Photography</a>
+                    <a href="https://www.linkedin.com/in/sohanchy" class="buttonWhite">Linkedin</a>
+                </div>
 
-      </div>
-
-    </div>
-
-    <div class="rightCover columnBehaviour">
-      <div id="cardContainer" class="vmid rightBorder">
-        <div id="topNarrator" class="topNarrator descMe">
-          <span class="">...</span>
-        </div>
-
-        <div class="links-p">
-
-          <div>
-
-            <a class=scroll href="#about_me_section">
-              <div id="aboutme" class="columnBehaviour tile" onmouseover="tileMouseOver('aboutme');"
-                onmouseout="tileMouseOut();">
-                About Me
-              </div>
-            </a>
-
-            <a class=scroll href="#my_skills_section">
-              <div id="myskills" class="columnBehaviour tile" onmouseover="tileMouseOver('myskills');"
-                onmouseout="tileMouseOut();">
-                Skills
-              </div>
-            </a>
-          </div>
-
-          <div>
-            <a href="https://sohanchy.com/code">
-              <div id="code" class="columnBehaviour tile" onmouseover="tileMouseOver('code');"
-                onmouseout="tileMouseOut();">
-                Github
-              </div>
-            </a>
-
-            <a class=scroll href="#my_education_section">
-              <div id="education" class="columnBehaviour tile" onmouseover="tileMouseOver('education');"
-                onmouseout="tileMouseOut();">
-                Education
-              </div>
-            </a>
-
-            <a href="https://sohanchy.com/Sohan_Chowdhury_resume.pdf">
-              <div id="research" class="columnBehaviour tile" onmouseover="tileMouseOver('research');"
-                onmouseout="tileMouseOut();">
-                Resume
-              </div>
-            </a>
-
-
-
-          </div>
+            </div>
 
         </div>
-      </div>
 
-    </div>
+        <div class="rightCover columnBehaviour">
+            <div id="cardContainer" class="vmid rightBorder">
+                <div id="topNarrator" class="topNarrator descMe">
+                    <span class="">...</span>
+                </div>
 
-  </div>
+                <div class="links-p">
 
+                    <div>
 
-  <div class="downTown">
+                        <a class=scroll href="#about_me_section">
+                            <div id="aboutme" class="columnBehaviour tile" onmouseover="tileMouseOver('aboutme');" onmouseout="tileMouseOut();">
+                                About Me
+                            </div>
+                        </a>
 
-    <div class="bodyPad" id="about_me_section">
+                        <a class=scroll href="#my_skills_section">
+                            <div id="myskills" class="columnBehaviour tile" onmouseover="tileMouseOver('myskills');" onmouseout="tileMouseOut();">
+                                Skills
+                            </div>
+                        </a>
+                    </div>
 
+                    <div>
+                        <a href="https://sohanchy.com/code">
+                            <div id="code" class="columnBehaviour tile" onmouseover="tileMouseOver('code');" onmouseout="tileMouseOut();">
+                                Github
+                            </div>
+                        </a>
 
-      <h2><em> "about me" </em></h2>
-      <div class="left-col">
-        <img name="goto_home" id="mypic" src="res/mypic.jpg">
-        <br />
-        Sohan Chowdhury <br />
-        &#183; Fullstack Software Engineer <br />
-        &#183; Hobbyist Landscape Photographer
-      </div>
+                        <a class=scroll href="#my_education_section">
+                            <div id="education" class="columnBehaviour tile" onmouseover="tileMouseOver('education');" onmouseout="tileMouseOut();">
+                                Education
+                            </div>
+                        </a>
 
-
-      <div class="right-col">
-
-
-        <p class="descMe txt">
-
-          I'm a Software Engineer with 3 years of full-time and 2 years of part-time professional experience. 
-          I will be graduating with a Master's degree in computer science from UBC in April 2023.
-          <br />
-          I have a Software Engineering background focusing on web technologies, especially in JS (Node, Express, React), Python (Flask, FastApi), and PHP (Laravel, Lumen)
-          <br />
-          I love hiking, backpacking & wilderness camping, enjoy reading science fiction and learning about obscure and interesting new things, and am an amateur landscape photographer.
-          <br />
-          I write clean, maintainable code that follows conventions. I learn fast, adapt to new technologies quickly and try to keep a fresh and open mind. I have clear conceptual knowledge of OOP, MVC, and SDLC and have professional experience working under variations of the Agile Scrum process.
-          </br>
-          Minimalistm and Flatnesss, YAGNI and KISS are my favourite mottos.
-          For instance, this page weighs only 13KB, and if you include the images, its only 85KB!
-
-          </br>
-          </br>
-          My primary OS's are is Macos & Linux(Kubuntu),
-          editor of choice is <s>Sublime Text</s> VS Code,
-          favourite IDEs are from Jetbrains and my default web browser is Chrome. <br />
-        </p>
-      </div>
-      <br />
-      <h2><em>"get in touch"</em></h2>
-
-      <div class="txt-center descMe txt">
-        You can email me at sohanchy.cs AT gmail DOT com</a> , I usually reply within 4-6 hours.
-      </div>
-
-
-      <div class="goUp">
-        <a class="scroll" href="#firstImpression"> [Up] </a>
-      </div>
+                        <a href="https://sohanchy.com/Sohan_Chowdhury_resume.pdf">
+                            <div id="resume" class="columnBehaviour tile" onmouseover="tileMouseOver('resume');" onmouseout="tileMouseOut();">
+                                Resume
+                            </div>
+                        </a>
 
 
 
+                    </div>
 
-    </div>
+                </div>
+            </div>
 
-    <div class="bodyPad" id="my_skills_section" style="background:white">
-      <h2><em> "does he know FORTRAN?"</em></h2>
-      <div class="descMe txt">
-        Here's a rough self estimation of my programming skills:
-        <br /> (Spoiler: I don't know FORTRAN.) <br />
-      </div>
-
-      <div id="landgraph" class="landgraph"></div>
-
-      <div class="goUp">
-        <a class="scroll" href="#firstImpression"> [Up] </a>
-      </div>
-
-    </div>
-
-    <div class="bodyPad" id="my_education_section">
-      <h2><em> "education" </em></h2>
-      <p class="descMe txt">
-        I'm almost finished with a Master's degree in computer science from the Univeristy of British Columbia (UBC).
-        Here my education was fully funded through scholarship, RA and TA. I worked developing novel on hand-tracking based interactions for virtual reality.
-        <br />
-        I've completed Computer Science & Software Engineering from American International University-Bangladesh with
-        Summa Cum Laude(Highest distinction). I also received the Vice Chancellors Award for Best Undergrad Research.
-        <br />
-        I consider myself proficient in spoken and written english.
-        <br />
-        Besides formal education,
-        One of my favourite courses online was <b>Stanford University's CS231n taught by Andrej Karpathy.</b>
-        I got most of my computer vision interest from just the way he taught, if you are into CV, look up that course,
-        its awesome.
-        <br />
-        One other favourite online course I did when starting to learn was was Harvards CS50, I still suggest any CS
-        fresher to go through at least the
-        first few weeks of this awesome course.
-      </p>
-      <div class="goUp">
-        <a class="scroll" href="#firstImpression"> [Up] </a>
-      </div>
-
-    </div>
-
-    <div class="bodyPad" id="my_skills_section">
-      <p class="descMe txt">
-        <blockquote>
-          "Two roads diverged in a yellow wood,<br />
-          and I took the road less travelled."<br />
-        </blockquote>
-        and It hurt man!<br />
-        NOT COOL Robert Frost.<br />
-
-      </p>
-
-      <div class="goUp">
-        <a class="scroll" href="#firstImpression"> [Up] </a>
-      </div>
+        </div>
 
     </div>
 
 
-  </div>
-  <script type="text/javascript">
-    document.addEventListener("DOMContentLoaded", function () {
-      var e = function () {
-          if ("scrollingElement" in document) return document.scrollingElement;
-          var a = document.documentElement,
-            b = a.scrollTop;
-          a.scrollTop = b + 1;
-          var c = a.scrollTop;
-          a.scrollTop = b;
-          return c > b ? a : document.body
-        }(),
-        g = function (a) {
-          var b = e.scrollTop;
-          if (2 > a.length) a = -b;
-          else if (a = document.querySelector(a)) {
-            a = a.getBoundingClientRect().top;
-            var c = e.scrollHeight - window.innerHeight;
-            a = b + a < c ? a : c - b
-          } else a = void 0;
-          if (a) return new Map([
-            ["start", b],
-            ["delta", a]
-          ])
-        },
-        h = function (a) {
-          var b =
-            a.getAttribute("href"),
-            c = g(b);
-          if (c) {
-            var d = new Map([
-                ["duration", 900]
-              ]),
-              k = performance.now();
-            requestAnimationFrame(function l(a) {
-              d.set("elapsed", a - k);
-              a = d.get("duration");
-              var f = d.get("elapsed"),
-                g = c.get("start"),
-                h = c.get("delta");
-              e.scrollTop = Math.round(h * (-Math.pow(2, -10 * f / a) + 1) + g);
-              d.get("elapsed") < d.get("duration") ? requestAnimationFrame(l) : (history.pushState(null, null,
-                b), e.scrollTop = c.get("start") + c.get("delta"))
-            })
-          }
-        },
-        f = document.querySelectorAll("a.scroll");
-      (function b(c, d) {
-        var e = c.item(d);
-        e.addEventListener("click",
-          function (b) {
-            b.preventDefault();
-            h(e)
-          });
-        if (d) return b(c, d - 1)
-      })(f, f.length - 1)
-    });
-  </script>
+    <div class="downTown">
+
+        <div class="bodyPad" id="about_me_section">
+
+
+            <h2><em> "about me" </em></h2>
+            <div class="left-col">
+                <img name="goto_home" id="mypic" src="res/mypic.jpg">
+                <br /> Sohan Chowdhury <br /> &#183; Fullstack Software Engineer <br /> &#183; Hobbyist Landscape Photographer
+            </div>
+
+
+            <div class="right-col">
+
+
+                <p class="descMe txt">
+
+                    I'm a Software Engineer with 3 years of full-time and 2 years of part-time professional experience. I will be graduating with a Master's degree in computer science from UBC in April 2023.
+                    <br /><br /> I have a Software Engineering background focusing on web technologies, especially in JS (Node, Express, React), Python (Flask, FastApi), and PHP (Laravel, Lumen)
+                    <br /><br /> I write clean, maintainable code that follows conventions. I learn fast, adapt to new technologies quickly and try to keep a fresh and open mind. I have clear conceptual knowledge of OOP, MVC, and SDLC and have professional
+                    experience working under variations of the Agile Scrum process.
+                    </br><br /> Minimalistm and Flatnesss, YAGNI and KISS are my favourite mottos. For instance, this page weighs only 13KB, and if you include the images, its only 85KB!
+                    </br>
+                    </br>
+                    I'm also an outdoor enthusiast with a love for hiking, backpacking, wilderness camping, and landscape photography. I enjoy reading science fiction and learning about obscure and interesting new things.
+
+                </p>
+            </div>
+            <br />
+            <h2><em>"get in touch"</em></h2>
+
+            <div class="txt-center descMe txt">
+                You can email me at sohanchy.cs AT gmail DOT com</a> , I usually reply within 4-6 hours.
+            </div>
+
+
+            <div class="goUp">
+                <a class="scroll" href="#firstImpression"> [Up] </a>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="bodyPad" id="my_skills_section" style="background:white">
+            <h2><em> "does he know FORTRAN?"</em></h2>
+            <div class="descMe txt">
+                Here's a rough self estimation of my programming skills:
+                <br /> (Spoiler: I don't know FORTRAN.) <br />
+            </div>
+
+            <div id="landgraph" class="landgraph"></div>
+
+            <div class="goUp">
+                <a class="scroll" href="#firstImpression"> [Up] </a>
+            </div>
+
+        </div>
+
+        <div class="bodyPad" id="my_education_section">
+            <h2><em> "education" </em></h2>
+            <p class="descMe txt">
+                I'm almost finished with a Master's degree in computer science from the Univeristy of British Columbia (UBC). Here my education was fully funded through scholarship, RA and TA. I worked developing novel on hand-tracking based interactions for virtual
+                reality.
+                <br /> <br /> I've completed Computer Science & Software Engineering from American International University-Bangladesh with Summa Cum Laude(Highest distinction). I also received the Vice Chancellors Award for Best Undergrad Research.
+                <br /> <br /> I consider myself proficient in spoken and written english.
+                <br /> <br /> Besides formal education, One of my favourite courses online was <b>Stanford University's CS231n taught by Andrej Karpathy.</b> I got most of my computer vision interest from just the way he taught, if you are into CV, look
+                up that course, its awesome.
+                <br /> One other favourite online course I did when starting to learn was was Harvards CS50, I still suggest any CS fresher to go through at least the first few weeks of this awesome course.
+            </p>
+            <div class="goUp">
+                <a class="scroll" href="#firstImpression"> [Up] </a>
+            </div>
+
+        </div>
+
+        <div class="bodyPad" id="my_skills_section">
+            <p class="descMe txt">
+                <blockquote>
+                    "It is possible to think you have no bugs in dev and still crash staging. <br /> That is not a weakness. That is life."<br />
+                </blockquote>
+                - Some guy on reddit, probably.<br />
+
+            </p>
+
+            <div class="goUp">
+                <a class="scroll" href="#firstImpression"> [Up] </a>
+            </div>
+
+        </div>
+
+
+    </div>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            var e = function() {
+                    if ("scrollingElement" in document) return document.scrollingElement;
+                    var a = document.documentElement,
+                        b = a.scrollTop;
+                    a.scrollTop = b + 1;
+                    var c = a.scrollTop;
+                    a.scrollTop = b;
+                    return c > b ? a : document.body
+                }(),
+                g = function(a) {
+                    var b = e.scrollTop;
+                    if (2 > a.length) a = -b;
+                    else if (a = document.querySelector(a)) {
+                        a = a.getBoundingClientRect().top;
+                        var c = e.scrollHeight - window.innerHeight;
+                        a = b + a < c ? a : c - b
+                    } else a = void 0;
+                    if (a) return new Map([
+                        ["start", b],
+                        ["delta", a]
+                    ])
+                },
+                h = function(a) {
+                    var b =
+                        a.getAttribute("href"),
+                        c = g(b);
+                    if (c) {
+                        var d = new Map([
+                                ["duration", 900]
+                            ]),
+                            k = performance.now();
+                        requestAnimationFrame(function l(a) {
+                            d.set("elapsed", a - k);
+                            a = d.get("duration");
+                            var f = d.get("elapsed"),
+                                g = c.get("start"),
+                                h = c.get("delta");
+                            e.scrollTop = Math.round(h * (-Math.pow(2, -10 * f / a) + 1) + g);
+                            d.get("elapsed") < d.get("duration") ? requestAnimationFrame(l) : (history.pushState(null, null,
+                                b), e.scrollTop = c.get("start") + c.get("delta"))
+                        })
+                    }
+                },
+                f = document.querySelectorAll("a.scroll");
+            (function b(c, d) {
+                var e = c.item(d);
+                e.addEventListener("click",
+                    function(b) {
+                        b.preventDefault();
+                        h(e)
+                    });
+                if (d) return b(c, d - 1)
+            })(f, f.length - 1)
+        });
+    </script>
 
 
 </body>

@@ -499,11 +499,29 @@ body {
 
 /* ── Theme Picker ── */
 .theme-picker {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 20;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding-left: 6px;
-    border-left: 1px solid var(--border);
+    gap: 9px;
+    padding: 8px 12px;
+    background: var(--bg-surface-alpha);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.theme-picker-label {
+    color: var(--text-faint);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 .theme-swatch {
@@ -1519,6 +1537,10 @@ body {
     .container {
         padding: 18px 12px 60px 12px;
         overflow-x: hidden;
+    }
+    .theme-picker {
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
     }
     .sp-golden-spot {
         width: 300px;

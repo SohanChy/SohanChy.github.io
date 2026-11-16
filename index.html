@@ -20,8 +20,13 @@
         content="Software Engineer at Humi by Employment Hero. High-signal, low-KB personal site.">
     <meta property="og:image" content="https://sohanchy.com/res/mypic.jpg">
 
-    <!-- Stylesheet: Zero external font latency, solarized light palette, pure CSS -->
+    <!-- Stylesheet: Zero external font latency, solarpunk palette, pure CSS -->
     <link rel="stylesheet" href="res/style.css" type="text/css" media="all">
+
+    <!-- Restore saved theme before first paint -->
+    <script>
+        (function () { var t = localStorage.getItem('sp-theme'); if (t && t !== 'green') document.documentElement.setAttribute('data-theme', t) })();
+    </script>
 
     <!-- Domain Canonical Redirect -->
     <script type="text/javascript">
@@ -32,6 +37,43 @@
 </head>
 
 <body>
+
+    <!-- Visible Solarpunk Celestial Atmospheric Background (Sunrise -> Midday -> Sunset) -->
+    <div class="solarpunk-bg" aria-hidden="true">
+        <!-- 1. Sunrise Layer (Morning Golden Hour) -->
+        <div class="sp-layer sp-sunrise-layer">
+            <div class="sp-sunrise-sky"></div>
+        </div>
+        <!-- 2. Midday Layer (Short Photosynthetic Solar Tech) -->
+        <div class="sp-layer sp-midday-layer">
+            <div class="sp-midday-sky"></div>
+        </div>
+        <!-- 3. Sunset Layer (Evening Golden Hour into Dusk) -->
+        <div class="sp-layer sp-sunset-layer">
+            <div class="sp-sunset-sky"></div>
+        </div>
+        <!-- Celestial Sun Orb & Beams (Arcs across sky with scroll) -->
+        <div class="sp-sun-orb"></div>
+        <div class="sp-sun-rays"></div>
+        <div class="sp-grid"></div>
+        <svg class="sp-topo" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="topo-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="var(--contour-top)" />
+                    <stop offset="45%" stop-color="var(--contour-mid)" />
+                    <stop offset="100%" stop-color="var(--contour-bot)" />
+                </linearGradient>
+            </defs>
+            <g opacity="0.45" stroke="url(#topo-grad)" stroke-width="1.5">
+                <path d="M-100 160 C 240 90, 600 240, 1000 140 C 1240 80, 1400 150, 1600 120" />
+                <path d="M-100 250 C 200 190, 560 330, 940 240 C 1200 180, 1380 260, 1600 220" />
+                <path d="M-100 360 C 280 300, 640 440, 1020 350 C 1260 290, 1420 370, 1600 330" />
+                <path d="M-100 480 C 220 430, 580 560, 960 470 C 1220 410, 1390 490, 1600 450" />
+                <path d="M-100 610 C 260 560, 620 680, 1000 600 C 1250 540, 1410 610, 1600 580" />
+                <path d="M-100 740 C 210 690, 570 800, 950 720 C 1210 670, 1380 730, 1600 710" />
+            </g>
+        </svg>
+    </div>
 
     <div class="container">
 
@@ -45,6 +87,14 @@
                 <span>📍 Vancouver, BC</span>
                 <span title="Last updated">Updated <time datetime="2026-11-15">Nov 2026</time></span>
                 <span><a href="#contact">Contact</a></span>
+                <div class="theme-picker" aria-label="Color theme">
+                    <button class="theme-swatch swatch-green active" data-theme="green" title="Living Green 🌿 (Field of Greens)"
+                        aria-label="Living Green theme"></button>
+                    <button class="theme-swatch swatch-golden" data-theme="golden" title="Golden Solarpunk ☀️ (The Ideal Future)"
+                        aria-label="Golden Solarpunk theme"></button>
+                    <button class="theme-swatch swatch-moss" data-theme="moss" title="Dusk Moss 🌑 (Twilight Solarpunk)"
+                        aria-label="Dusk Moss theme"></button>
+                </div>
             </div>
         </header>
 
@@ -54,7 +104,7 @@
                 <h1 class="hero-title">Sohan Chowdhury</h1>
                 <p class="hero-subtitle">
                     Full-Stack & Systems Engineer · <strong>Vancouver, BC</strong> · 8+ years building resilient
-                    backends, async architectures, and pragmatic AI products.
+                    backends, async architectures, and pragmatic products.
                 </p>
             </div>
             <div class="hero-avatar">
@@ -70,7 +120,8 @@
             <a href="#projects" class="nav-pill"><span class="nav-glyph">⬡</span> Projects & Research</a>
             <a href="#skills" class="nav-pill"><span class="nav-glyph">◈</span> Skills</a>
             <a href="#outdoors" class="nav-pill"><span class="nav-glyph">▲</span> Outdoors</a>
-            <a href="Sohan_Chowdhury_resume.pdf" class="nav-pill" target="_blank" rel="noopener"><span class="nav-glyph">✦</span> Resume <span class="nav-pill-sub">[PDF]</span> ↗</a>
+            <a href="Sohan_Chowdhury_resume.pdf" class="nav-pill" target="_blank" rel="noopener"><span
+                    class="nav-glyph">✦</span> Resume <span class="nav-pill-sub">[PDF]</span> ↗</a>
         </nav>
 
         <!-- Tone-of-Voice Slider (Inspired by getcoleman.com) -->
@@ -403,7 +454,8 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <span>Last updated: <time datetime="2026-11-15">November 2026</time> · Solarized Light · Zero dependencies</span>
+                <span>Last updated: <time datetime="2026-11-15">November 2026</time> · Solarpunk · Zero
+                    dependencies</span>
                 <a href="#" class="back-to-top">↑ Back to top</a>
             </div>
         </footer>
@@ -472,6 +524,78 @@
 
             // Initialize on page load to guarantee text matches slider position
             updateTone(parseInt(slider.value, 10), true);
+        })();
+    </script>
+
+    <!-- Theme Picker (Solarpunk Palette Switcher) -->
+    <script type="text/javascript">
+        (function () {
+            var picker = document.querySelector('.theme-picker');
+            if (!picker) return;
+            var swatches = picker.querySelectorAll('.theme-swatch');
+            var html = document.documentElement;
+
+            // Sync active swatch with restored theme
+            var saved = localStorage.getItem('sp-theme') || 'green';
+            swatches.forEach(function (s) {
+                s.classList.toggle('active', s.getAttribute('data-theme') === saved);
+            });
+
+            picker.addEventListener('click', function (e) {
+                var swatch = e.target.closest('.theme-swatch');
+                if (!swatch) return;
+                var theme = swatch.getAttribute('data-theme');
+
+                if (theme === 'green') {
+                    html.removeAttribute('data-theme');
+                } else {
+                    html.setAttribute('data-theme', theme);
+                }
+
+                localStorage.setItem('sp-theme', theme);
+                swatches.forEach(function (s) {
+                    s.classList.toggle('active', s === swatch);
+                });
+            });
+        })();
+    </script>
+
+    <!-- Scroll-Driven Sunrise -> Short Midday -> Sunset Celestial Cycle -->
+    <script type="text/javascript">
+        (function () {
+            var ticking = false;
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function () {
+                        var doc = document.documentElement;
+                        var total = doc.scrollHeight - window.innerHeight;
+                        var p = total > 0 ? Math.min(Math.max((window.pageYOffset || doc.scrollTop) / total, 0), 1) : 0;
+                        
+                        // Normalized progress (0 at top, 1 at bottom)
+                        doc.style.setProperty('--scroll-p', p.toFixed(3));
+                        
+                        // Sun arc coordinates across the sky (Sunrise East -> Overhead Midday -> Sunset West)
+                        var sunX = (18 + p * 64).toFixed(1) + '%';
+                        var sunY = (14 - (4 * p * (1 - p)) * 12).toFixed(1) + '%';
+                        doc.style.setProperty('--sun-x', sunX);
+                        doc.style.setProperty('--sun-y', sunY);
+                        
+                        // Opacity curves: long sunrise (0 to 0.42), short midday (0.35 to 0.58), long sunset (0.48 to 1.0)
+                        var sunriseOp = Math.max(0, Math.min(1, (0.42 - p) / 0.35)).toFixed(3);
+                        var middayOp = Math.max(0, Math.min(1, 1 - Math.abs(p - 0.45) * 3.5)).toFixed(3);
+                        var sunsetOp = Math.max(0, Math.min(1, (p - 0.48) / 0.35)).toFixed(3);
+                        
+                        doc.style.setProperty('--sunrise-op', sunriseOp);
+                        doc.style.setProperty('--midday-op', middayOp);
+                        doc.style.setProperty('--sunset-op', sunsetOp);
+                        
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
         })();
     </script>
 

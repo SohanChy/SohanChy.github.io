@@ -1,56 +1,381 @@
 /* ==========================================================================
-   Sohan Chowdhury - Personal Portfolio
-   Solarized Light / Solarpunk Aesthetic · High Signal · Minimalist · Zero Bloat
+   Sohan Chowdhury – Personal Portfolio
+   Solarpunk Aesthetic · Golden Hour Sunrise to Sunset Celestial Scroll
    ========================================================================== */
 
+/* ── Palette: Living Green 🌿 (Default: Sunrise Golden Hour -> Short Midday -> Sunset Golden Hour) ── */
 :root {
-    --bg: #fdf6e3;
-    --bg-surface: #f7f1df;
-    --bg-card: #eee8d5;
-    --bg-highlight: #e4dcbe;
-    --border: #dfd7be;
-    --border-dark: #cbbf9f;
-    --text: #073642;
-    --text-muted: #586e75;
-    --text-faint: #839496;
-    --green: #859900;
-    --cyan: #2aa198;
-    --yellow: #b58900;
-    --orange: #cb4b16;
-    --blue: #268bd2;
-    --magenta: #d33682;
+    --scroll-p: 0;
+    --sun-x: 18%;
+    --sun-y: 14%;
+    --sunrise-op: 1;
+    --midday-op: 0;
+    --sunset-op: 0;
+
+    /* 1. Sunrise Golden Hour (Top of Page: Morning Dawn) */
+    --sunrise-sky-1: #fed7aa;
+    --sunrise-sky-2: #fef08a;
+    --sunrise-sky-3: #fef9c3;
+    --sunrise-sky-4: #ecfdf5;
+
+    /* 2. Short Midday (Mid-Page: Photosynthetic Solar Tech) */
+    --midday-sky-1: #7ee0ee;
+    --midday-sky-2: #a7f3d0;
+    --midday-sky-3: #d1fae5;
+    --midday-sky-4: #f0fdf4;
+
+    /* 3. Sunset Golden Hour (Bottom of Page: Backcountry Sunset into Twilight) */
+    --sunset-sky-1: #fdba74;
+    --sunset-sky-2: #f97316;
+    --sunset-sky-3: #f59e0b;
+    --sunset-sky-4: #0f766e;
+
+    /* Celestial Sun Orb & Beams */
+    --sun-color-core: #f59e0b;
+    --sun-color-mid: rgba(251, 191, 36, 0.78);
+    --sun-color-outer: rgba(254, 215, 170, 0.45);
+    --sun-beam-color: rgba(254, 240, 138, 0.65);
+
+    /* Card Surfaces & Eco-Glassmorphism (Frosted glass letting the sun & skies radiate through) */
+    --bg-surface: rgba(255, 255, 255, 0.62);
+    --bg-surface-alpha: rgba(255, 255, 255, 0.70);
+    --bg-card: rgba(240, 248, 242, 0.68);
+    --bg-highlight: rgba(212, 235, 216, 0.75);
+    --border: rgba(45, 115, 70, 0.22);
+    --border-dark: rgba(25, 80, 45, 0.45);
+    --card-shadow: 0 8px 30px rgba(15, 36, 23, 0.08);
+    --card-shadow-hover: 0 14px 36px rgba(15, 36, 23, 0.14);
+
+    /* Grid & Topo Contours */
+    --grid-color: rgba(30, 95, 60, 0.07);
+    --contour-top: #f59e0b;
+    --contour-mid: #16a34a;
+    --contour-bot: #d97706;
+
+    /* High-Contrast Crisp Typography */
+    --text: #0d2115;
+    --text-muted: #294734;
+    --text-faint: #50705a;
+
+    /* Accents */
+    --accent: #16a34a;
+    --accent-bright: #22c55e;
+    --warm-accent: #d97706;
+    --cool-accent: #0d9488;
+    --cool-accent-bright: #14b8a6;
+    --warm: #d97706;
+    --warm-deep: #b45309;
+    --link: #15803d;
+    --link-cool: #0f766e;
+    --pop: #e11d48;
+    --glow: rgba(34, 197, 94, 0.28);
+
+    /* Timeline Vine gradient (sunrise gold -> midday emerald -> sunset amber-teal) */
+    --vine-start: #f59e0b;
+    --vine-mid: #16a34a;
+    --vine-end: #d97706;
+
+    /* Interactive aliases */
+    --green: #16a34a;
+    --cyan: #0d9488;
+    --yellow: #f59e0b;
+    --orange: #d97706;
+    --blue: #0284c7;
+    --magenta: #e11d48;
+
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
 }
 
-*, *::before, *::after {
-    box-sizing: border-box;
+/* ── Palette: Golden Hour ☀️ (Rich Honey Sunrise -> High Daylight -> Deep Terracotta Sunset) ── */
+[data-theme="golden"] {
+    --sunrise-sky-1: #fde68a;
+    --sunrise-sky-2: #fef08a;
+    --sunrise-sky-3: #fef3c7;
+    --sunrise-sky-4: #f7fee7;
+
+    --midday-sky-1: #93c5fd;
+    --midday-sky-2: #bbf7d0;
+    --midday-sky-3: #ecfccb;
+    --midday-sky-4: #fefce8;
+
+    --sunset-sky-1: #ea580c;
+    --sunset-sky-2: #f97316;
+    --sunset-sky-3: #f59e0b;
+    --sunset-sky-4: #14532d;
+
+    --sun-color-core: #ea580c;
+    --sun-color-mid: rgba(245, 158, 11, 0.85);
+    --sun-color-outer: rgba(251, 146, 60, 0.5);
+    --sun-beam-color: rgba(253, 230, 138, 0.7);
+
+    --bg-surface: rgba(255, 252, 244, 0.65);
+    --bg-surface-alpha: rgba(255, 252, 244, 0.72);
+    --bg-card: rgba(248, 241, 226, 0.70);
+    --bg-highlight: rgba(235, 224, 197, 0.75);
+    --border: rgba(185, 135, 45, 0.25);
+    --border-dark: rgba(145, 95, 25, 0.5);
+    --card-shadow: 0 8px 30px rgba(70, 48, 15, 0.08);
+    --card-shadow-hover: 0 14px 36px rgba(70, 48, 15, 0.14);
+
+    --grid-color: rgba(150, 105, 30, 0.07);
+    --contour-top: #d97706;
+    --contour-mid: #65a30d;
+    --contour-bot: #ea580c;
+
+    --text: #20190f;
+    --text-muted: #50422d;
+    --text-faint: #78694e;
+
+    --accent: #65a30d;
+    --accent-bright: #84cc16;
+    --warm-accent: #d97706;
+    --cool-accent: #15803d;
+    --cool-accent-bright: #22c55e;
+    --warm: #d97706;
+    --warm-deep: #b45309;
+    --link: #4d7c0f;
+    --link-cool: #166534;
+    --pop: #e11d48;
+    --glow: rgba(217, 119, 6, 0.28);
+
+    --vine-start: #f59e0b;
+    --vine-mid: #65a30d;
+    --vine-end: #ea580c;
+
+    --green: #65a30d;
+    --cyan: #15803d;
+    --yellow: #d97706;
+    --orange: #b45309;
+    --blue: #0284c7;
+    --magenta: #e11d48;
 }
+
+/* ── Palette: Dusk Moss 🌑 (Warm Lantern Sunrise -> Cyan Midday -> Twilight Mountain Sunset) ── */
+[data-theme="moss"] {
+    --sunrise-sky-1: #f59e0b;
+    --sunrise-sky-2: #d97706;
+    --sunrise-sky-3: #fef3c7;
+    --sunrise-sky-4: #e0e7ff;
+
+    --midday-sky-1: #38bdf8;
+    --midday-sky-2: #6ee7b7;
+    --midday-sky-3: #ccfbf1;
+    --midday-sky-4: #f0fdf4;
+
+    --sunset-sky-1: #c2410c;
+    --sunset-sky-2: #b45309;
+    --sunset-sky-3: #78350f;
+    --sunset-sky-4: #083344;
+
+    --sun-color-core: #d97706;
+    --sun-color-mid: rgba(217, 119, 6, 0.75);
+    --sun-color-outer: rgba(245, 158, 11, 0.4);
+    --sun-beam-color: rgba(251, 191, 36, 0.55);
+
+    --bg-surface: rgba(255, 255, 255, 0.64);
+    --bg-surface-alpha: rgba(255, 255, 255, 0.72);
+    --bg-card: rgba(235, 243, 240, 0.70);
+    --bg-highlight: rgba(207, 224, 219, 0.75);
+    --border: rgba(50, 105, 90, 0.25);
+    --border-dark: rgba(30, 75, 62, 0.5);
+    --card-shadow: 0 8px 30px rgba(18, 45, 36, 0.08);
+    --card-shadow-hover: 0 14px 36px rgba(18, 45, 36, 0.14);
+
+    --grid-color: rgba(35, 90, 75, 0.07);
+    --contour-top: #d97706;
+    --contour-mid: #059669;
+    --contour-bot: #c2410c;
+
+    --text: #101d17;
+    --text-muted: #32493e;
+    --text-faint: #587569;
+
+    --accent: #059669;
+    --accent-bright: #10b981;
+    --warm-accent: #d97706;
+    --cool-accent: #0891b2;
+    --cool-accent-bright: #06b6d4;
+    --warm: #b45309;
+    --warm-deep: #78350f;
+    --link: #047857;
+    --link-cool: #0e7490;
+    --pop: #e11d48;
+    --glow: rgba(16, 185, 129, 0.28);
+
+    --vine-start: #f59e0b;
+    --vine-mid: #059669;
+    --vine-end: #c2410c;
+
+    --green: #059669;
+    --cyan: #0891b2;
+    --yellow: #d97706;
+    --orange: #b45309;
+    --blue: #0284c7;
+    --magenta: #e11d48;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--bg);
+    background-color: var(--sunrise-sky-1);
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--bg);
     color: var(--text);
     font-family: var(--font-sans);
     font-size: 16px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    background: transparent !important;
+    position: relative;
 }
 
-/* Container */
+/* ── Visible Fixed Solarpunk Celestial Atmosphere ── */
+.solarpunk-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.sp-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* 1. Sunrise Layer (Morning Golden Hour: Top of Page) */
+.sp-sunrise-layer {
+    opacity: var(--sunrise-op, 1);
+    transition: opacity 0.12s ease-out;
+}
+
+.sp-sunrise-sky {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        var(--sunrise-sky-1) 0%,
+        var(--sunrise-sky-2) 35%,
+        var(--sunrise-sky-3) 70%,
+        var(--sunrise-sky-4) 100%
+    );
+}
+
+/* 2. Midday Layer (Short, Bright Solar Tech: Mid-Page) */
+.sp-midday-layer {
+    opacity: var(--midday-op, 0);
+    transition: opacity 0.12s ease-out;
+}
+
+.sp-midday-sky {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        var(--midday-sky-1) 0%,
+        var(--midday-sky-2) 35%,
+        var(--midday-sky-3) 70%,
+        var(--midday-sky-4) 100%
+    );
+}
+
+/* 3. Sunset Layer (Evening Golden Hour: Bottom of Page) */
+.sp-sunset-layer {
+    opacity: var(--sunset-op, 0);
+    transition: opacity 0.12s ease-out;
+}
+
+.sp-sunset-sky {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        var(--sunset-sky-1) 0%,
+        var(--sunset-sky-2) 35%,
+        var(--sunset-sky-3) 70%,
+        var(--sunset-sky-4) 100%
+    );
+}
+
+/* Moving Sun Orb across the Celestial Arc (Sunrise East -> Overhead Midday -> Sunset West) */
+.sp-sun-orb {
+    position: absolute;
+    left: var(--sun-x, 18%);
+    top: var(--sun-y, 14%);
+    width: 440px;
+    height: 440px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: radial-gradient(circle,
+        var(--sun-color-core) 0%,
+        var(--sun-color-mid) 38%,
+        var(--sun-color-outer) 68%,
+        transparent 75%
+    );
+    filter: blur(8px);
+    transition: left 0.12s ease-out, top 0.12s ease-out;
+}
+
+.sp-sun-rays {
+    position: absolute;
+    left: var(--sun-x, 18%);
+    top: var(--sun-y, 14%);
+    width: 620px;
+    height: 620px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle,
+        var(--sun-beam-color) 0%,
+        transparent 65%
+    );
+    opacity: 0.85;
+    transition: left 0.12s ease-out, top 0.12s ease-out;
+}
+
+/* Architectural solar cell micro-grid */
+.sp-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 38px 38px;
+    mask-image: radial-gradient(ellipse at 50% 30%, rgba(0, 0, 0, 0.55) 0%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0, 0, 0, 0.55) 0%, transparent 85%);
+    opacity: 0.85;
+}
+
+/* Topographical elevation contours shifting from morning gold to midday green to sunset amber */
+.sp-topo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    transition: opacity 0.4s ease;
+}
+
+/* ── Container ── */
 .container {
-    max-width: 780px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 40px 24px 80px 24px;
+    padding: 36px 24px 80px 24px;
+    position: relative;
+    z-index: 10;
 }
 
-/* Status / Beacon Bar */
+/* ── Status / Beacon Bar ── */
 .status-bar {
     display: flex;
     flex-wrap: wrap;
@@ -59,12 +384,17 @@ body {
     gap: 12px;
     padding: 8px 14px;
     background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-top: 2.5px solid var(--warm-accent);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12), var(--card-shadow);
     font-family: var(--font-mono);
     font-size: 13px;
     color: var(--text-muted);
-    margin-bottom: 36px;
+    margin-bottom: 34px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .beacon {
@@ -76,29 +406,23 @@ body {
 .pulse-dot {
     width: 8px;
     height: 8px;
-    background-color: var(--green);
+    background-color: var(--accent-bright);
     border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(133, 153, 0, 0.7);
+    box-shadow: 0 0 6px var(--accent-bright);
     animation: pulse 2.5s infinite cubic-bezier(0.66, 0, 0, 1);
 }
 
 @keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 rgba(133, 153, 0, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 7px rgba(133, 153, 0, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(133, 153, 0, 0);
-    }
+    0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7), 0 0 5px var(--accent-bright); }
+    70%  { box-shadow: 0 0 0 9px transparent,          0 0 2px var(--accent-bright); }
+    100% { box-shadow: 0 0 0 0 transparent,           0 0 5px var(--accent-bright); }
 }
 
 .status-meta {
     display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 .status-meta a {
@@ -108,58 +432,95 @@ body {
 }
 
 .status-meta a:hover {
-    color: var(--cyan);
-    border-bottom-color: var(--cyan);
+    color: var(--link);
+    border-bottom-color: var(--link);
 }
 
-/* Hero Section */
+/* ── Theme Picker ── */
+.theme-picker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 6px;
+    border-left: 1px solid var(--border);
+}
+
+.theme-swatch {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.theme-swatch:hover {
+    transform: scale(1.22);
+    border-color: var(--text);
+}
+
+.theme-swatch.active {
+    border-color: var(--text);
+    box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 3.5px var(--accent);
+}
+
+.swatch-green  { background: linear-gradient(135deg, #f59e0b, #10b981); }
+.swatch-golden { background: linear-gradient(135deg, #fbbf24, #65a30d); }
+.swatch-moss   { background: linear-gradient(135deg, #f59e0b, #0891b2); }
+
+/* ── Hero Section (Bathed in Radiant Morning Sunrise Golden Hour) ── */
 .hero {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 28px;
-    margin-bottom: 32px;
+    margin-bottom: 30px;
+    position: relative;
+    padding: 24px 26px;
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 4.5px solid var(--warm-accent);
+    border-radius: 12px;
+    box-shadow: 0 10px 32px rgba(245, 158, 11, 0.14), var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
-.hero-text {
-    flex: 1;
-}
+.hero-text { flex: 1; }
 
 .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.25rem;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 8px 0;
     color: var(--text);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
 }
 
 .hero-subtitle {
     font-size: 1.15rem;
     color: var(--text-muted);
-    margin: 0 0 16px 0;
+    margin: 0;
     font-weight: 400;
 }
 
-.hero-subtitle strong {
-    color: var(--text);
-}
+.hero-subtitle strong { color: var(--text); }
 
-.hero-avatar {
-    flex-shrink: 0;
-}
+.hero-avatar { flex-shrink: 0; }
 
 .avatar-img {
     width: 104px;
     height: 104px;
     border-radius: 50%;
-    border: 3px solid var(--bg-card);
-    box-shadow: 0 2px 8px rgba(7, 54, 66, 0.08);
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 20px rgba(217, 119, 6, 0.25);
     object-fit: cover;
     background-color: var(--bg-card);
 }
 
-/* Quick Nav / Solarpunk Tactile Chips */
+/* ── Quick Nav ── */
 .quick-nav {
     display: flex;
     flex-wrap: wrap;
@@ -174,45 +535,43 @@ body {
     font-family: var(--font-mono);
     font-size: 13px;
     font-weight: 500;
-    padding: 6px 12px;
+    padding: 6px 13px;
     background: var(--bg-surface);
     color: var(--text);
-    border: 1px solid var(--border-dark);
-    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
     text-decoration: none;
-    box-shadow: 0 1px 2px rgba(7, 54, 66, 0.04), inset 0 1px 0 rgba(253, 246, 227, 0.9);
-    transition: all 0.16s ease-in-out;
+    box-shadow: 0 2px 8px rgba(25, 55, 35, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: all 0.18s ease;
 }
 
 .nav-glyph {
-    color: var(--yellow);
+    color: var(--warm-accent);
     font-size: 11px;
     line-height: 1;
     margin-right: 6px;
     display: inline-block;
-    transition: transform 0.2s ease, color 0.2s ease;
+    transition: transform 0.2s ease, color 0.18s ease;
 }
 
 .nav-pill:hover {
-    background: var(--bg-card);
-    border-color: var(--yellow);
-    color: var(--text);
-    box-shadow: 0 2px 8px rgba(181, 137, 0, 0.18), inset 0 1px 0 rgba(253, 246, 227, 1);
+    background: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 4px 16px rgba(22, 163, 74, 0.2);
     transform: translateY(-1px);
 }
 
 .nav-pill:hover .nav-glyph {
-    color: var(--orange);
+    color: var(--accent);
     transform: scale(1.25);
 }
 
-.nav-pill:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 2px rgba(7, 54, 66, 0.05);
-}
+.nav-pill:active { transform: translateY(0); }
 
 .nav-pill:focus-visible {
-    outline: 2px solid var(--yellow);
+    outline: 2px solid var(--accent);
     outline-offset: 2px;
 }
 
@@ -220,21 +579,18 @@ body {
     font-size: 11px;
     color: var(--text-faint);
     margin-left: 3px;
-    transition: color 0.16s ease;
 }
 
-.nav-pill:hover .nav-pill-sub {
-    color: var(--text-muted);
-}
-
-/* Interactive Tone-of-Voice Slider (getcoleman.com inspired) */
+/* ── Tone-of-Voice Slider ── */
 .tone-widget {
     background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 22px 24px;
     margin-bottom: 44px;
-    box-shadow: inset 0 1px 3px rgba(7, 54, 66, 0.03);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .tone-header {
@@ -262,55 +618,54 @@ body {
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.slider-container {
-    margin: 12px 0 16px 0;
-}
+.slider-container { margin: 12px 0 16px 0; }
 
 .tone-slider {
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
-    height: 7px;
-    border-radius: 4px;
-    background: var(--border);
+    height: 6px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--warm), var(--accent), var(--cyan));
     outline: none;
     cursor: pointer;
-    transition: background 0.2s ease;
 }
 
 .tone-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--cyan);
-    border: 3px solid var(--bg-surface);
-    box-shadow: 0 0 6px var(--cyan);
+    width: 22px;
+    height: 22px;
+    border-radius: 50% 0 50% 0;
+    transform: rotate(45deg);
+    background: var(--accent);
+    border: 2.5px solid #ffffff;
+    box-shadow: 0 0 8px var(--accent);
     cursor: pointer;
     transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-
 .tone-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.15);
-    background: var(--yellow);
+    transform: rotate(45deg) scale(1.18);
+    background: var(--warm);
+    box-shadow: 0 0 10px var(--warm);
 }
 
 .tone-slider::-moz-range-thumb {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--cyan);
-    border: 3px solid var(--bg-surface);
-    box-shadow: 0 0 6px var(--cyan);
+    width: 22px;
+    height: 22px;
+    border-radius: 50% 0 50% 0;
+    transform: rotate(45deg);
+    background: var(--accent);
+    border: 2.5px solid #ffffff;
+    box-shadow: 0 0 8px var(--accent);
     cursor: pointer;
     transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .tone-slider::-moz-range-thumb:hover {
-    transform: scale(1.15);
-    background: var(--yellow);
+    transform: rotate(45deg) scale(1.18);
+    background: var(--warm);
 }
 
 .slider-ticks {
@@ -338,12 +693,11 @@ body {
     transition: opacity 0.15s ease;
 }
 
-/* Section Common */
-.section {
-    margin-bottom: 48px;
-}
+/* ── Section Common ── */
+.section { margin-bottom: 48px; }
 
 .section-title {
+    position: relative;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -352,50 +706,81 @@ body {
     font-weight: 700;
     color: var(--text);
     margin: 0 0 20px 0;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
 }
 
-.section-title .hash {
-    color: var(--green);
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 25%;
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), var(--warm-accent), transparent);
+    border-radius: 1px;
 }
 
-/* Timeline (Merged Life & Career Story) */
+.section-title .hash { color: var(--accent); }
+
+/* ── Timeline: Living Celestial Vine (Sunrise -> Midday -> Sunset) ── */
 .timeline {
     position: relative;
-    padding-left: 24px;
-    border-left: 2px solid var(--border);
+    padding-left: 26px;
+    border-left: none;
     display: flex;
     flex-direction: column;
     gap: 26px;
-    margin: 20px 0 24px 8px;
+    margin: 18px 0 22px 6px;
 }
 
-.timeline-item {
-    position: relative;
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2.5px;
+    background: linear-gradient(180deg,
+        var(--vine-start) 0%,
+        var(--vine-mid) 42%,
+        var(--vine-end) 92%,
+        transparent 100%
+    );
+    border-radius: 1px;
+    transform-origin: top center;
+    animation: stem-grow 1.2s ease-out both;
 }
+
+@keyframes stem-grow {
+    from { transform: scaleY(0); opacity: 0; }
+    to   { transform: scaleY(1); opacity: 1; }
+}
+
+.timeline-item { position: relative; }
 
 .timeline-dot {
     position: absolute;
     left: -31px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--bg);
-    border: 2px solid var(--cyan);
-    transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+    top: 6px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50% 0 50% 0;
+    background: #ffffff;
+    border: 2px solid var(--accent);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .timeline-dot.active {
-    background: var(--green);
-    border-color: var(--green);
-    box-shadow: 0 0 0 4px rgba(133, 153, 0, 0.2);
+    background: var(--warm-accent);
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3), 0 0 10px var(--sun-color-core);
 }
 
 .timeline-item:hover .timeline-dot {
-    transform: scale(1.2);
-    border-color: var(--yellow);
+    transform: rotate(45deg) scale(1.3);
+    border-color: var(--warm-accent);
+    box-shadow: 0 0 10px var(--warm-accent);
 }
 
 .timeline-header {
@@ -413,9 +798,7 @@ body {
     color: var(--text);
 }
 
-.timeline-org {
-    color: var(--cyan);
-}
+.timeline-org { color: var(--link); }
 
 .timeline-time {
     font-family: var(--font-mono);
@@ -447,16 +830,17 @@ body {
 }
 
 .timeline-note a {
-    color: var(--blue);
+    color: var(--link);
     text-decoration: none;
     font-weight: 600;
 }
 
 .timeline-note a:hover {
     text-decoration: underline;
+    color: var(--warm-accent);
 }
 
-/* Projects & Research */
+/* ── Projects: Refined Architectural Cards ── */
 .projects-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -464,25 +848,28 @@ body {
 }
 
 @media (min-width: 600px) {
-    .projects-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+    .projects-grid { grid-template-columns: 1fr 1fr; }
 }
 
 .project-card {
     background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 3.5px solid var(--accent);
+    border-radius: 10px;
     padding: 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: transform 0.15s ease, border-color 0.15s ease;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
 
 .project-card:hover {
     transform: translateY(-2px);
-    border-color: var(--border-dark);
+    border-left-color: var(--accent-bright);
+    box-shadow: var(--card-shadow-hover);
 }
 
 .project-type {
@@ -490,7 +877,7 @@ body {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--yellow);
+    color: var(--warm-accent);
     margin-bottom: 6px;
 }
 
@@ -508,8 +895,8 @@ body {
 }
 
 .project-title a:hover {
-    color: var(--cyan);
-    border-bottom-color: var(--cyan);
+    color: var(--link);
+    border-bottom-color: var(--link);
 }
 
 .project-desc {
@@ -529,25 +916,28 @@ body {
 }
 
 .project-link {
-    color: var(--blue);
+    color: var(--link);
     text-decoration: none;
     font-weight: 600;
 }
 
 .project-link:hover {
     text-decoration: underline;
+    color: var(--accent-bright);
 }
 
-.project-stars {
-    color: var(--text-faint);
-}
+.project-stars { color: var(--text-faint); }
 
-/* Skills Mastery Scale (Code-based, humorous & visual, < 1.5 KB) */
+/* ── Skills ── */
 .skills-container {
     background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 3.5px solid var(--accent);
+    border-radius: 10px;
     padding: 22px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .skills-note {
@@ -605,7 +995,7 @@ body {
 .skill-track {
     width: 100%;
     height: 6px;
-    background: var(--bg-card);
+    background: var(--bg-highlight);
     border-radius: 3px;
     overflow: hidden;
     border: 1px solid var(--border);
@@ -613,17 +1003,15 @@ body {
 
 .skill-fill {
     height: 100%;
-    background: var(--cyan);
+    background: linear-gradient(90deg, var(--accent), var(--warm-accent));
     border-radius: 3px;
 }
 
 .skill-fill.expert {
-    background: var(--green);
+    background: linear-gradient(90deg, var(--accent-bright), var(--accent), var(--warm-accent));
 }
 
-.skill-fill.zero {
-    background: transparent;
-}
+.skill-fill.zero { background: transparent; }
 
 .skill-comment {
     font-size: 12px;
@@ -632,70 +1020,16 @@ body {
     font-family: var(--font-sans);
 }
 
-.skills-matrix {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-}
-
-@media (min-width: 600px) {
-    .skills-matrix {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-.skill-group {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 12px 14px;
-}
-
-.skill-category {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--text);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.skill-category-signal {
-    color: var(--green);
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.skill-tag {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    background: var(--bg-card);
-    color: var(--text);
-    padding: 3px 8px;
-    border-radius: 3px;
-    border: 1px solid var(--border);
-}
-
-.skill-tag.accent {
-    border-color: var(--border-dark);
-    font-weight: 600;
-}
-
-
-
-/* Outdoors & Photography */
+/* ── Outdoors & Photography (Sunset Golden Hour into Alpine Twilight) ── */
 .outdoors-box {
     background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px;
+    border: 1.5px solid rgba(245, 158, 11, 0.45);
+    border-left: 4.5px solid var(--warm-accent);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 32px rgba(245, 158, 11, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .outdoors-box p {
@@ -707,31 +1041,39 @@ body {
 .outdoors-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
     font-family: var(--font-mono);
     font-size: 13px;
 }
 
 .outdoors-links a {
-    color: var(--cyan);
+    color: var(--warm-deep);
+    font-weight: 600;
     text-decoration: none;
-    border-bottom: 1px dashed var(--cyan);
+    border-bottom: 1.5px dashed var(--warm-accent);
+    transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .outdoors-links a:hover {
-    color: var(--green);
-    border-bottom-color: var(--green);
+    color: var(--accent);
+    border-bottom-color: var(--accent);
 }
 
-/* Quote */
+/* ── Quote Box ── */
 .quote-box {
+    position: relative;
     margin: 36px 0;
-    padding: 16px 20px;
+    padding: 20px 24px 20px 26px;
     background: var(--bg-surface);
-    border-left: 3px solid var(--yellow);
-    border-radius: 0 6px 6px 0;
+    border: 1.5px solid rgba(245, 158, 11, 0.35);
+    border-left: 4.5px solid var(--warm-accent);
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(245, 158, 11, 0.15);
     font-style: italic;
     color: var(--text);
+    overflow: hidden;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .quote-box cite {
@@ -743,17 +1085,24 @@ body {
     color: var(--text-faint);
 }
 
-/* Footer */
+/* ── Footer ── */
 .footer {
+    position: relative;
     margin-top: 60px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
+    padding: 28px 22px 22px 22px;
+    background: var(--bg-surface);
+    border: 1.5px solid rgba(245, 158, 11, 0.35);
+    border-top: 3.5px solid var(--warm-accent);
+    border-radius: 10px;
+    box-shadow: 0 10px 36px rgba(245, 158, 11, 0.18);
     font-family: var(--font-mono);
     font-size: 12.5px;
     color: var(--text-muted);
     display: flex;
     flex-direction: column;
     gap: 16px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .footer-top {
@@ -774,11 +1123,12 @@ body {
     color: var(--text);
     text-decoration: none;
     border-bottom: 1px solid var(--border);
+    transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .footer-links a:hover {
-    color: var(--cyan);
-    border-bottom-color: var(--cyan);
+    color: var(--warm-accent);
+    border-bottom-color: var(--warm-accent);
 }
 
 .footer-bottom {
@@ -792,39 +1142,24 @@ body {
 }
 
 .back-to-top {
-    color: var(--green);
+    color: var(--warm-accent);
+    font-weight: 600;
     text-decoration: none;
+    transition: color 0.15s ease;
 }
 
 .back-to-top:hover {
     text-decoration: underline;
+    color: var(--accent);
 }
 
-/* Mobile Adjustments */
+/* ── Mobile ── */
 @media (max-width: 600px) {
-    .container {
-        padding: 24px 16px 60px 16px;
-    }
-    .hero {
-        flex-direction: column-reverse;
-        gap: 16px;
-    }
-    .avatar-img {
-        width: 80px;
-        height: 80px;
-    }
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    .status-bar {
-        font-size: 12px;
-    }
-    .timeline {
-        margin-left: 4px;
-        padding-left: 20px;
-        gap: 22px;
-    }
-    .timeline-dot {
-        left: -27px;
-    }
+    .container { padding: 18px 12px 60px 12px; }
+    .hero { flex-direction: column-reverse; gap: 16px; padding: 18px; }
+    .avatar-img { width: 80px; height: 80px; }
+    .hero-title { font-size: 1.8rem; }
+    .status-bar { font-size: 12px; padding: 8px 10px; }
+    .timeline { margin-left: 4px; padding-left: 22px; gap: 20px; }
+    .timeline-dot { left: -26px; }
 }

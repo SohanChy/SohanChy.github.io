@@ -1,0 +1,256 @@
+.fingerprint-container {
+    max-width: 760px;
+}
+
+.fingerprint-card {
+    overflow: hidden;
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-left: 4.5px solid var(--warm-accent);
+    border-radius: 14px;
+    box-shadow: 0 10px 32px rgba(245, 158, 11, 0.14), var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.fingerprint-intro {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 34px 36px 30px;
+}
+
+.fingerprint-art {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex: 0 0 156px;
+    width: 156px;
+    height: 156px;
+    background: linear-gradient(145deg, rgba(217, 119, 6, 0.14), rgba(22, 163, 74, 0.12));
+    border: 1px solid var(--border);
+    border-radius: 50%;
+}
+
+.fingerprint-art img {
+    display: block;
+    width: 112px;
+    height: 112px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    filter: drop-shadow(0 8px 12px rgba(25, 55, 35, 0.12));
+}
+
+.art-sun {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    color: var(--warm-accent);
+    font-size: 30px;
+    line-height: 1;
+    text-shadow: 0 0 16px rgba(217, 119, 6, 0.35);
+}
+
+.fingerprint-copy {
+    min-width: 0;
+}
+
+.fingerprint-kicker {
+    margin: 0 0 10px;
+    color: var(--link);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.fingerprint-kicker span {
+    margin-right: 5px;
+    color: var(--warm-accent);
+}
+
+.fingerprint-copy h1 {
+    margin: 0 0 10px;
+    color: var(--text);
+    font-size: clamp(2rem, 5vw, 2.7rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+}
+
+.fingerprint-lede {
+    max-width: 470px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.fingerprint-result {
+    margin: 0 26px 24px;
+    padding: 20px 22px 18px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    color: var(--text-faint);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.result-signal {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--glow);
+}
+
+.fingerprint-hash {
+    display: block;
+    overflow-wrap: anywhere;
+    color: var(--link);
+    font-family: var(--font-mono);
+    font-size: clamp(1.1rem, 3.2vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 1.4;
+}
+
+.result-caption {
+    margin: 9px 0 0;
+    color: var(--text-faint);
+    font-size: 12px;
+}
+
+.fingerprint-explainer {
+    margin: 0 26px;
+    padding: 0 2px 22px;
+}
+
+.explainer-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.explainer-icon {
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    color: var(--warm-accent);
+    background: rgba(217, 119, 6, 0.12);
+    border-radius: 9px;
+    font-size: 23px;
+    line-height: 1;
+}
+
+.explainer-heading h2 {
+    margin: 0 0 3px;
+    color: var(--text);
+    font-size: 1.15rem;
+    line-height: 1.35;
+}
+
+.explainer-heading p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.fingerprint-explainer ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 22px;
+    margin: 16px 0 0 46px;
+    padding: 0;
+    list-style: none;
+}
+
+.fingerprint-explainer li {
+    position: relative;
+    padding-left: 18px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.fingerprint-explainer li::before {
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    content: "↗";
+    font-family: var(--font-mono);
+    font-weight: 700;
+}
+
+.fingerprint-takeaway {
+    margin: 0;
+    padding: 16px 26px;
+    background: linear-gradient(100deg, rgba(22, 163, 74, 0.09), rgba(217, 119, 6, 0.1));
+    border-top: 1px dashed var(--border);
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.fingerprint-takeaway span {
+    margin-right: 6px;
+    color: var(--warm-accent);
+}
+
+.fingerprint-footer {
+    margin-top: 28px;
+}
+
+@media (max-width: 600px) {
+    .fingerprint-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px 20px;
+    }
+
+    .fingerprint-art {
+        align-self: center;
+        flex-basis: 132px;
+        width: 132px;
+        height: 132px;
+    }
+
+    .fingerprint-art img {
+        width: 96px;
+        height: 96px;
+    }
+
+    .fingerprint-result {
+        margin: 0 16px 20px;
+        padding: 18px 14px;
+    }
+
+    .fingerprint-explainer {
+        margin: 0 18px;
+    }
+
+    .fingerprint-explainer ul {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-left: 0;
+    }
+
+    .fingerprint-takeaway {
+        padding: 15px 18px;
+    }
+}

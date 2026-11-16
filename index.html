@@ -1001,8 +1001,9 @@
     <script type="text/javascript">
         (function () {
             var ticking = false;
+            var mobileViewport = window.matchMedia('(max-width: 600px)');
             function onScroll() {
-                if (!ticking) {
+                if (!mobileViewport.matches && !ticking) {
                     window.requestAnimationFrame(function () {
                         var doc = document.documentElement;
                         var total = doc.scrollHeight - window.innerHeight;
@@ -1032,7 +1033,31 @@
                     ticking = true;
                 }
             }
+
+            function onViewportChange(event) {
+                if (event.matches) {
+                    var style = document.documentElement.style;
+                    [
+                        '--scroll-p',
+                        '--sunrise-op',
+                        '--midday-op',
+                        '--sunset-op',
+                        '--light-angle',
+                        '--shadow-skew'
+                    ].forEach(function (property) {
+                        style.removeProperty(property);
+                    });
+                } else {
+                    onScroll();
+                }
+            }
+
             window.addEventListener('scroll', onScroll, { passive: true });
+            if (mobileViewport.addEventListener) {
+                mobileViewport.addEventListener('change', onViewportChange);
+            } else {
+                mobileViewport.addListener(onViewportChange);
+            }
             onScroll();
         })();
     </script>

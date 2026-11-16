@@ -52,25 +52,298 @@
         <div class="sp-layer sp-sunset-layer">
             <div class="sp-sunset-sky"></div>
         </div>
-        <!-- Celestial Sun Orb & Beams (Arcs across sky with scroll) -->
-        <div class="sp-sun-orb"></div>
-        <div class="sp-sun-rays"></div>
+        <!-- Golden Hour Directional Light: sweeps across the mountains as you scroll -->
+        <div class="sp-golden-light"></div>
+        <div class="sp-golden-spot"></div>
         <div class="sp-grid"></div>
-        <svg class="sp-topo" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <svg class="sp-topo" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
             <defs>
+                <!-- Solarpunk Elevation Palette Gradient -->
                 <linearGradient id="topo-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="var(--contour-top)" />
-                    <stop offset="45%" stop-color="var(--contour-mid)" />
-                    <stop offset="100%" stop-color="var(--contour-bot)" />
+                    <stop offset="0%" stop-color="var(--contour-top)" stop-opacity="0.88" />
+                    <stop offset="45%" stop-color="var(--contour-mid)" stop-opacity="0.78" />
+                    <stop offset="100%" stop-color="var(--contour-bot)" stop-opacity="0.88" />
                 </linearGradient>
+
+                <!-- Lake Magog Glacial Waters Gradient -->
+                <radialGradient id="lake-magog-rad" cx="50%" cy="45%" r="55%">
+                    <stop offset="0%" stop-color="var(--cool-accent-bright)" stop-opacity="0.28" />
+                    <stop offset="60%" stop-color="var(--cool-accent)" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="var(--accent)" stop-opacity="0.08" />
+                </radialGradient>
+
+                <!-- Lake Magog Golden Hour Water Reflection -->
+                <linearGradient id="lake-reflection-grad" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop offset="0%" stop-color="var(--warm-accent)" stop-opacity="0.32" />
+                    <stop offset="50%" stop-color="var(--yellow)" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+                </linearGradient>
+
+                <!-- Mountain Facet: Golden Morning Sunlight (East face) -->
+                <linearGradient id="facet-gold-light" x1="20%" y1="10%" x2="90%" y2="90%">
+                    <stop offset="0%" stop-color="#fef08a" stop-opacity="0.82" />
+                    <stop offset="35%" stop-color="var(--warm-accent)" stop-opacity="0.70" />
+                    <stop offset="85%" stop-color="var(--warm-deep)" stop-opacity="0.55" />
+                    <stop offset="100%" stop-color="transparent" stop-opacity="0.1" />
+                </linearGradient>
+
+                <!-- Mountain Facet: Fiery Sunset Alpenglow (West face) -->
+                <linearGradient id="facet-alpenglow-light" x1="90%" y1="10%" x2="10%" y2="90%">
+                    <stop offset="0%" stop-color="#fed7aa" stop-opacity="0.88" />
+                    <stop offset="30%" stop-color="#f97316" stop-opacity="0.78" />
+                    <stop offset="70%" stop-color="var(--warm-accent)" stop-opacity="0.68" />
+                    <stop offset="100%" stop-color="#c2410c" stop-opacity="0.55" />
+                </linearGradient>
+
+                <!-- Mountain Facet: Deep Alpine Contrast Shadow -->
+                <linearGradient id="facet-shadow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#042f2e" stop-opacity="0.48" />
+                    <stop offset="50%" stop-color="#0f172a" stop-opacity="0.58" />
+                    <stop offset="100%" stop-color="#022c22" stop-opacity="0.45" />
+                </linearGradient>
+
+                <!-- Sweeping Mountain Cast Shadow across Valley & Lake -->
+                <linearGradient id="cast-shadow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#042f2e" stop-opacity="0.55" />
+                    <stop offset="50%" stop-color="#0f172a" stop-opacity="0.38" />
+                    <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+                </linearGradient>
+
+                <!-- Razor-sharp Knife-Edge Arête Highlight -->
+                <linearGradient id="arete-light-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+                    <stop offset="40%" stop-color="var(--warm-accent)" stop-opacity="0.85" />
+                    <stop offset="100%" stop-color="var(--yellow)" stop-opacity="0.60" />
+                </linearGradient>
+
+                <!-- Soft horizontal edge fade -->
+                <linearGradient id="topo-edge-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="white" stop-opacity="0.25" />
+                    <stop offset="6%" stop-color="white" stop-opacity="1" />
+                    <stop offset="94%" stop-color="white" stop-opacity="1" />
+                    <stop offset="100%" stop-color="white" stop-opacity="0.25" />
+                </linearGradient>
+                <mask id="topo-edge-mask">
+                    <rect width="1600" height="1000" fill="url(#topo-edge-fade)" />
+                </mask>
+
+                <!-- Soft Blur Filters -->
+                <filter id="shadow-blur" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="12" />
+                </filter>
+                <filter id="glow-blur" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="8" />
+                </filter>
             </defs>
-            <g opacity="0.45" stroke="url(#topo-grad)" stroke-width="1.5">
-                <path d="M-100 160 C 240 90, 600 240, 1000 140 C 1240 80, 1400 150, 1600 120" />
-                <path d="M-100 250 C 200 190, 560 330, 940 240 C 1200 180, 1380 260, 1600 220" />
-                <path d="M-100 360 C 280 300, 640 440, 1020 350 C 1260 290, 1420 370, 1600 330" />
-                <path d="M-100 480 C 220 430, 580 560, 960 470 C 1220 410, 1390 490, 1600 450" />
-                <path d="M-100 610 C 260 560, 620 680, 1000 600 C 1250 540, 1410 610, 1600 580" />
-                <path d="M-100 740 C 210 690, 570 800, 950 720 C 1210 670, 1380 730, 1600 710" />
+            <g mask="url(#topo-edge-mask)">
+
+                <!-- ═══════════════════════════════════════════════════════════════
+                     1. SWEEPING MOUNTAIN CAST SHADOW
+                     Rotates across the terrain and Lake Magog dynamically on scroll
+                     ═══════════════════════════════════════════════════════════════ -->
+                <g class="mountain-cast-shadow" filter="url(#shadow-blur)" pointer-events="none">
+                    <!-- Grand Pyramidal Shadow of Mount Assiniboine -->
+                    <path d="M 1060 160 L 680 720 L 980 760 Z" fill="url(#cast-shadow-grad)" />
+                    <!-- Sunburst Peak Cast Shadow -->
+                    <path d="M 400 260 L 260 640 L 440 680 Z" fill="url(#cast-shadow-grad)" opacity="0.7" />
+                </g>
+
+                <!-- ═══════════════════════════════════════════════════════════════
+                     2. LAKE MAGOG (Elev 2,160m / 7,087 ft) & SHORELINE
+                     Glacial alpine basin mirroring the golden mountain light
+                     ═══════════════════════════════════════════════════════════════ -->
+                <g class="lake-magog-basin">
+                    <!-- Lake Magog Water Body -->
+                    <path d="M 540 580 C 580 540, 680 525, 780 535 C 870 545, 940 575, 960 620 C 970 665, 910 710, 830 725 C 740 740, 640 720, 580 690 C 530 665, 510 615, 540 580 Z"
+                          fill="url(#lake-magog-rad)" stroke="var(--cool-accent)" stroke-width="1.4" opacity="0.85" />
+                    <!-- Inner Depth Contours -->
+                    <path d="M 580 595 C 610 565, 690 550, 770 560 C 840 570, 900 595, 915 630 C 925 660, 880 690, 810 700 C 740 710, 660 695, 615 675 C 575 655, 560 620, 580 595 Z"
+                          stroke="var(--cool-accent)" stroke-width="0.85" stroke-dasharray="3,3" opacity="0.45" />
+                    <!-- Lake Magog Golden-Hour Reflection Ribbon -->
+                    <ellipse cx="780" cy="620" rx="190" ry="70" fill="url(#lake-reflection-grad)" class="lake-water-reflection" filter="url(#glow-blur)" />
+                    <!-- Sunburst Lake (Small Alpine Tarn nearby) -->
+                    <path d="M 380 490 C 410 470, 460 470, 480 495 C 495 520, 470 545, 430 550 C 390 555, 360 535, 365 510 C 370 498, 375 492, 380 490 Z"
+                          fill="url(#lake-magog-rad)" stroke="var(--cool-accent)" stroke-width="1.1" opacity="0.75" />
+                    <!-- Magog Creek Outflow -->
+                    <path d="M 540 580 C 470 595, 410 635, 340 695 C 270 755, 200 840, 110 920 C 50 970, -20 990, -50 1000"
+                          stroke="var(--cool-accent)" stroke-width="1.3" opacity="0.55" />
+                </g>
+
+                <!-- ═══════════════════════════════════════════════════════════════
+                     3. MOUNT ASSINIBOINE SHADED RELIEF FACETS (LIGHT & SHADOW)
+                     Divided by knife-edge North Ridge Arête; shifts on scroll
+                     ═══════════════════════════════════════════════════════════════ -->
+                <g class="topo-hillshade" pointer-events="none">
+                    <!-- EAST FACET: Lit with golden morning light at top, darkens on scroll -->
+                    <g filter="url(#shadow-blur)">
+                        <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 1120 580 L 1380 520 Q 1260 360 1160 250 Z"
+                              fill="url(#facet-gold-light)" class="facet-east-lit" />
+                        <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 1120 580 L 1380 520 Q 1260 360 1160 250 Z"
+                              fill="url(#facet-shadow-grad)" class="facet-east-shadow" />
+                    </g>
+                    <!-- WEST FACET: In mountain shadow at top, blazes into sunset alpenglow on scroll -->
+                    <g filter="url(#shadow-blur)">
+                        <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 720 560 L 660 530 Q 780 380 920 250 Z"
+                              fill="url(#facet-shadow-grad)" class="facet-west-shadow" />
+                        <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 720 560 L 660 530 Q 780 380 920 250 Z"
+                              fill="url(#facet-alpenglow-light)" class="facet-west-lit" />
+                    </g>
+
+                    <!-- SUNBURST PEAK (2,849m) FACET LIGHT & SHADOW -->
+                    <g filter="url(#shadow-blur)">
+                        <path d="M 400 260 Q 360 340 310 430 T 250 540 L 400 560 L 470 510 Q 440 380 400 260 Z"
+                              fill="url(#facet-gold-light)" class="facet-east-lit" opacity="0.65" />
+                        <path d="M 400 260 Q 450 340 500 440 T 560 530 L 470 510 L 400 560 Q 420 380 400 260 Z"
+                              fill="url(#facet-alpenglow-light)" class="facet-west-lit" opacity="0.75" />
+                    </g>
+                </g>
+
+                <!-- ═══════════════════════════════════════════════════════════════
+                     4. PRECISION TOPOGRAPHIC CONTOURS (100m INTERVALS)
+                     Pyramidal concentric contour lines of the Matterhorn of the Rockies
+                     ═══════════════════════════════════════════════════════════════ -->
+                <g stroke="url(#topo-grad)" stroke-width="0.85" opacity="0.32" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Mt Assiniboine 3500m -->
+                    <path d="M 1040 180 C 1050 170, 1075 172, 1080 185 C 1075 198, 1055 200, 1040 195 C 1032 190, 1032 182, 1040 180 Z" />
+                    <!-- Mt Assiniboine 3400m -->
+                    <path d="M 1020 205 C 1040 185, 1095 188, 1105 210 C 1100 230, 1060 235, 1025 225 C 1010 218, 1010 210, 1020 205 Z" />
+                    <!-- Mt Assiniboine 3200m -->
+                    <path d="M 985 240 C 1025 200, 1140 205, 1155 245 C 1145 285, 1070 290, 1000 275 C 970 262, 970 248, 985 240 Z" />
+                    <!-- Mt Assiniboine 3100m -->
+                    <path d="M 960 265 C 1010 215, 1170 220, 1190 270 C 1175 320, 1080 325, 985 305 C 945 290, 945 272, 960 265 Z" />
+                    <!-- Mt Assiniboine 2900m -->
+                    <path d="M 920 310 C 980 245, 1225 250, 1255 315 C 1235 385, 1100 390, 955 365 C 900 345, 900 320, 920 310 Z" />
+                    <!-- Mt Assiniboine 2800m -->
+                    <path d="M 895 340 C 965 260, 1260 265, 1295 345 C 1270 425, 1115 430, 935 400 C 875 375, 875 348, 895 340 Z" />
+                    <!-- Mt Assiniboine 2600m -->
+                    <path d="M 850 395 C 935 295, 1320 300, 1365 400 C 1335 500, 1140 505, 895 470 C 825 440, 825 405, 850 395 Z" />
+                    <!-- Mt Assiniboine 2500m -->
+                    <path d="M 825 430 C 915 315, 1360 320, 1410 435 C 1375 545, 1155 550, 870 510 C 795 475, 795 438, 825 430 Z" />
+                    <!-- Mt Assiniboine 2300m (Approaching Lake Rim) -->
+                    <path d="M 770 495 C 880 355, 1435 360, 1495 500 C 1450 635, 1180 640, 820 590 C 730 550, 730 508, 770 495 Z" />
+
+                    <!-- Sunburst Peak 2700m -->
+                    <path d="M 380 280 C 390 270, 415 272, 420 285 C 415 295, 395 298, 380 292 C 372 288, 372 282, 380 280 Z" />
+                    <!-- Sunburst Peak 2500m -->
+                    <path d="M 345 320 C 375 285, 455 288, 465 325 C 455 355, 390 360, 350 345 C 335 335, 335 325, 345 320 Z" />
+                    <!-- Sunburst Peak 2300m -->
+                    <path d="M 305 370 C 355 315, 495 320, 515 375 C 500 425, 400 435, 315 410 C 290 395, 290 380, 305 370 Z" />
+
+                    <!-- Valley & Continental Divide Contours (2000m down to 1800m) -->
+                    <path d="M -50 200 C 80 170, 220 70, 440 75 C 660 80, 770 320, 900 325 C 1040 330, 1140 70, 1350 50 C 1480 35, 1560 140, 1660 120" />
+                    <path d="M -50 270 C 95 235, 245 130, 465 135 C 685 140, 785 370, 910 375 C 1055 380, 1170 130, 1375 110 C 1500 95, 1570 200, 1660 180" />
+                    <path d="M -50 360 C 115 320, 270 210, 495 215 C 695 220, 800 420, 920 425 C 1075 430, 1210 210, 1405 185 C 1520 160, 1580 270, 1660 250" />
+                    <path d="M -50 450 C 135 410, 290 410, 525 435 C 610 445, 620 475, 630 510 C 620 575, 610 635, 715 650 C 830 665, 940 655, 1030 640 C 1130 620, 1150 495, 1220 465 C 1340 415, 1450 350, 1550 320 C 1600 305, 1630 380, 1660 360" />
+                    <path d="M -50 600 C 130 585, 280 635, 465 675 C 650 715, 810 705, 950 675 C 1090 645, 1220 575, 1390 525 C 1520 485, 1580 575, 1660 555" />
+                    <path d="M -50 710 C 150 685, 310 735, 505 775 C 690 805, 840 785, 980 745 C 1130 695, 1250 645, 1410 605 C 1540 565, 1590 665, 1660 645" />
+                    <path d="M -50 820 C 170 795, 330 835, 535 865 C 720 895, 870 865, 1010 825 C 1160 775, 1280 725, 1430 685 C 1550 655, 1600 755, 1660 735" />
+                </g>
+
+                <!-- ═══════════════════════════════════════════════════════════════
+                     5. MASTER INDEX CONTOURS (BOLDER 300m INTERVALS)
+                     ═══════════════════════════════════════════════════════════════ -->
+                <g stroke="url(#topo-grad)" stroke-width="1.45" opacity="0.62" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- Mt Assiniboine 3300m Index Contour -->
+                    <path d="M 1000 220 C 1030 190, 1115 195, 1130 225 C 1120 255, 1065 260, 1010 245 C 990 235, 990 225, 1000 220 Z" />
+                    <!-- Mt Assiniboine 3000m Index Contour -->
+                    <path d="M 940 285 C 995 230, 1195 235, 1220 290 C 1200 350, 1085 355, 970 330 C 920 310, 920 290, 940 285 Z" />
+                    <!-- Mt Assiniboine 2700m Index Contour -->
+                    <path d="M 870 365 C 950 275, 1290 280, 1330 370 C 1300 460, 1125 465, 915 430 C 850 400, 850 370, 870 365 Z" />
+                    <!-- Mt Assiniboine 2400m Index Contour -->
+                    <path d="M 795 460 C 900 335, 1395 340, 1450 470 C 1410 595, 1165 600, 845 550 C 760 510, 760 470, 795 460 Z" />
+                    <!-- Sunburst Peak 2600m Index -->
+                    <path d="M 365 300 C 385 275, 435 278, 445 305 C 435 330, 390 335, 365 325 C 352 318, 352 308, 365 300 Z" />
+                    <!-- Sunburst Peak 2300m Index -->
+                    <path d="M 285 395 C 345 330, 520 335, 545 400 C 525 455, 410 465, 300 435 C 270 418, 270 405, 285 395 Z" />
+                    <!-- Lake Magog Basin Rim 2160m Master Contour -->
+                    <path d="M -50 510 C 160 470, 270 480, 500 500 C 580 510, 600 570, 610 630 C 630 690, 730 715, 850 720 C 970 720, 1050 680, 1110 630 C 1180 560, 1270 450, 1430 410 C 1550 370, 1600 460, 1660 440" />
+                    <!-- Valley Approach 1800m Index -->
+                    <path d="M -50 900 C 180 875, 350 915, 560 945 C 750 975, 900 935, 1040 885 C 1190 835, 1310 785, 1460 745 C 1580 715, 1620 815, 1660 795" />
+                </g>
+
+                <!-- ═══════════════════════════════════════════════════════════════
+                     6. RAZOR-SHARP KNIFE-EDGE NORTH RIDGE (ARÊTE)
+                     The dramatic dividing line between golden light and alpine shadow
+                     ═══════════════════════════════════════════════════════════════ -->
+                <path d="M 1060 160 Q 1000 280 940 400 T 860 550"
+                      stroke="url(#arete-light-grad)" stroke-width="2.2" stroke-linecap="round" class="ridge-arete-crest" />
+                <!-- East Ridge Crest Line -->
+                <path d="M 1060 160 Q 1160 250 1260 360 T 1380 500"
+                      stroke="url(#topo-grad)" stroke-width="1.3" stroke-dasharray="5,6" opacity="0.60" />
+                <!-- Sunburst Peak Sharp Arête -->
+                <path d="M 400 260 Q 400 370 400 490"
+                      stroke="url(#arete-light-grad)" stroke-width="1.6" stroke-linecap="round" opacity="0.80" />
+
+                <!-- ═══════════════════════════════════════════════════════════════
+                     7. SUMMIT ALPENGLOW PINNACLE BEACON & LABELS
+                     ═══════════════════════════════════════════════════════════════ -->
+                <g class="summit-beacon">
+                    <polygon points="1060,146 1068,162 1052,162" fill="var(--warm-accent)" opacity="0.95" />
+                    <circle cx="1060" cy="155" r="2.2" fill="#fff" />
+                    <circle cx="1060" cy="155" r="14" fill="var(--warm-accent)" opacity="0.35" filter="url(#glow-blur)" />
+                </g>
+
+                <!-- Topographic Map Elevation Spot Heights & Text (Minimalist Monospace) -->
+                <g fill="url(#topo-grad)" font-family="var(--font-mono)" letter-spacing="0.12em" opacity="0.75">
+                    <!-- Mount Assiniboine Summit Marker -->
+                    <text x="1078" y="152" font-size="10.5" font-weight="700">▲ 3618m · MT. ASSINIBOINE</text>
+                    <text x="1078" y="165" font-size="7.5" opacity="0.85">11,870 FT · "MATTERHORN OF THE ROCKIES"</text>
+                    <text x="910" y="320" font-size="8" font-style="italic" opacity="0.7" transform="rotate(-34, 910, 320)">NORTH RIDGE ARÊTE ➔</text>
+
+                    <!-- Lake Magog Center Marker & Label -->
+                    <circle cx="760" cy="615" r="2.5" fill="var(--cool-accent-bright)" opacity="0.95" />
+                    <text x="760" y="638" font-size="10" font-weight="700" text-anchor="middle" fill="var(--cool-accent-bright)">LAKE MAGOG · ELEV 2160m</text>
+                    <text x="760" y="652" font-size="7.5" text-anchor="middle" fill="var(--cool-accent)" opacity="0.88">ALPINE GLACIAL BASIN · 7087 FT</text>
+                    <text x="460" y="630" font-size="7.5" fill="var(--cool-accent)" opacity="0.8" transform="rotate(22, 460, 630)">➔ MAGOG CREEK</text>
+
+                    <!-- Sunburst Peak Label -->
+                    <path d="M 400 252 L 405 262 L 395 262 Z" fill="var(--warm-accent)" opacity="0.9" />
+                    <circle cx="400" cy="258" r="1.5" fill="#fff" />
+                    <text x="245" y="260" font-size="9" font-weight="600">SUNBURST PEAK · 2849m ▲</text>
+                    <text x="350" y="535" font-size="7.5" fill="var(--cool-accent)" opacity="0.75">SUNBURST LAKE</text>
+
+                    <!-- Elevation Numbers along Master Contours -->
+                    <text x="95" y="130" font-size="8">2100m</text>
+                    <text x="95" y="290" font-size="8">1800m</text>
+                    <text x="95" y="470" font-size="8">1650m</text>
+                    <text x="95" y="850" font-size="8">1350m</text>
+                    <text x="1465" y="115" font-size="8">3300m</text>
+                    <text x="1465" y="200" font-size="8">3000m</text>
+                    <text x="1465" y="380" font-size="8">2700m</text>
+                    <text x="1465" y="420" font-size="8">2400m</text>
+                    <text x="1465" y="750" font-size="8">2160m</text>
+                </g>
+
+                <!-- Technical Surveyor Crosshairs -->
+                <g stroke="url(#topo-grad)" stroke-width="0.9" opacity="0.35">
+                    <line x1="84" y1="60" x2="96" y2="60" />
+                    <line x1="90" y1="54" x2="90" y2="66" />
+                    <line x1="1504" y1="60" x2="1516" y2="60" />
+                    <line x1="1510" y1="54" x2="1510" y2="66" />
+                    <line x1="84" y1="930" x2="96" y2="930" />
+                    <line x1="90" y1="924" x2="90" y2="936" />
+                    <line x1="1504" y1="930" x2="1516" y2="930" />
+                    <line x1="1510" y1="924" x2="1510" y2="936" />
+                    <line x1="794" y1="50" x2="806" y2="50" />
+                    <line x1="800" y1="44" x2="800" y2="56" />
+                    <line x1="794" y1="940" x2="806" y2="940" />
+                    <line x1="800" y1="934" x2="800" y2="946" />
+                </g>
+
+                <!-- Surveyor Geodetic Header & Datum -->
+                <g fill="url(#topo-grad)" font-family="var(--font-mono)" font-size="8" letter-spacing="0.1em" opacity="0.48">
+                    <text x="105" y="63">50°52'N · 115°39'W · CONTINENTAL DIVIDE</text>
+                    <text x="1270" y="63">MT. ASSINIBOINE PROVINCIAL PARK · BC</text>
+                    <text x="105" y="933">TOPOGRAPHIC RELIEF DATUM: CGVD2013 · MSL</text>
+                    <text x="1270" y="920">CONTOUR INTERVAL: 100m (INDEX 300m)</text>
+                    <line x1="1270" y1="932" x2="1490" y2="932" stroke="url(#topo-grad)" stroke-width="1.2" opacity="0.5" />
+                    <line x1="1270" y1="928" x2="1270" y2="936" stroke="url(#topo-grad)" stroke-width="1.2" opacity="0.5" />
+                    <line x1="1380" y1="928" x2="1380" y2="936" stroke="url(#topo-grad)" stroke-width="1.2" opacity="0.5" />
+                    <line x1="1490" y1="928" x2="1490" y2="936" stroke="url(#topo-grad)" stroke-width="1.2" opacity="0.5" />
+                    <text x="1267" y="946">0</text>
+                    <text x="1373" y="946">1 km</text>
+                    <text x="1480" y="946">2 km</text>
+                </g>
             </g>
         </svg>
     </div>
@@ -81,7 +354,7 @@
         <header class="status-bar">
             <div class="beacon">
                 <span class="pulse-dot" title="Active"></span>
-                <span>Software Engineer @ <strong>Humi by Employment Hero</strong></span>
+                <span>Software Engineer, Wilderness Backpacker, Landscape Photographer</span>
             </div>
             <div class="status-meta">
                 <span>📍 Vancouver, BC</span>
@@ -574,13 +847,8 @@
                         // Normalized progress (0 at top, 1 at bottom)
                         doc.style.setProperty('--scroll-p', p.toFixed(3));
                         
-                        // Sun arc coordinates across the sky (Sunrise East -> Overhead Midday -> Sunset West)
-                        var sunX = (18 + p * 64).toFixed(1) + '%';
-                        var sunY = (14 - (4 * p * (1 - p)) * 12).toFixed(1) + '%';
-                        doc.style.setProperty('--sun-x', sunX);
-                        doc.style.setProperty('--sun-y', sunY);
-                        
-                        // Opacity curves: long sunrise (0 to 0.42), short midday (0.35 to 0.58), long sunset (0.48 to 1.0)
+                        // Opacity curves driving Sky Layers & Mt. Assiniboine Light & Shadow:
+                        // Long morning sunrise (0 to 0.42), short high-noon midday (0.35 to 0.58), long sunset alpenglow (0.48 to 1.0)
                         var sunriseOp = Math.max(0, Math.min(1, (0.42 - p) / 0.35)).toFixed(3);
                         var middayOp = Math.max(0, Math.min(1, 1 - Math.abs(p - 0.45) * 3.5)).toFixed(3);
                         var sunsetOp = Math.max(0, Math.min(1, (p - 0.48) / 0.35)).toFixed(3);
@@ -588,6 +856,12 @@
                         doc.style.setProperty('--sunrise-op', sunriseOp);
                         doc.style.setProperty('--midday-op', middayOp);
                         doc.style.setProperty('--sunset-op', sunsetOp);
+
+                        // Directional Golden Hour light angle & sweeping mountain cast shadow
+                        var lightAngle = (115 + p * 130).toFixed(1) + 'deg';
+                        doc.style.setProperty('--light-angle', lightAngle);
+                        var shadowSkew = (-26 + p * 52).toFixed(1) + 'deg';
+                        doc.style.setProperty('--shadow-skew', shadowSkew);
                         
                         ticking = false;
                     });

@@ -6,8 +6,6 @@
 /* ── Palette: Living Green 🌿 (Default: Sunrise Golden Hour -> Short Midday -> Sunset Golden Hour) ── */
 :root {
     --scroll-p: 0;
-    --sun-x: 18%;
-    --sun-y: 14%;
     --sunrise-op: 1;
     --midday-op: 0;
     --sunset-op: 0;
@@ -24,22 +22,16 @@
     --midday-sky-3: #d1fae5;
     --midday-sky-4: #f0fdf4;
 
-    /* 3. Sunset Golden Hour (Bottom of Page: Backcountry Sunset into Twilight) */
+    /* 3. Sunset Golden Hour (Bottom of Page: Backcountry Sunset into Alpine Twilight) */
     --sunset-sky-1: #fdba74;
     --sunset-sky-2: #f97316;
-    --sunset-sky-3: #f59e0b;
-    --sunset-sky-4: #0f766e;
+    --sunset-sky-3: #c2410c;
+    --sunset-sky-4: #134e4a;
 
-    /* Celestial Sun Orb & Beams */
-    --sun-color-core: #f59e0b;
-    --sun-color-mid: rgba(251, 191, 36, 0.78);
-    --sun-color-outer: rgba(254, 215, 170, 0.45);
-    --sun-beam-color: rgba(254, 240, 138, 0.65);
-
-    /* Card Surfaces & Eco-Glassmorphism (Frosted glass letting the sun & skies radiate through) */
-    --bg-surface: rgba(255, 255, 255, 0.62);
-    --bg-surface-alpha: rgba(255, 255, 255, 0.70);
-    --bg-card: rgba(240, 248, 242, 0.68);
+    /* Card Surfaces & Eco-Glassmorphism (Frosted glass letting the mountain landscape radiate through) */
+    --bg-surface: rgba(255, 255, 255, 0.64);
+    --bg-surface-alpha: rgba(255, 255, 255, 0.72);
+    --bg-card: rgba(240, 248, 242, 0.70);
     --bg-highlight: rgba(212, 235, 216, 0.75);
     --border: rgba(45, 115, 70, 0.22);
     --border-dark: rgba(25, 80, 45, 0.45);
@@ -87,9 +79,9 @@
     --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace;
 }
 
-/* ── Palette: Golden Hour ☀️ (Rich Honey Sunrise -> High Daylight -> Deep Terracotta Sunset) ── */
+/* ── Palette: Golden Solarpunk ☀️ (Rich Honey Sunrise -> High Daylight -> Deep Terracotta Alpenglow) ── */
 [data-theme="golden"] {
-    --sunrise-sky-1: #fde68a;
+    --sunrise-sky-1: #fde047;
     --sunrise-sky-2: #fef08a;
     --sunrise-sky-3: #fef3c7;
     --sunrise-sky-4: #f7fee7;
@@ -101,18 +93,13 @@
 
     --sunset-sky-1: #ea580c;
     --sunset-sky-2: #f97316;
-    --sunset-sky-3: #f59e0b;
+    --sunset-sky-3: #9a3412;
     --sunset-sky-4: #14532d;
 
-    --sun-color-core: #ea580c;
-    --sun-color-mid: rgba(245, 158, 11, 0.85);
-    --sun-color-outer: rgba(251, 146, 60, 0.5);
-    --sun-beam-color: rgba(253, 230, 138, 0.7);
-
-    --bg-surface: rgba(255, 252, 244, 0.65);
-    --bg-surface-alpha: rgba(255, 252, 244, 0.72);
-    --bg-card: rgba(248, 241, 226, 0.70);
-    --bg-highlight: rgba(235, 224, 197, 0.75);
+    --bg-surface: rgba(255, 252, 244, 0.68);
+    --bg-surface-alpha: rgba(255, 252, 244, 0.74);
+    --bg-card: rgba(248, 241, 226, 0.72);
+    --bg-highlight: rgba(235, 224, 197, 0.78);
     --border: rgba(185, 135, 45, 0.25);
     --border-dark: rgba(145, 95, 25, 0.5);
     --card-shadow: 0 8px 30px rgba(70, 48, 15, 0.08);
@@ -151,41 +138,36 @@
     --magenta: #e11d48;
 }
 
-/* ── Palette: Dusk Moss 🌑 (Warm Lantern Sunrise -> Cyan Midday -> Twilight Mountain Sunset) ── */
+/* ── Palette: Dusk Moss 🌑 (Alpine Mist Dawn -> Cyan Midday -> Twilight Mountain Dusk) ── */
 [data-theme="moss"] {
-    --sunrise-sky-1: #f59e0b;
-    --sunrise-sky-2: #d97706;
-    --sunrise-sky-3: #fef3c7;
-    --sunrise-sky-4: #e0e7ff;
+    --sunrise-sky-1: #fef3c7;
+    --sunrise-sky-2: #e0f2fe;
+    --sunrise-sky-3: #ccfbf1;
+    --sunrise-sky-4: #f0fdf4;
 
     --midday-sky-1: #38bdf8;
-    --midday-sky-2: #6ee7b7;
+    --midday-sky-2: #5eead4;
     --midday-sky-3: #ccfbf1;
     --midday-sky-4: #f0fdf4;
 
     --sunset-sky-1: #c2410c;
-    --sunset-sky-2: #b45309;
-    --sunset-sky-3: #78350f;
+    --sunset-sky-2: #9a3412;
+    --sunset-sky-3: #431407;
     --sunset-sky-4: #083344;
 
-    --sun-color-core: #d97706;
-    --sun-color-mid: rgba(217, 119, 6, 0.75);
-    --sun-color-outer: rgba(245, 158, 11, 0.4);
-    --sun-beam-color: rgba(251, 191, 36, 0.55);
-
-    --bg-surface: rgba(255, 255, 255, 0.64);
-    --bg-surface-alpha: rgba(255, 255, 255, 0.72);
-    --bg-card: rgba(235, 243, 240, 0.70);
-    --bg-highlight: rgba(207, 224, 219, 0.75);
+    --bg-surface: rgba(255, 255, 255, 0.66);
+    --bg-surface-alpha: rgba(255, 255, 255, 0.74);
+    --bg-card: rgba(235, 243, 240, 0.72);
+    --bg-highlight: rgba(207, 224, 219, 0.78);
     --border: rgba(50, 105, 90, 0.25);
     --border-dark: rgba(30, 75, 62, 0.5);
     --card-shadow: 0 8px 30px rgba(18, 45, 36, 0.08);
     --card-shadow-hover: 0 14px 36px rgba(18, 45, 36, 0.14);
 
     --grid-color: rgba(35, 90, 75, 0.07);
-    --contour-top: #d97706;
-    --contour-mid: #059669;
-    --contour-bot: #c2410c;
+    --contour-top: #38bdf8;
+    --contour-mid: #10b981;
+    --contour-bot: #ea580c;
 
     --text: #101d17;
     --text-muted: #32493e;
@@ -203,9 +185,9 @@
     --pop: #e11d48;
     --glow: rgba(16, 185, 129, 0.28);
 
-    --vine-start: #f59e0b;
+    --vine-start: #06b6d4;
     --vine-mid: #059669;
-    --vine-end: #c2410c;
+    --vine-end: #ea580c;
 
     --green: #059669;
     --cyan: #0891b2;
@@ -221,6 +203,7 @@
 html {
     scroll-behavior: smooth;
     background-color: var(--sunrise-sky-1);
+    transition: background-color 0.3s ease;
 }
 
 body {
@@ -261,7 +244,7 @@ body {
 /* 1. Sunrise Layer (Morning Golden Hour: Top of Page) */
 .sp-sunrise-layer {
     opacity: var(--sunrise-op, 1);
-    transition: opacity 0.12s ease-out;
+    transition: opacity 0.14s ease-out;
 }
 
 .sp-sunrise-sky {
@@ -269,8 +252,8 @@ body {
     inset: 0;
     background: linear-gradient(180deg,
         var(--sunrise-sky-1) 0%,
-        var(--sunrise-sky-2) 35%,
-        var(--sunrise-sky-3) 70%,
+        var(--sunrise-sky-2) 32%,
+        var(--sunrise-sky-3) 68%,
         var(--sunrise-sky-4) 100%
     );
 }
@@ -278,7 +261,7 @@ body {
 /* 2. Midday Layer (Short, Bright Solar Tech: Mid-Page) */
 .sp-midday-layer {
     opacity: var(--midday-op, 0);
-    transition: opacity 0.12s ease-out;
+    transition: opacity 0.14s ease-out;
 }
 
 .sp-midday-sky {
@@ -292,10 +275,10 @@ body {
     );
 }
 
-/* 3. Sunset Layer (Evening Golden Hour: Bottom of Page) */
+/* 3. Sunset Layer (Evening Golden Hour: Bottom of Page into Alpine Dusk) */
 .sp-sunset-layer {
     opacity: var(--sunset-op, 0);
-    transition: opacity 0.12s ease-out;
+    transition: opacity 0.14s ease-out;
 }
 
 .sp-sunset-sky {
@@ -303,44 +286,113 @@ body {
     inset: 0;
     background: linear-gradient(180deg,
         var(--sunset-sky-1) 0%,
-        var(--sunset-sky-2) 35%,
-        var(--sunset-sky-3) 70%,
+        var(--sunset-sky-2) 34%,
+        var(--sunset-sky-3) 68%,
         var(--sunset-sky-4) 100%
     );
 }
 
-/* Moving Sun Orb across the Celestial Arc (Sunrise East -> Overhead Midday -> Sunset West) */
-.sp-sun-orb {
+/* ── Golden Hour Directional Light Sweep ── */
+.sp-golden-light {
     position: absolute;
-    left: var(--sun-x, 18%);
-    top: var(--sun-y, 14%);
-    width: 440px;
-    height: 440px;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(var(--light-angle, 125deg),
+        rgba(251, 191, 36, 0.28) 0%,
+        rgba(245, 158, 11, 0.12) 36%,
+        transparent 66%
+    );
+    mix-blend-mode: soft-light;
+    transition: background 0.08s ease-out;
+}
+
+.sp-golden-spot {
+    position: absolute;
+    top: 22%;
+    left: calc(28% + var(--scroll-p, 0) * 46%);
+    width: 650px;
+    height: 650px;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background: radial-gradient(circle,
-        var(--sun-color-core) 0%,
-        var(--sun-color-mid) 38%,
-        var(--sun-color-outer) 68%,
-        transparent 75%
+        rgba(254, 240, 138, 0.22) 0%,
+        rgba(245, 158, 11, 0.10) 42%,
+        transparent 70%
     );
-    filter: blur(8px);
-    transition: left 0.12s ease-out, top 0.12s ease-out;
+    pointer-events: none;
+    filter: blur(42px);
+    transition: left 0.08s ease-out;
 }
 
-.sp-sun-rays {
-    position: absolute;
-    left: var(--sun-x, 18%);
-    top: var(--sun-y, 14%);
-    width: 620px;
-    height: 620px;
-    transform: translate(-50%, -50%);
-    background: radial-gradient(circle,
-        var(--sun-beam-color) 0%,
-        transparent 65%
-    );
-    opacity: 0.85;
-    transition: left 0.12s ease-out, top 0.12s ease-out;
+/* ── Mount Assiniboine: Golden Light & Mountain Shadow System ── */
+.topo-hillshade {
+    pointer-events: none;
+}
+
+/* East Facet: Lit at top/morning, transitions into shadow on scroll */
+.facet-east-lit {
+    opacity: calc(1 - var(--scroll-p, 0) * 0.90);
+    transition: opacity 0.06s ease-out;
+}
+
+.facet-east-shadow {
+    opacity: calc(0.08 + var(--scroll-p, 0) * 0.88);
+    transition: opacity 0.06s ease-out;
+}
+
+/* West Facet: Starts in deep cool shadow, blazes into sunset alpenglow */
+.facet-west-lit {
+    opacity: calc(0.12 + var(--scroll-p, 0) * 0.88);
+    transition: opacity 0.06s ease-out;
+}
+
+.facet-west-shadow {
+    opacity: calc(0.92 - var(--scroll-p, 0) * 0.85);
+    transition: opacity 0.06s ease-out;
+}
+
+/* Mountain Cast Shadow: Sweeps dynamically across Lake Magog and the valley */
+.mountain-cast-shadow {
+    transform-box: view-box;
+    transform-origin: 1060px 160px;
+    transform: skewX(var(--shadow-skew, -26deg));
+    transition: transform 0.08s ease-out, opacity 0.08s ease-out;
+    opacity: 0.88;
+}
+
+/* Razor-sharp Knife-Edge North Ridge (Arête) Highlight */
+.ridge-arete-crest {
+    filter: drop-shadow(0 0 5px var(--warm-accent));
+}
+
+/* Lake Magog Golden-Hour Water Reflection */
+.lake-water-reflection {
+    opacity: calc(0.35 + var(--scroll-p, 0) * 0.55);
+    transition: opacity 0.08s ease-out;
+}
+
+/* Summit Pinnacle Alpenglow Beacon */
+@keyframes summit-alpenglow-glow {
+    0%, 100% {
+        opacity: 0.75;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.98;
+        transform: scale(1.15);
+    }
+}
+
+.summit-beacon {
+    transform-box: view-box;
+    transform-origin: 1060px 160px;
+    animation: summit-alpenglow-glow 6s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .summit-beacon {
+        animation: none !important;
+    }
 }
 
 /* Architectural solar cell micro-grid */
@@ -356,13 +408,16 @@ body {
     opacity: 0.85;
 }
 
-/* Topographical elevation contours shifting from morning gold to midday green to sunset amber */
+/* Topographical elevation plot contours shifting from morning gold to midday green to sunset amber */
 .sp-topo {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     opacity: 0.95;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
     transition: opacity 0.4s ease;
 }
 
@@ -446,29 +501,30 @@ body {
 }
 
 .theme-swatch {
-    width: 17px;
-    height: 17px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
-    border: 1.5px solid var(--border);
+    border: 1.5px solid rgba(255, 255, 255, 0.7);
     cursor: pointer;
     padding: 0;
     outline: none;
-    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease;
 }
 
 .theme-swatch:hover {
-    transform: scale(1.22);
-    border-color: var(--text);
+    transform: scale(1.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .theme-swatch.active {
-    border-color: var(--text);
-    box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 3.5px var(--accent);
+    transform: scale(1.12);
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 4px var(--accent);
 }
 
-.swatch-green  { background: linear-gradient(135deg, #f59e0b, #10b981); }
-.swatch-golden { background: linear-gradient(135deg, #fbbf24, #65a30d); }
-.swatch-moss   { background: linear-gradient(135deg, #f59e0b, #0891b2); }
+.swatch-green  { background: linear-gradient(135deg, #fde047 0%, #22c55e 52%, #15803d 100%); }
+.swatch-golden { background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #ea580c 100%); }
+.swatch-moss   { background: linear-gradient(135deg, #38bdf8 0%, #059669 50%, #083344 100%); }
 
 /* ── Hero Section (Bathed in Radiant Morning Sunrise Golden Hour) ── */
 .hero {

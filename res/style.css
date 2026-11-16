@@ -1180,6 +1180,107 @@ body {
 
 .project-stars { color: var(--text-faint); }
 
+/* ── Little Things: Tiny, playful launchpad ── */
+.tiny-things-intro {
+    color: var(--text-muted);
+    margin: -8px 0 18px;
+}
+
+.tiny-things-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+@media (min-width: 600px) {
+    .tiny-things-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.tiny-thing {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: linear-gradient(145deg, var(--bg-highlight), var(--bg-surface) 72%);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.tiny-thing:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.tiny-thing-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.tiny-thing-icon {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--bg-surface-alpha);
+    font-size: 20px;
+}
+
+.tiny-thing-kicker {
+    color: var(--warm-deep);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.tiny-thing-title {
+    margin: 0 0 7px;
+    color: var(--text);
+    font-size: 1.08rem;
+}
+
+.tiny-thing-desc {
+    flex-grow: 1;
+    margin: 0 0 16px;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.tiny-thing-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 14px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: var(--text);
+    color: var(--bg-surface-alpha);
+    font-size: 0.88rem;
+    font-weight: 650;
+    text-decoration: none;
+    transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.tiny-thing-button:hover {
+    transform: translateY(-1px);
+    background: var(--link);
+}
+
+.tiny-thing-button:focus-visible {
+    outline: 3px solid var(--warm-accent);
+    outline-offset: 3px;
+}
+
 /* ── Skills ── */
 .skills-container {
     background: var(--bg-surface);

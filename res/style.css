@@ -1407,6 +1407,18 @@ body {
 
 /* ── Mobile ── */
 @media (max-width: 600px) {
+    .sp-layer,
+    .sp-golden-light,
+    .sp-golden-spot,
+    .facet-east-lit,
+    .facet-east-shadow,
+    .facet-west-lit,
+    .facet-west-shadow,
+    .mountain-cast-shadow,
+    .lake-water-reflection {
+        transition: none;
+    }
+
     .container {
         padding: 18px 12px 60px 12px;
         overflow-x: hidden;

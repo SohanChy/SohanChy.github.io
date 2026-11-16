@@ -3,7 +3,7 @@
    Solarpunk Aesthetic · Golden Hour Sunrise to Sunset Celestial Scroll
    ========================================================================== */
 
-/* ── Palette: Living Green 🌿 (Default: Sunrise Golden Hour -> Short Midday -> Sunset Golden Hour) ── */
+/* ── Palette: Living Green ◈ (Default: Sunrise Golden Hour -> Short Midday -> Sunset Golden Hour) ── */
 :root {
     --scroll-p: 0;
     --sunrise-op: 1;
@@ -653,6 +653,7 @@ body {
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
+    --tone-color: var(--cyan);
 }
 
 .tone-header {
@@ -675,14 +676,79 @@ body {
 .tone-badge {
     padding: 3px 10px;
     background: var(--bg-card);
-    border: 1px solid var(--border-dark);
+    border: 1px solid var(--tone-color, var(--border-dark));
     border-radius: 12px;
     font-weight: 600;
-    color: var(--text);
+    color: var(--tone-color, var(--text));
     transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-.slider-container { margin: 12px 0 16px 0; }
+.slider-container {
+    margin: 14px 0 16px 0;
+}
+
+.slider-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+}
+
+.slider-step-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.slider-step-btn:hover:not(:disabled) {
+    background: var(--bg-highlight);
+    border-color: var(--tone-color, var(--accent));
+    color: var(--tone-color, var(--accent));
+    transform: translateY(-1px);
+}
+
+.slider-step-btn:active:not(:disabled) {
+    transform: scale(0.94);
+}
+
+.slider-step-btn:disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+.slider-step-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.slider-core {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.slider-track-wrap {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    position: relative;
+    width: 100%;
+}
 
 .tone-slider {
     -webkit-appearance: none;
@@ -690,56 +756,168 @@ body {
     width: 100%;
     height: 6px;
     border-radius: 3px;
-    background: linear-gradient(90deg, var(--warm), var(--accent), var(--cyan));
+    background: linear-gradient(90deg, var(--orange) 0%, var(--yellow) 25%, var(--cyan) 50%, var(--blue) 75%, var(--magenta) 100%);
     outline: none;
     cursor: pointer;
+    touch-action: pan-y;
+    margin: 0;
+    padding: 0;
 }
 
+/* Solar tech-y minimalist circular aperture thumb */
 .tone-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 22px;
-    height: 22px;
-    border-radius: 50% 0 50% 0;
-    transform: rotate(45deg);
-    background: var(--accent);
-    border: 2.5px solid #ffffff;
-    box-shadow: 0 0 8px var(--accent);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: none;
+    background: radial-gradient(circle at center, #ffffff 28%, var(--tone-color, var(--cyan)) 32%, var(--tone-color, var(--cyan)) 100%);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 12px var(--tone-color, var(--cyan));
     cursor: pointer;
-    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .tone-slider::-webkit-slider-thumb:hover {
-    transform: rotate(45deg) scale(1.18);
-    background: var(--warm);
-    box-shadow: 0 0 10px var(--warm);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 18px var(--tone-color, var(--cyan));
 }
 
 .tone-slider::-moz-range-thumb {
-    width: 22px;
-    height: 22px;
-    border-radius: 50% 0 50% 0;
-    transform: rotate(45deg);
-    background: var(--accent);
-    border: 2.5px solid #ffffff;
-    box-shadow: 0 0 8px var(--accent);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: none;
+    background: radial-gradient(circle at center, #ffffff 28%, var(--tone-color, var(--cyan)) 32%, var(--tone-color, var(--cyan)) 100%);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12), 0 0 12px var(--tone-color, var(--cyan));
     cursor: pointer;
-    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .tone-slider::-moz-range-thumb:hover {
-    transform: rotate(45deg) scale(1.18);
-    background: var(--warm);
+    transform: scale(1.15);
+    box-shadow: 0 0 0 2px #ffffff, 0 0 18px var(--tone-color, var(--cyan));
 }
 
 .slider-ticks {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    height: 34px;
+    margin-top: 4px;
+}
+
+.slider-tick {
+    position: absolute;
+    top: 0;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--text-faint);
-    margin-top: 6px;
-    padding: 0 2px;
+    transition: color 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.slider-tick:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.slider-tick .tick-pip {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-faint);
+    opacity: 0.45;
+    transition: all 0.2s ease;
+}
+
+.slider-tick:hover .tick-pip {
+    opacity: 0.9;
+    background: var(--text);
+}
+
+.slider-tick:hover {
+    color: var(--text);
+}
+
+.slider-tick.active {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.slider-tick.active .tick-pip {
+    width: 8px;
+    height: 8px;
+    background: var(--tone-color, var(--cyan));
+    opacity: 1;
+    box-shadow: 0 0 8px var(--tone-color, var(--cyan));
+}
+
+/* Mathematical step alignment: thumb is 20px wide (radius 10px) */
+.slider-tick[data-val="0"] {
+    left: 0;
+    align-items: flex-start;
+    text-align: left;
+}
+.slider-tick[data-val="0"] .tick-pip {
+    margin-left: 7px; /* 10px center - 3px half pip */
+}
+.slider-tick[data-val="0"].active .tick-pip {
+    margin-left: 6px; /* 10px center - 4px half pip */
+}
+
+.slider-tick[data-val="1"] {
+    left: calc(10px + 0.25 * (100% - 20px));
+    transform: translateX(-50%);
+    align-items: center;
+    text-align: center;
+}
+
+.slider-tick[data-val="2"] {
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: center;
+    text-align: center;
+}
+
+.slider-tick[data-val="3"] {
+    left: calc(10px + 0.75 * (100% - 20px));
+    transform: translateX(-50%);
+    align-items: center;
+    text-align: center;
+}
+
+.slider-tick[data-val="4"] {
+    right: 0;
+    left: auto;
+    align-items: flex-end;
+    text-align: right;
+}
+.slider-tick[data-val="4"] .tick-pip {
+    margin-right: 7px; /* 10px center - 3px half pip */
+}
+.slider-tick[data-val="4"].active .tick-pip {
+    margin-right: 6px; /* 10px center - 4px half pip */
+}
+
+.tick-short {
+    display: none;
+}
+
+.tick-full {
+    display: inline;
 }
 
 .dynamic-bio-box {
@@ -787,6 +965,16 @@ body {
 .section-title .hash { color: var(--accent); }
 
 /* ── Timeline: Living Celestial Vine (Sunrise -> Midday -> Sunset) ── */
+.timeline-panel {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    padding: 22px 24px 18px 28px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
 .timeline {
     position: relative;
     padding-left: 26px;
@@ -794,7 +982,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 26px;
-    margin: 18px 0 22px 6px;
+    margin: 0 0 0 4px;
 }
 
 .timeline::before {
@@ -1231,6 +1419,67 @@ body {
     .avatar-img { width: 80px; height: 80px; }
     .hero-title { font-size: 1.8rem; }
     .status-bar { font-size: 12px; padding: 8px 10px; }
-    .timeline { margin-left: 4px; padding-left: 22px; gap: 20px; }
+    .timeline-panel { padding: 18px 16px 14px 22px; }
+    .timeline { margin-left: 2px; padding-left: 22px; gap: 20px; }
     .timeline-dot { left: -26px; }
+
+    /* Tone Widget Mobile Polish */
+    .tone-widget {
+        padding: 18px 14px;
+        margin-bottom: 36px;
+    }
+    .tone-header {
+        font-size: 11.5px;
+        gap: 6px;
+    }
+    .tone-badge {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+    .slider-row {
+        gap: 8px;
+    }
+    .slider-step-btn {
+        width: 30px;
+        height: 30px;
+    }
+    .slider-track-wrap {
+        height: 30px;
+    }
+    .slider-ticks {
+        height: 30px;
+        margin-top: 3px;
+    }
+    .slider-tick {
+        font-size: 10px;
+    }
+    .tick-full {
+        display: none;
+    }
+    .tick-short {
+        display: inline;
+    }
+    .dynamic-bio-text {
+        font-size: 0.98rem;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 360px) {
+    .slider-row {
+        gap: 6px;
+    }
+    .slider-step-btn {
+        width: 26px;
+        height: 26px;
+    }
+    .slider-track-wrap {
+        height: 26px;
+    }
+    .slider-ticks {
+        height: 28px;
+    }
+    .slider-tick {
+        font-size: 9px;
+    }
 }

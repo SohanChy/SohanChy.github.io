@@ -56,7 +56,8 @@
         <div class="sp-golden-light"></div>
         <div class="sp-golden-spot"></div>
         <div class="sp-grid"></div>
-        <svg class="sp-topo" viewBox="0 0 1600 1000" overflow="hidden" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <svg class="sp-topo" viewBox="0 0 1600 1000" overflow="hidden" fill="none" xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMidYMid slice">
             <defs>
                 <!-- Solarpunk Elevation Palette Gradient -->
                 <linearGradient id="topo-grad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -154,19 +155,24 @@
                      ═══════════════════════════════════════════════════════════════ -->
                 <g class="lake-magog-basin">
                     <!-- Lake Magog Water Body -->
-                    <path d="M 540 580 C 580 540, 680 525, 780 535 C 870 545, 940 575, 960 620 C 970 665, 910 710, 830 725 C 740 740, 640 720, 580 690 C 530 665, 510 615, 540 580 Z"
-                          fill="url(#lake-magog-rad)" stroke="var(--cool-accent)" stroke-width="1.4" opacity="0.85" />
+                    <path
+                        d="M 540 580 C 580 540, 680 525, 780 535 C 870 545, 940 575, 960 620 C 970 665, 910 710, 830 725 C 740 740, 640 720, 580 690 C 530 665, 510 615, 540 580 Z"
+                        fill="url(#lake-magog-rad)" stroke="var(--cool-accent)" stroke-width="1.4" opacity="0.85" />
                     <!-- Inner Depth Contours -->
-                    <path d="M 580 595 C 610 565, 690 550, 770 560 C 840 570, 900 595, 915 630 C 925 660, 880 690, 810 700 C 740 710, 660 695, 615 675 C 575 655, 560 620, 580 595 Z"
-                          stroke="var(--cool-accent)" stroke-width="0.85" stroke-dasharray="3,3" opacity="0.45" />
+                    <path
+                        d="M 580 595 C 610 565, 690 550, 770 560 C 840 570, 900 595, 915 630 C 925 660, 880 690, 810 700 C 740 710, 660 695, 615 675 C 575 655, 560 620, 580 595 Z"
+                        stroke="var(--cool-accent)" stroke-width="0.85" stroke-dasharray="3,3" opacity="0.45" />
                     <!-- Lake Magog Golden-Hour Reflection Ribbon -->
-                    <ellipse cx="780" cy="620" rx="190" ry="70" fill="url(#lake-reflection-grad)" class="lake-water-reflection" filter="url(#glow-blur)" />
+                    <ellipse cx="780" cy="620" rx="190" ry="70" fill="url(#lake-reflection-grad)"
+                        class="lake-water-reflection" filter="url(#glow-blur)" />
                     <!-- Sunburst Lake (Small Alpine Tarn nearby) -->
-                    <path d="M 380 490 C 410 470, 460 470, 480 495 C 495 520, 470 545, 430 550 C 390 555, 360 535, 365 510 C 370 498, 375 492, 380 490 Z"
-                          fill="url(#lake-magog-rad)" stroke="var(--cool-accent)" stroke-width="1.1" opacity="0.75" />
+                    <path
+                        d="M 380 490 C 410 470, 460 470, 480 495 C 495 520, 470 545, 430 550 C 390 555, 360 535, 365 510 C 370 498, 375 492, 380 490 Z"
+                        fill="url(#lake-magog-rad)" stroke="var(--cool-accent)" stroke-width="1.1" opacity="0.75" />
                     <!-- Magog Creek Outflow -->
-                    <path d="M 540 580 C 470 595, 410 635, 340 695 C 270 755, 200 840, 110 920 C 50 970, -20 990, -50 1000"
-                          stroke="var(--cool-accent)" stroke-width="1.3" opacity="0.55" />
+                    <path
+                        d="M 540 580 C 470 595, 410 635, 340 695 C 270 755, 200 840, 110 920 C 50 970, -20 990, -50 1000"
+                        stroke="var(--cool-accent)" stroke-width="1.3" opacity="0.55" />
                 </g>
 
                 <!-- ═══════════════════════════════════════════════════════════════
@@ -177,24 +183,24 @@
                     <!-- EAST FACET: Lit with golden morning light at top, darkens on scroll -->
                     <g filter="url(#shadow-blur)">
                         <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 1120 580 L 1380 520 Q 1260 360 1160 250 Z"
-                              fill="url(#facet-gold-light)" class="facet-east-lit" />
+                            fill="url(#facet-gold-light)" class="facet-east-lit" />
                         <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 1120 580 L 1380 520 Q 1260 360 1160 250 Z"
-                              fill="url(#facet-shadow-grad)" class="facet-east-shadow" />
+                            fill="url(#facet-shadow-grad)" class="facet-east-shadow" />
                     </g>
                     <!-- WEST FACET: In mountain shadow at top, blazes into sunset alpenglow on scroll -->
                     <g filter="url(#shadow-blur)">
                         <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 720 560 L 660 530 Q 780 380 920 250 Z"
-                              fill="url(#facet-shadow-grad)" class="facet-west-shadow" />
+                            fill="url(#facet-shadow-grad)" class="facet-west-shadow" />
                         <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 720 560 L 660 530 Q 780 380 920 250 Z"
-                              fill="url(#facet-alpenglow-light)" class="facet-west-lit" />
+                            fill="url(#facet-alpenglow-light)" class="facet-west-lit" />
                     </g>
 
                     <!-- SUNBURST PEAK (2,849m) FACET LIGHT & SHADOW -->
                     <g filter="url(#shadow-blur)">
                         <path d="M 400 260 Q 360 340 310 430 T 250 540 L 400 560 L 470 510 Q 440 380 400 260 Z"
-                              fill="url(#facet-gold-light)" class="facet-east-lit" opacity="0.65" />
+                            fill="url(#facet-gold-light)" class="facet-east-lit" opacity="0.65" />
                         <path d="M 400 260 Q 450 340 500 440 T 560 530 L 470 510 L 400 560 Q 420 380 400 260 Z"
-                              fill="url(#facet-alpenglow-light)" class="facet-west-lit" opacity="0.75" />
+                            fill="url(#facet-alpenglow-light)" class="facet-west-lit" opacity="0.75" />
                     </g>
                 </g>
 
@@ -202,77 +208,106 @@
                      4. PRECISION TOPOGRAPHIC CONTOURS (100m INTERVALS)
                      Pyramidal concentric contour lines of the Matterhorn of the Rockies
                      ═══════════════════════════════════════════════════════════════ -->
-                <g stroke="url(#topo-grad)" stroke-width="0.85" opacity="0.32" stroke-linecap="round" stroke-linejoin="round">
+                <g stroke="url(#topo-grad)" stroke-width="0.85" opacity="0.32" stroke-linecap="round"
+                    stroke-linejoin="round">
                     <!-- Mt Assiniboine 3500m -->
-                    <path d="M 1040 180 C 1050 170, 1075 172, 1080 185 C 1075 198, 1055 200, 1040 195 C 1032 190, 1032 182, 1040 180 Z" />
+                    <path
+                        d="M 1040 180 C 1050 170, 1075 172, 1080 185 C 1075 198, 1055 200, 1040 195 C 1032 190, 1032 182, 1040 180 Z" />
                     <!-- Mt Assiniboine 3400m -->
-                    <path d="M 1020 205 C 1040 185, 1095 188, 1105 210 C 1100 230, 1060 235, 1025 225 C 1010 218, 1010 210, 1020 205 Z" />
+                    <path
+                        d="M 1020 205 C 1040 185, 1095 188, 1105 210 C 1100 230, 1060 235, 1025 225 C 1010 218, 1010 210, 1020 205 Z" />
                     <!-- Mt Assiniboine 3200m -->
-                    <path d="M 985 240 C 1025 200, 1140 205, 1155 245 C 1145 285, 1070 290, 1000 275 C 970 262, 970 248, 985 240 Z" />
+                    <path
+                        d="M 985 240 C 1025 200, 1140 205, 1155 245 C 1145 285, 1070 290, 1000 275 C 970 262, 970 248, 985 240 Z" />
                     <!-- Mt Assiniboine 3100m -->
-                    <path d="M 960 265 C 1010 215, 1170 220, 1190 270 C 1175 320, 1080 325, 985 305 C 945 290, 945 272, 960 265 Z" />
+                    <path
+                        d="M 960 265 C 1010 215, 1170 220, 1190 270 C 1175 320, 1080 325, 985 305 C 945 290, 945 272, 960 265 Z" />
                     <!-- Mt Assiniboine 2900m -->
-                    <path d="M 920 310 C 980 245, 1225 250, 1255 315 C 1235 385, 1100 390, 955 365 C 900 345, 900 320, 920 310 Z" />
+                    <path
+                        d="M 920 310 C 980 245, 1225 250, 1255 315 C 1235 385, 1100 390, 955 365 C 900 345, 900 320, 920 310 Z" />
                     <!-- Mt Assiniboine 2800m -->
-                    <path d="M 895 340 C 965 260, 1260 265, 1295 345 C 1270 425, 1115 430, 935 400 C 875 375, 875 348, 895 340 Z" />
+                    <path
+                        d="M 895 340 C 965 260, 1260 265, 1295 345 C 1270 425, 1115 430, 935 400 C 875 375, 875 348, 895 340 Z" />
                     <!-- Mt Assiniboine 2600m -->
-                    <path d="M 850 395 C 935 295, 1320 300, 1365 400 C 1335 500, 1140 505, 895 470 C 825 440, 825 405, 850 395 Z" />
+                    <path
+                        d="M 850 395 C 935 295, 1320 300, 1365 400 C 1335 500, 1140 505, 895 470 C 825 440, 825 405, 850 395 Z" />
                     <!-- Mt Assiniboine 2500m -->
-                    <path d="M 825 430 C 915 315, 1360 320, 1410 435 C 1375 545, 1155 550, 870 510 C 795 475, 795 438, 825 430 Z" />
+                    <path
+                        d="M 825 430 C 915 315, 1360 320, 1410 435 C 1375 545, 1155 550, 870 510 C 795 475, 795 438, 825 430 Z" />
                     <!-- Mt Assiniboine 2300m (Approaching Lake Rim) -->
-                    <path d="M 770 495 C 880 355, 1435 360, 1495 500 C 1450 635, 1180 640, 820 590 C 730 550, 730 508, 770 495 Z" />
+                    <path
+                        d="M 770 495 C 880 355, 1435 360, 1495 500 C 1450 635, 1180 640, 820 590 C 730 550, 730 508, 770 495 Z" />
 
                     <!-- Sunburst Peak 2700m -->
-                    <path d="M 380 280 C 390 270, 415 272, 420 285 C 415 295, 395 298, 380 292 C 372 288, 372 282, 380 280 Z" />
+                    <path
+                        d="M 380 280 C 390 270, 415 272, 420 285 C 415 295, 395 298, 380 292 C 372 288, 372 282, 380 280 Z" />
                     <!-- Sunburst Peak 2500m -->
-                    <path d="M 345 320 C 375 285, 455 288, 465 325 C 455 355, 390 360, 350 345 C 335 335, 335 325, 345 320 Z" />
+                    <path
+                        d="M 345 320 C 375 285, 455 288, 465 325 C 455 355, 390 360, 350 345 C 335 335, 335 325, 345 320 Z" />
                     <!-- Sunburst Peak 2300m -->
-                    <path d="M 305 370 C 355 315, 495 320, 515 375 C 500 425, 400 435, 315 410 C 290 395, 290 380, 305 370 Z" />
+                    <path
+                        d="M 305 370 C 355 315, 495 320, 515 375 C 500 425, 400 435, 315 410 C 290 395, 290 380, 305 370 Z" />
 
                     <!-- Valley & Continental Divide Contours (2000m down to 1800m) -->
-                    <path d="M -50 200 C 80 170, 220 70, 440 75 C 660 80, 770 320, 900 325 C 1040 330, 1140 70, 1350 50 C 1480 35, 1560 140, 1660 120" />
-                    <path d="M -50 270 C 95 235, 245 130, 465 135 C 685 140, 785 370, 910 375 C 1055 380, 1170 130, 1375 110 C 1500 95, 1570 200, 1660 180" />
-                    <path d="M -50 360 C 115 320, 270 210, 495 215 C 695 220, 800 420, 920 425 C 1075 430, 1210 210, 1405 185 C 1520 160, 1580 270, 1660 250" />
-                    <path d="M -50 450 C 135 410, 290 410, 525 435 C 610 445, 620 475, 630 510 C 620 575, 610 635, 715 650 C 830 665, 940 655, 1030 640 C 1130 620, 1150 495, 1220 465 C 1340 415, 1450 350, 1550 320 C 1600 305, 1630 380, 1660 360" />
-                    <path d="M -50 600 C 130 585, 280 635, 465 675 C 650 715, 810 705, 950 675 C 1090 645, 1220 575, 1390 525 C 1520 485, 1580 575, 1660 555" />
-                    <path d="M -50 710 C 150 685, 310 735, 505 775 C 690 805, 840 785, 980 745 C 1130 695, 1250 645, 1410 605 C 1540 565, 1590 665, 1660 645" />
-                    <path d="M -50 820 C 170 795, 330 835, 535 865 C 720 895, 870 865, 1010 825 C 1160 775, 1280 725, 1430 685 C 1550 655, 1600 755, 1660 735" />
+                    <path
+                        d="M -50 200 C 80 170, 220 70, 440 75 C 660 80, 770 320, 900 325 C 1040 330, 1140 70, 1350 50 C 1480 35, 1560 140, 1660 120" />
+                    <path
+                        d="M -50 270 C 95 235, 245 130, 465 135 C 685 140, 785 370, 910 375 C 1055 380, 1170 130, 1375 110 C 1500 95, 1570 200, 1660 180" />
+                    <path
+                        d="M -50 360 C 115 320, 270 210, 495 215 C 695 220, 800 420, 920 425 C 1075 430, 1210 210, 1405 185 C 1520 160, 1580 270, 1660 250" />
+                    <path
+                        d="M -50 450 C 135 410, 290 410, 525 435 C 610 445, 620 475, 630 510 C 620 575, 610 635, 715 650 C 830 665, 940 655, 1030 640 C 1130 620, 1150 495, 1220 465 C 1340 415, 1450 350, 1550 320 C 1600 305, 1630 380, 1660 360" />
+                    <path
+                        d="M -50 600 C 130 585, 280 635, 465 675 C 650 715, 810 705, 950 675 C 1090 645, 1220 575, 1390 525 C 1520 485, 1580 575, 1660 555" />
+                    <path
+                        d="M -50 710 C 150 685, 310 735, 505 775 C 690 805, 840 785, 980 745 C 1130 695, 1250 645, 1410 605 C 1540 565, 1590 665, 1660 645" />
+                    <path
+                        d="M -50 820 C 170 795, 330 835, 535 865 C 720 895, 870 865, 1010 825 C 1160 775, 1280 725, 1430 685 C 1550 655, 1600 755, 1660 735" />
                 </g>
 
                 <!-- ═══════════════════════════════════════════════════════════════
                      5. MASTER INDEX CONTOURS (BOLDER 300m INTERVALS)
                      ═══════════════════════════════════════════════════════════════ -->
-                <g stroke="url(#topo-grad)" stroke-width="1.45" opacity="0.62" stroke-linecap="round" stroke-linejoin="round">
+                <g stroke="url(#topo-grad)" stroke-width="1.45" opacity="0.62" stroke-linecap="round"
+                    stroke-linejoin="round">
                     <!-- Mt Assiniboine 3300m Index Contour -->
-                    <path d="M 1000 220 C 1030 190, 1115 195, 1130 225 C 1120 255, 1065 260, 1010 245 C 990 235, 990 225, 1000 220 Z" />
+                    <path
+                        d="M 1000 220 C 1030 190, 1115 195, 1130 225 C 1120 255, 1065 260, 1010 245 C 990 235, 990 225, 1000 220 Z" />
                     <!-- Mt Assiniboine 3000m Index Contour -->
-                    <path d="M 940 285 C 995 230, 1195 235, 1220 290 C 1200 350, 1085 355, 970 330 C 920 310, 920 290, 940 285 Z" />
+                    <path
+                        d="M 940 285 C 995 230, 1195 235, 1220 290 C 1200 350, 1085 355, 970 330 C 920 310, 920 290, 940 285 Z" />
                     <!-- Mt Assiniboine 2700m Index Contour -->
-                    <path d="M 870 365 C 950 275, 1290 280, 1330 370 C 1300 460, 1125 465, 915 430 C 850 400, 850 370, 870 365 Z" />
+                    <path
+                        d="M 870 365 C 950 275, 1290 280, 1330 370 C 1300 460, 1125 465, 915 430 C 850 400, 850 370, 870 365 Z" />
                     <!-- Mt Assiniboine 2400m Index Contour -->
-                    <path d="M 795 460 C 900 335, 1395 340, 1450 470 C 1410 595, 1165 600, 845 550 C 760 510, 760 470, 795 460 Z" />
+                    <path
+                        d="M 795 460 C 900 335, 1395 340, 1450 470 C 1410 595, 1165 600, 845 550 C 760 510, 760 470, 795 460 Z" />
                     <!-- Sunburst Peak 2600m Index -->
-                    <path d="M 365 300 C 385 275, 435 278, 445 305 C 435 330, 390 335, 365 325 C 352 318, 352 308, 365 300 Z" />
+                    <path
+                        d="M 365 300 C 385 275, 435 278, 445 305 C 435 330, 390 335, 365 325 C 352 318, 352 308, 365 300 Z" />
                     <!-- Sunburst Peak 2300m Index -->
-                    <path d="M 285 395 C 345 330, 520 335, 545 400 C 525 455, 410 465, 300 435 C 270 418, 270 405, 285 395 Z" />
+                    <path
+                        d="M 285 395 C 345 330, 520 335, 545 400 C 525 455, 410 465, 300 435 C 270 418, 270 405, 285 395 Z" />
                     <!-- Lake Magog Basin Rim 2160m Master Contour -->
-                    <path d="M -50 510 C 160 470, 270 480, 500 500 C 580 510, 600 570, 610 630 C 630 690, 730 715, 850 720 C 970 720, 1050 680, 1110 630 C 1180 560, 1270 450, 1430 410 C 1550 370, 1600 460, 1660 440" />
+                    <path
+                        d="M -50 510 C 160 470, 270 480, 500 500 C 580 510, 600 570, 610 630 C 630 690, 730 715, 850 720 C 970 720, 1050 680, 1110 630 C 1180 560, 1270 450, 1430 410 C 1550 370, 1600 460, 1660 440" />
                     <!-- Valley Approach 1800m Index -->
-                    <path d="M -50 900 C 180 875, 350 915, 560 945 C 750 975, 900 935, 1040 885 C 1190 835, 1310 785, 1460 745 C 1580 715, 1620 815, 1660 795" />
+                    <path
+                        d="M -50 900 C 180 875, 350 915, 560 945 C 750 975, 900 935, 1040 885 C 1190 835, 1310 785, 1460 745 C 1580 715, 1620 815, 1660 795" />
                 </g>
 
                 <!-- ═══════════════════════════════════════════════════════════════
                      6. RAZOR-SHARP KNIFE-EDGE NORTH RIDGE (ARÊTE)
                      The dramatic dividing line between golden light and alpine shadow
                      ═══════════════════════════════════════════════════════════════ -->
-                <path d="M 1060 160 Q 1000 280 940 400 T 860 550"
-                      stroke="url(#arete-light-grad)" stroke-width="2.2" stroke-linecap="round" class="ridge-arete-crest" />
+                <path d="M 1060 160 Q 1000 280 940 400 T 860 550" stroke="url(#arete-light-grad)" stroke-width="2.2"
+                    stroke-linecap="round" class="ridge-arete-crest" />
                 <!-- East Ridge Crest Line -->
-                <path d="M 1060 160 Q 1160 250 1260 360 T 1380 500"
-                      stroke="url(#topo-grad)" stroke-width="1.3" stroke-dasharray="5,6" opacity="0.60" />
+                <path d="M 1060 160 Q 1160 250 1260 360 T 1380 500" stroke="url(#topo-grad)" stroke-width="1.3"
+                    stroke-dasharray="5,6" opacity="0.60" />
                 <!-- Sunburst Peak Sharp Arête -->
-                <path d="M 400 260 Q 400 370 400 490"
-                      stroke="url(#arete-light-grad)" stroke-width="1.6" stroke-linecap="round" opacity="0.80" />
+                <path d="M 400 260 Q 400 370 400 490" stroke="url(#arete-light-grad)" stroke-width="1.6"
+                    stroke-linecap="round" opacity="0.80" />
 
                 <!-- ═══════════════════════════════════════════════════════════════
                      7. SUMMIT ALPENGLOW PINNACLE BEACON & LABELS
@@ -280,7 +315,8 @@
                 <g class="summit-beacon">
                     <polygon points="1060,146 1068,162 1052,162" fill="var(--warm-accent)" opacity="0.95" />
                     <circle cx="1060" cy="155" r="2.2" fill="#fff" />
-                    <circle cx="1060" cy="155" r="14" fill="var(--warm-accent)" opacity="0.35" filter="url(#glow-blur)" />
+                    <circle cx="1060" cy="155" r="14" fill="var(--warm-accent)" opacity="0.35"
+                        filter="url(#glow-blur)" />
                 </g>
 
                 <!-- Topographic Map Elevation Spot Heights & Text (Minimalist Monospace) -->
@@ -288,13 +324,17 @@
                     <!-- Mount Assiniboine Summit Marker -->
                     <text x="1078" y="152" font-size="10.5" font-weight="700">▲ 3618m · MT. ASSINIBOINE</text>
                     <text x="1078" y="165" font-size="7.5" opacity="0.85">11,870 FT · "MATTERHORN OF THE ROCKIES"</text>
-                    <text x="910" y="320" font-size="8" font-style="italic" opacity="0.7" transform="rotate(-34, 910, 320)">NORTH RIDGE ARÊTE ➔</text>
+                    <text x="910" y="320" font-size="8" font-style="italic" opacity="0.7"
+                        transform="rotate(-34, 910, 320)">NORTH RIDGE ARÊTE ➔</text>
 
                     <!-- Lake Magog Center Marker & Label -->
                     <circle cx="760" cy="615" r="2.5" fill="var(--cool-accent-bright)" opacity="0.95" />
-                    <text x="760" y="638" font-size="10" font-weight="700" text-anchor="middle" fill="var(--cool-accent-bright)">LAKE MAGOG · ELEV 2160m</text>
-                    <text x="760" y="652" font-size="7.5" text-anchor="middle" fill="var(--cool-accent)" opacity="0.88">ALPINE GLACIAL BASIN · 7087 FT</text>
-                    <text x="460" y="630" font-size="7.5" fill="var(--cool-accent)" opacity="0.8" transform="rotate(22, 460, 630)">➔ MAGOG CREEK</text>
+                    <text x="760" y="638" font-size="10" font-weight="700" text-anchor="middle"
+                        fill="var(--cool-accent-bright)">LAKE MAGOG · ELEV 2160m</text>
+                    <text x="760" y="652" font-size="7.5" text-anchor="middle" fill="var(--cool-accent)"
+                        opacity="0.88">ALPINE GLACIAL BASIN · 7087 FT</text>
+                    <text x="460" y="630" font-size="7.5" fill="var(--cool-accent)" opacity="0.8"
+                        transform="rotate(22, 460, 630)">➔ MAGOG CREEK</text>
 
                     <!-- Sunburst Peak Label -->
                     <path d="M 400 252 L 405 262 L 395 262 Z" fill="var(--warm-accent)" opacity="0.9" />
@@ -331,15 +371,20 @@
                 </g>
 
                 <!-- Surveyor Geodetic Header & Datum -->
-                <g fill="url(#topo-grad)" font-family="var(--font-mono)" font-size="8" letter-spacing="0.1em" opacity="0.48">
+                <g fill="url(#topo-grad)" font-family="var(--font-mono)" font-size="8" letter-spacing="0.1em"
+                    opacity="0.48">
                     <text x="105" y="63">50°52'N · 115°39'W · CONTINENTAL DIVIDE</text>
                     <text x="1270" y="63">MT. ASSINIBOINE PROVINCIAL PARK · BC</text>
                     <text x="105" y="933">TOPOGRAPHIC RELIEF DATUM: CGVD2013 · MSL</text>
                     <text x="1270" y="920">CONTOUR INTERVAL: 100m (INDEX 300m)</text>
-                    <line x1="1270" y1="932" x2="1490" y2="932" stroke="url(#topo-grad)" stroke-width="1.2" opacity="0.5" />
-                    <line x1="1270" y1="928" x2="1270" y2="936" stroke="url(#topo-grad)" stroke-width="1.2" opacity="0.5" />
-                    <line x1="1380" y1="928" x2="1380" y2="936" stroke="url(#topo-grad)" stroke-width="1.2" opacity="0.5" />
-                    <line x1="1490" y1="928" x2="1490" y2="936" stroke="url(#topo-grad)" stroke-width="1.2" opacity="0.5" />
+                    <line x1="1270" y1="932" x2="1490" y2="932" stroke="url(#topo-grad)" stroke-width="1.2"
+                        opacity="0.5" />
+                    <line x1="1270" y1="928" x2="1270" y2="936" stroke="url(#topo-grad)" stroke-width="1.2"
+                        opacity="0.5" />
+                    <line x1="1380" y1="928" x2="1380" y2="936" stroke="url(#topo-grad)" stroke-width="1.2"
+                        opacity="0.5" />
+                    <line x1="1490" y1="928" x2="1490" y2="936" stroke="url(#topo-grad)" stroke-width="1.2"
+                        opacity="0.5" />
                     <text x="1267" y="946">0</text>
                     <text x="1373" y="946">1 km</text>
                     <text x="1480" y="946">2 km</text>
@@ -361,10 +406,10 @@
                 <span title="Last updated">Updated <time datetime="2026-11-15">Nov 2026</time></span>
                 <span><a href="#contact">Contact</a></span>
                 <div class="theme-picker" aria-label="Color theme">
-                    <button class="theme-swatch swatch-green active" data-theme="green" title="Living Green 🌿 (Field of Greens)"
-                        aria-label="Living Green theme"></button>
-                    <button class="theme-swatch swatch-golden" data-theme="golden" title="Golden Solarpunk ☀️ (The Ideal Future)"
-                        aria-label="Golden Solarpunk theme"></button>
+                    <button class="theme-swatch swatch-green active" data-theme="green"
+                        title="Living Green ◈ (Field of Greens)" aria-label="Living Green theme"></button>
+                    <button class="theme-swatch swatch-golden" data-theme="golden"
+                        title="Golden Solarpunk ☀️ (The Ideal Future)" aria-label="Golden Solarpunk theme"></button>
                     <button class="theme-swatch swatch-moss" data-theme="moss" title="Dusk Moss 🌑 (Twilight Solarpunk)"
                         aria-label="Dusk Moss theme"></button>
                 </div>
@@ -400,19 +445,64 @@
         <!-- Tone-of-Voice Slider (Inspired by getcoleman.com) -->
         <section id="about" class="tone-widget" aria-label="Tone of voice selector">
             <div class="tone-header">
-                <span class="tone-label-prefix">Signal Filter / Tone:</span>
+                <span class="tone-label-prefix">Calibrate Sohan:</span>
                 <span id="tone-badge" class="tone-badge" style="color: var(--cyan); border-color: var(--cyan);">AGENTIC
                     · Product Engineer</span>
             </div>
             <div class="slider-container">
-                <input type="range" id="tone-slider" class="tone-slider" min="0" max="4" value="2" step="1"
-                    aria-label="Adjust bio tone from Plain English to Full Jargon">
-                <div class="slider-ticks">
-                    <span>Human‑First</span>
-                    <span>AI‑Assisted</span>
-                    <span>Agentic</span>
-                    <span>Hype‑Cycle Rider</span>
-                    <span>AI Delusions</span>
+                <div class="slider-row">
+                    <button type="button" id="tone-prev" class="slider-step-btn" aria-label="Previous tone"
+                        title="Previous tone">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="slider-core">
+                        <div class="slider-track-wrap">
+                            <input type="range" id="tone-slider" class="tone-slider" min="0" max="4" value="2" step="1"
+                                aria-label="Adjust bio tone from Plain English to Full Jargon">
+                        </div>
+                        <div class="slider-ticks" role="tablist" aria-label="Bio tone presets">
+                            <button type="button" class="slider-tick" data-val="0" role="tab" aria-selected="false"
+                                aria-label="Human-First tone">
+                                <span class="tick-pip"></span>
+                                <span class="tick-label"><span class="tick-full">Human‑First</span><span
+                                        class="tick-short">Human</span></span>
+                            </button>
+                            <button type="button" class="slider-tick" data-val="1" role="tab" aria-selected="false"
+                                aria-label="AI-Assisted tone">
+                                <span class="tick-pip"></span>
+                                <span class="tick-label"><span class="tick-full">AI‑Assisted</span><span
+                                        class="tick-short">AI</span></span>
+                            </button>
+                            <button type="button" class="slider-tick active" data-val="2" role="tab"
+                                aria-selected="true" aria-label="Agentic tone">
+                                <span class="tick-pip"></span>
+                                <span class="tick-label"><span class="tick-full">Agentic</span><span
+                                        class="tick-short">Agentic</span></span>
+                            </button>
+                            <button type="button" class="slider-tick" data-val="3" role="tab" aria-selected="false"
+                                aria-label="Hype-Cycle Rider tone">
+                                <span class="tick-pip"></span>
+                                <span class="tick-label"><span class="tick-full">Hype‑Cycle Rider</span><span
+                                        class="tick-short">Hype</span></span>
+                            </button>
+                            <button type="button" class="slider-tick" data-val="4" role="tab" aria-selected="false"
+                                aria-label="AI Delusions tone">
+                                <span class="tick-pip"></span>
+                                <span class="tick-label"><span class="tick-full">AI Delusions</span><span
+                                        class="tick-short">Delusion</span></span>
+                            </button>
+                        </div>
+                    </div>
+                    <button type="button" id="tone-next" class="slider-step-btn" aria-label="Next tone"
+                        title="Next tone">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
                 </div>
             </div>
             <div class="dynamic-bio-box">
@@ -430,6 +520,7 @@
         <!-- Life & Career Timeline (Story Narrative) -->
         <section id="timeline" class="section">
             <h2 class="section-title"><span class="hash">#</span> Life & Career Timeline</h2>
+            <div class="timeline-panel">
             <div class="timeline">
 
                 <!-- 2023 - Present: Humi -->
@@ -518,6 +609,7 @@
             <div class="timeline-note">
                 Looking for formal job descriptions, corporate metrics, or full employment history? Grab the <a
                     href="Sohan_Chowdhury_resume.pdf" target="_blank" rel="noopener">formal PDF resume ↗</a>.
+            </div>
             </div>
         </section>
 
@@ -679,8 +771,7 @@
                                 <div class="skill-track">
                                     <div class="skill-fill zero" style="width: 0%;"></div>
                                 </div>
-                                <span class="skill-comment">Still don't know it. (The spoiler from 2016 remains
-                                    true.)</span>
+                                <span class="skill-comment">Still don't know it.</span>
                             </div>
 
                         </div>
@@ -738,9 +829,13 @@
     <!-- Tone of Voice Slider Script (Inspired by getcoleman.com) -->
     <script type="text/javascript">
         (function () {
+            var widget = document.getElementById('about');
             var slider = document.getElementById('tone-slider');
             var badge = document.getElementById('tone-badge');
             var bio = document.getElementById('dynamic-bio');
+            var prevBtn = document.getElementById('tone-prev');
+            var nextBtn = document.getElementById('tone-next');
+            var tickBtns = document.querySelectorAll('.slider-tick');
 
             var tones = [
                 {
@@ -751,7 +846,7 @@
                 {
                     badge: "AI‑ASSISTED · Software Engineer",
                     badgeColor: "var(--yellow)",
-                    text: "Software Engineer with 8+ years shipping production backends. I lean on AI‑assisted tooling to accelerate legacy modernization—rebuilt a sync notification system into real‑time async queues, crafted a micro‑ORM to tame MariaDB 5.5 quirks, and built an AI labour‑forecasting engine processing 1M+ data points per roster. UBC MSc. Copilot tab‑completes my tests."
+                    text: "Software Engineer with 8+ years shipping production backends. I lean on AI‑assisted tooling to accelerate legacy modernization—rebuilt a sync notification system into real‑time async queues, crafted a micro‑ORM to tame MariaDB 5.5 quirks, and built an AI labour‑forecasting engine processing 1M+ data points per roster."
                 },
                 {
                     badge: "AGENTIC · Product Engineer",
@@ -759,23 +854,43 @@
                     text: "Product‑minded Software Engineer who sits with stakeholders, translates fuzzy business problems into concrete architecture, and ships the solution to prod. Took an AI labour‑forecasting engine from ‘wouldn’t it be nice if’ to 1M+ data points in production delivering 14% cost savings. Modernized legacy sync systems, expanded TAM 2‑3x through POS integrations I scoped, designed, and delivered end‑to‑end. My agents handle the boilerplate; I handle ‘what customer problem should we solve to make the most business impact?’"
                 },
                 {
-                    badge: "HYPE‑CYCLE RIDER · AI‑First Senior Engineer",
+                    badge: "HYPE‑CYCLE RIDER · AI‑First Engineer",
                     badgeColor: "var(--blue)",
                     text: "Product Minded Software Engineer leaning full-tilt into the frontier of AI driven agentic software development. 8+ years designing high-scale backends, now supercharged with agentic orchestration, context-aware reasoning pipelines, and real-time inference layers. Took our predictive labor‑forecasting engine from concept to production—running automated schedule synthesis across 1M+ data points to unlock a 14% efficiency gain. Between tuning retrieval loops, deploying event-driven microservices, and using autonomous coding agents to 10x developer velocity."
                 },
                 {
                     badge: "AI DELUSIONS · AGI Intern",
                     badgeColor: "var(--magenta)",
-                    text: "I am a sentient product‑engineering mesh that autonomously ingests stakeholder vibes, synthesizes cross‑functional quantum requirements, and manifests production‑ready code through sheer prompt‑force. I don’t ‘talk to stakeholders’, I telepathically align their OKRs. My forecasting engine doesn’t predict labour costs, it predicts the CEO’s next pivot. I have mass‑replaced the entire product org with 47 autonomous agents. UBC gave me a mass‑degree."
+                    text: "I am a sentient product‑engineering mesh that autonomously ingests stakeholder vibes, synthesizes cross‑functional quantum requirements, and manifests production‑ready code through sheer prompt‑force. I don’t ‘talk to stakeholders’, I telepathically align their OKRs. My forecasting engine doesn’t predict labour costs, it predicts the CEO’s next pivot. I have mass‑replaced the entire product org with 47 autonomous agents."
                 }
             ];
 
-            function updateTone(idx, immediate) {
+            function setTone(idx, immediate) {
                 var tone = tones[idx];
                 if (!tone) return;
+
+                if (parseInt(slider.value, 10) !== idx) {
+                    slider.value = idx;
+                }
+
+                if (widget) {
+                    widget.style.setProperty('--tone-color', tone.badgeColor);
+                }
+
                 badge.innerText = tone.badge;
                 badge.style.color = tone.badgeColor;
                 badge.style.borderColor = tone.badgeColor;
+
+                if (prevBtn) prevBtn.disabled = (idx === 0);
+                if (nextBtn) nextBtn.disabled = (idx === tones.length - 1);
+
+                tickBtns.forEach(function (btn) {
+                    var val = parseInt(btn.getAttribute('data-val'), 10);
+                    var isActive = (val === idx);
+                    btn.classList.toggle('active', isActive);
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+
                 if (immediate) {
                     bio.innerText = tone.text;
                     bio.style.opacity = '1';
@@ -789,14 +904,63 @@
             }
 
             slider.addEventListener('input', function () {
-                updateTone(parseInt(this.value, 10), false);
+                setTone(parseInt(this.value, 10), false);
             });
             slider.addEventListener('change', function () {
-                updateTone(parseInt(this.value, 10), false);
+                setTone(parseInt(this.value, 10), false);
             });
 
-            // Initialize on page load to guarantee text matches slider position
-            updateTone(parseInt(slider.value, 10), true);
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function () {
+                    var curr = parseInt(slider.value, 10);
+                    if (curr > 0) setTone(curr - 1, false);
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function () {
+                    var curr = parseInt(slider.value, 10);
+                    if (curr < tones.length - 1) setTone(curr + 1, false);
+                });
+            }
+
+            tickBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var val = parseInt(this.getAttribute('data-val'), 10);
+                    if (!isNaN(val)) setTone(val, false);
+                });
+            });
+
+            // Touch swipe gesture on mobile
+            if (widget) {
+                var touchStartX = 0;
+                var touchStartY = 0;
+
+                widget.addEventListener('touchstart', function (e) {
+                    if (e.touches.length === 1) {
+                        touchStartX = e.touches[0].clientX;
+                        touchStartY = e.touches[0].clientY;
+                    }
+                }, { passive: true });
+
+                widget.addEventListener('touchend', function (e) {
+                    if (e.changedTouches.length === 1) {
+                        var dx = e.changedTouches[0].clientX - touchStartX;
+                        var dy = e.changedTouches[0].clientY - touchStartY;
+                        // Minimum horizontal threshold: 45px and predominantly horizontal
+                        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+                            var curr = parseInt(slider.value, 10);
+                            if (dx < 0 && curr < tones.length - 1) {
+                                setTone(curr + 1, false);
+                            } else if (dx > 0 && curr > 0) {
+                                setTone(curr - 1, false);
+                            }
+                        }
+                    }
+                }, { passive: true });
+            }
+
+            // Initialize on page load
+            setTone(parseInt(slider.value, 10), true);
         })();
     </script>
 
@@ -843,16 +1007,16 @@
                         var doc = document.documentElement;
                         var total = doc.scrollHeight - window.innerHeight;
                         var p = total > 0 ? Math.min(Math.max((window.pageYOffset || doc.scrollTop) / total, 0), 1) : 0;
-                        
+
                         // Normalized progress (0 at top, 1 at bottom)
                         doc.style.setProperty('--scroll-p', p.toFixed(3));
-                        
+
                         // Opacity curves driving Sky Layers & Mt. Assiniboine Light & Shadow:
                         // Long morning sunrise (0 to 0.42), short high-noon midday (0.35 to 0.58), long sunset alpenglow (0.48 to 1.0)
                         var sunriseOp = Math.max(0, Math.min(1, (0.42 - p) / 0.35)).toFixed(3);
                         var middayOp = Math.max(0, Math.min(1, 1 - Math.abs(p - 0.45) * 3.5)).toFixed(3);
                         var sunsetOp = Math.max(0, Math.min(1, (p - 0.48) / 0.35)).toFixed(3);
-                        
+
                         doc.style.setProperty('--sunrise-op', sunriseOp);
                         doc.style.setProperty('--midday-op', middayOp);
                         doc.style.setProperty('--sunset-op', sunsetOp);
@@ -862,7 +1026,7 @@
                         doc.style.setProperty('--light-angle', lightAngle);
                         var shadowSkew = (-26 + p * 52).toFixed(1) + 'deg';
                         doc.style.setProperty('--shadow-skew', shadowSkew);
-                        
+
                         ticking = false;
                     });
                     ticking = true;

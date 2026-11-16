@@ -1,167 +1,695 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Days Left Of Your Life</title>
+    <title>Days Left Of Your Life · Solarpunk Life Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://sohanchy.com/daysleft/" />
+    <meta name="description"
+        content="A solarpunk life calendar and memento mori by Sohan Chowdhury. Visualize your lifespan in days under the sun, tracking days journeyed and days awaiting the dawn.">
+    <meta name="author" content="Sohan Chowdhury">
 
-    <link rel="stylesheet" href="bootstripped.min.css">
-    
+    <!-- OpenGraph / Social Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sohanchy.com/daysleft/">
+    <meta property="og:title" content="Days Left Of Your Life · Solarpunk Life Calendar">
+    <meta property="og:description"
+        content="A solarpunk meditation on time. Visualize your life in days under the sun.">
+    <meta property="og:image" content="https://sohanchy.com/res/mypic.jpg">
 
-    <style type="text/css">
-        body, .smooth-container { scroll-behavior: smooth }
-        body {
-            font-family: Helvetica, sans-serif;
-            margin: 40px auto;
-            max-width: 650px;
-            line-height: 1.6;
-            color: #444;
-            padding: 0 10px
-        }
-        header {
-            text-align: center;
-        }
-        
-        h1,
-        h2,
-        h3 {
-            line-height: 1.2
-        }
+    <!-- Solarpunk Stylesheets -->
+    <link rel="stylesheet" href="../res/style.css" type="text/css" media="all">
+    <link rel="stylesheet" href="daysleft.css" type="text/css" media="all">
 
-        .gridbox {
-            font-size: 1.5em;
-            text-align: center;
-        }
+    <!-- Restore saved theme before first paint -->
+    <script>
+        (function () { var t = localStorage.getItem('sp-theme'); if (t && t !== 'green') document.documentElement.setAttribute('data-theme', t) })();
+    </script>
 
-        .leftdays{
-            color: #27ae60;
+    <!-- Domain Canonical Redirect -->
+    <script type="text/javascript">
+        if (window.location.hostname === 'sohanchy.github.io') {
+            window.location.replace('https://sohanchy.com' + window.location.pathname);
         }
-        .gonedays{
-            color: #7f8c8d;
-        }
-    </style>
-
+    </script>
 </head>
 
 <body>
-    <header>
-        <h1>Enter Your Birthday</h1>
-        <input type="date" id="bday"><button onclick="bdayEntered()" type="button">Save</button>
 
-        <h2 id="main">Days Left Of Your Life</h1>
-        <h2 id="leftDaysCounter"></h2>
-    </header>
+    <!-- Visible Solarpunk Celestial Atmospheric Background (Sunrise -> Midday -> Sunset) -->
+    <div class="solarpunk-bg" aria-hidden="true">
+        <!-- 1. Sunrise Layer (Morning Golden Hour) -->
+        <div class="sp-layer sp-sunrise-layer">
+            <div class="sp-sunrise-sky"></div>
+        </div>
+        <!-- 2. Midday Layer (Short Photosynthetic Solar Tech) -->
+        <div class="sp-layer sp-midday-layer">
+            <div class="sp-midday-sky"></div>
+        </div>
+        <!-- 3. Sunset Layer (Evening Golden Hour into Dusk) -->
+        <div class="sp-layer sp-sunset-layer">
+            <div class="sp-sunset-sky"></div>
+        </div>
+        <!-- Golden Hour Directional Light: sweeps across the mountains as you scroll -->
+        <div class="sp-golden-light"></div>
+        <div class="sp-golden-spot"></div>
+        <div class="sp-grid"></div>
+        <svg class="sp-topo" viewBox="0 0 1600 1000" overflow="hidden" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <!-- Solarpunk Elevation Palette Gradient -->
+                <linearGradient id="topo-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="var(--contour-top)" stop-opacity="0.88" />
+                    <stop offset="45%" stop-color="var(--contour-mid)" stop-opacity="0.78" />
+                    <stop offset="100%" stop-color="var(--contour-bot)" stop-opacity="0.88" />
+                </linearGradient>
 
-    <div id="gridCalendar" class="gridbox">
+                <!-- Lake Magog Glacial Waters Gradient -->
+                <radialGradient id="lake-magog-rad" cx="50%" cy="45%" r="55%">
+                    <stop offset="0%" stop-color="var(--cool-accent-bright)" stop-opacity="0.28" />
+                    <stop offset="60%" stop-color="var(--cool-accent)" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="var(--accent)" stop-opacity="0.08" />
+                </radialGradient>
+
+                <!-- Lake Magog Golden Hour Water Reflection -->
+                <linearGradient id="lake-reflection-grad" x1="50%" y1="0%" x2="50%" y2="100%">
+                    <stop offset="0%" stop-color="var(--warm-accent)" stop-opacity="0.32" />
+                    <stop offset="50%" stop-color="var(--yellow)" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+                </linearGradient>
+
+                <!-- Mountain Facet: Golden Morning Sunlight (East face) -->
+                <linearGradient id="facet-gold-light" x1="20%" y1="10%" x2="90%" y2="90%">
+                    <stop offset="0%" stop-color="#fef08a" stop-opacity="0.82" />
+                    <stop offset="35%" stop-color="var(--warm-accent)" stop-opacity="0.70" />
+                    <stop offset="85%" stop-color="var(--warm-deep)" stop-opacity="0.55" />
+                    <stop offset="100%" stop-color="transparent" stop-opacity="0.1" />
+                </linearGradient>
+
+                <!-- Mountain Facet: Fiery Sunset Alpenglow (West face) -->
+                <linearGradient id="facet-alpenglow-light" x1="90%" y1="10%" x2="10%" y2="90%">
+                    <stop offset="0%" stop-color="#fed7aa" stop-opacity="0.88" />
+                    <stop offset="30%" stop-color="#f97316" stop-opacity="0.78" />
+                    <stop offset="70%" stop-color="var(--warm-accent)" stop-opacity="0.68" />
+                    <stop offset="100%" stop-color="#c2410c" stop-opacity="0.55" />
+                </linearGradient>
+
+                <!-- Mountain Facet: Deep Alpine Contrast Shadow -->
+                <linearGradient id="facet-shadow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#042f2e" stop-opacity="0.48" />
+                    <stop offset="50%" stop-color="#0f172a" stop-opacity="0.58" />
+                    <stop offset="100%" stop-color="#022c22" stop-opacity="0.45" />
+                </linearGradient>
+
+                <!-- Sweeping Mountain Cast Shadow across Valley & Lake -->
+                <linearGradient id="cast-shadow-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#042f2e" stop-opacity="0.55" />
+                    <stop offset="50%" stop-color="#0f172a" stop-opacity="0.38" />
+                    <stop offset="100%" stop-color="transparent" stop-opacity="0" />
+                </linearGradient>
+
+                <!-- Razor-sharp Knife-Edge Arête Highlight -->
+                <linearGradient id="arete-light-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+                    <stop offset="40%" stop-color="var(--warm-accent)" stop-opacity="0.85" />
+                    <stop offset="100%" stop-color="var(--yellow)" stop-opacity="0.60" />
+                </linearGradient>
+
+                <!-- Soft horizontal edge fade -->
+                <linearGradient id="topo-edge-fade" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="white" stop-opacity="0.25" />
+                    <stop offset="6%" stop-color="white" stop-opacity="1" />
+                    <stop offset="94%" stop-color="white" stop-opacity="1" />
+                    <stop offset="100%" stop-color="white" stop-opacity="0.25" />
+                </linearGradient>
+                <mask id="topo-edge-mask">
+                    <rect width="1600" height="1000" fill="url(#topo-edge-fade)" />
+                </mask>
+
+                <!-- Soft Blur Filters -->
+                <filter id="shadow-blur" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="12" />
+                </filter>
+                <filter id="glow-blur" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="8" />
+                </filter>
+            </defs>
+            <g mask="url(#topo-edge-mask)">
+
+                <!-- 1. SWEEPING MOUNTAIN CAST SHADOW -->
+                <g class="mountain-cast-shadow" filter="url(#shadow-blur)" pointer-events="none">
+                    <path d="M 1060 160 L 680 720 L 980 760 Z" fill="url(#cast-shadow-grad)" />
+                    <path d="M 400 260 L 260 640 L 440 680 Z" fill="url(#cast-shadow-grad)" opacity="0.7" />
+                </g>
+
+                <!-- 2. LAKE MAGOG & SHORELINE -->
+                <g class="lake-magog-basin">
+                    <path d="M 540 580 C 580 540, 680 525, 780 535 C 870 545, 940 575, 960 620 C 970 665, 910 710, 830 725 C 740 740, 640 720, 580 690 C 530 665, 510 615, 540 580 Z"
+                          fill="url(#lake-magog-rad)" stroke="var(--cool-accent)" stroke-width="1.4" opacity="0.85" />
+                    <path d="M 580 595 C 610 565, 690 550, 770 560 C 840 570, 900 595, 915 630 C 925 660, 880 690, 810 700 C 740 710, 660 695, 615 675 C 575 655, 560 620, 580 595 Z"
+                          stroke="var(--cool-accent)" stroke-width="0.85" stroke-dasharray="3,3" opacity="0.45" />
+                    <ellipse cx="780" cy="620" rx="190" ry="70" fill="url(#lake-reflection-grad)" class="lake-water-reflection" filter="url(#glow-blur)" />
+                    <path d="M 380 490 C 410 470, 460 470, 480 495 C 495 520, 470 545, 430 550 C 390 555, 360 535, 365 510 C 370 498, 375 492, 380 490 Z"
+                          fill="url(#lake-magog-rad)" stroke="var(--cool-accent)" stroke-width="1.1" opacity="0.75" />
+                    <path d="M 540 580 C 470 595, 410 635, 340 695 C 270 755, 200 840, 110 920 C 50 970, -20 990, -50 1000"
+                          stroke="var(--cool-accent)" stroke-width="1.3" opacity="0.55" />
+                </g>
+
+                <!-- 3. MOUNT ASSINIBOINE SHADED RELIEF FACETS -->
+                <g class="topo-hillshade" pointer-events="none">
+                    <g filter="url(#shadow-blur)">
+                        <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 1120 580 L 1380 520 Q 1260 360 1160 250 Z"
+                              fill="url(#facet-gold-light)" class="facet-east-lit" />
+                        <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 1120 580 L 1380 520 Q 1260 360 1160 250 Z"
+                              fill="url(#facet-shadow-grad)" class="facet-east-shadow" />
+                    </g>
+                    <g filter="url(#shadow-blur)">
+                        <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 720 560 L 660 530 Q 780 380 920 250 Z"
+                              fill="url(#facet-shadow-grad)" class="facet-west-shadow" />
+                        <path d="M 1060 160 Q 1000 280 940 400 T 860 550 L 720 560 L 660 530 Q 780 380 920 250 Z"
+                              fill="url(#facet-alpenglow-light)" class="facet-west-lit" />
+                    </g>
+                    <g filter="url(#shadow-blur)">
+                        <path d="M 400 260 Q 360 340 310 430 T 250 540 L 400 560 L 470 510 Q 440 380 400 260 Z"
+                              fill="url(#facet-gold-light)" class="facet-east-lit" opacity="0.65" />
+                        <path d="M 400 260 Q 450 340 500 440 T 560 530 L 470 510 L 400 560 Q 420 380 400 260 Z"
+                              fill="url(#facet-alpenglow-light)" class="facet-west-lit" opacity="0.75" />
+                    </g>
+                </g>
+
+                <!-- 4. PRECISION TOPOGRAPHIC CONTOURS -->
+                <g stroke="url(#topo-grad)" stroke-width="0.85" opacity="0.32" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M 1040 180 C 1050 170, 1075 172, 1080 185 C 1075 198, 1055 200, 1040 195 C 1032 190, 1032 182, 1040 180 Z" />
+                    <path d="M 1020 205 C 1040 185, 1095 188, 1105 210 C 1100 230, 1060 235, 1025 225 C 1010 218, 1010 210, 1020 205 Z" />
+                    <path d="M 985 240 C 1025 200, 1140 205, 1155 245 C 1145 285, 1070 290, 1000 275 C 970 262, 970 248, 985 240 Z" />
+                    <path d="M 960 265 C 1010 215, 1170 220, 1190 270 C 1175 320, 1080 325, 985 305 C 945 290, 945 272, 960 265 Z" />
+                    <path d="M 920 310 C 980 245, 1225 250, 1255 315 C 1235 385, 1100 390, 955 365 C 900 345, 900 320, 920 310 Z" />
+                    <path d="M 895 340 C 965 260, 1260 265, 1295 345 C 1270 425, 1115 430, 935 400 C 875 375, 875 348, 895 340 Z" />
+                    <path d="M 850 395 C 935 295, 1320 300, 1365 400 C 1335 500, 1140 505, 895 470 C 825 440, 825 405, 850 395 Z" />
+                    <path d="M 825 430 C 915 315, 1360 320, 1410 435 C 1375 545, 1155 550, 870 510 C 795 475, 795 438, 825 430 Z" />
+                    <path d="M 770 495 C 880 355, 1435 360, 1495 500 C 1450 635, 1180 640, 820 590 C 730 550, 730 508, 770 495 Z" />
+                    <path d="M 380 280 C 390 270, 415 272, 420 285 C 415 295, 395 298, 380 292 C 372 288, 372 282, 380 280 Z" />
+                    <path d="M 345 320 C 375 285, 455 288, 465 325 C 455 355, 390 360, 350 345 C 335 335, 335 325, 345 320 Z" />
+                    <path d="M 305 370 C 355 315, 495 320, 515 375 C 500 425, 400 435, 315 410 C 290 395, 290 380, 305 370 Z" />
+                    <path d="M -50 200 C 80 170, 220 70, 440 75 C 660 80, 770 320, 900 325 C 1040 330, 1140 70, 1350 50 C 1480 35, 1560 140, 1660 120" />
+                    <path d="M -50 270 C 95 235, 245 130, 465 135 C 685 140, 785 370, 910 375 C 1055 380, 1170 130, 1375 110 C 1500 95, 1570 200, 1660 180" />
+                    <path d="M -50 360 C 115 320, 270 210, 495 215 C 695 220, 800 420, 920 425 C 1075 430, 1210 210, 1405 185 C 1520 160, 1580 270, 1660 250" />
+                    <path d="M -50 450 C 135 410, 290 410, 525 435 C 610 445, 620 475, 630 510 C 620 575, 610 635, 715 650 C 830 665, 940 655, 1030 640 C 1130 620, 1150 495, 1220 465 C 1340 415, 1450 350, 1550 320 C 1600 305, 1630 380, 1660 360" />
+                    <path d="M -50 600 C 130 585, 280 635, 465 675 C 650 715, 810 705, 950 675 C 1090 645, 1220 575, 1390 525 C 1520 485, 1580 575, 1660 555" />
+                    <path d="M -50 710 C 150 685, 310 735, 505 775 C 690 805, 840 785, 980 745 C 1130 695, 1250 645, 1410 605 C 1540 565, 1590 665, 1660 645" />
+                    <path d="M -50 820 C 170 795, 330 835, 535 865 C 720 895, 870 865, 1010 825 C 1160 775, 1280 725, 1430 685 C 1550 655, 1600 755, 1660 735" />
+                </g>
+
+                <!-- 5. MASTER INDEX CONTOURS -->
+                <g stroke="url(#topo-grad)" stroke-width="1.45" opacity="0.62" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M 1000 220 C 1030 190, 1115 195, 1130 225 C 1120 255, 1065 260, 1010 245 C 990 235, 990 225, 1000 220 Z" />
+                    <path d="M 940 285 C 995 230, 1195 235, 1220 290 C 1200 350, 1085 355, 970 330 C 920 310, 920 290, 940 285 Z" />
+                    <path d="M 870 365 C 950 275, 1290 280, 1330 370 C 1300 460, 1125 465, 915 430 C 850 400, 850 370, 870 365 Z" />
+                    <path d="M 795 460 C 900 335, 1395 340, 1450 470 C 1410 595, 1165 600, 845 550 C 760 510, 760 470, 795 460 Z" />
+                    <path d="M 365 300 C 385 275, 435 278, 445 305 C 435 330, 390 335, 365 325 C 352 318, 352 308, 365 300 Z" />
+                    <path d="M 285 395 C 345 330, 520 335, 545 400 C 525 455, 410 465, 300 435 C 270 418, 270 405, 285 395 Z" />
+                    <path d="M -50 510 C 160 470, 270 480, 500 500 C 580 510, 600 570, 610 630 C 630 690, 730 715, 850 720 C 970 720, 1050 680, 1110 630 C 1180 560, 1270 450, 1430 410 C 1550 370, 1600 460, 1660 440" />
+                    <path d="M -50 900 C 180 875, 350 915, 560 945 C 750 975, 900 935, 1040 885 C 1190 835, 1310 785, 1460 745 C 1580 715, 1620 815, 1660 795" />
+                </g>
+
+                <!-- 6. NORTH RIDGE (ARÊTE) -->
+                <path d="M 1060 160 Q 1000 280 940 400 T 860 550"
+                      stroke="url(#arete-light-grad)" stroke-width="2.2" stroke-linecap="round" class="ridge-arete-crest" />
+                <path d="M 1060 160 Q 1160 250 1260 360 T 1380 500"
+                      stroke="url(#topo-grad)" stroke-width="1.3" stroke-dasharray="5,6" opacity="0.60" />
+                <path d="M 400 260 Q 400 370 400 490"
+                      stroke="url(#arete-light-grad)" stroke-width="1.6" stroke-linecap="round" opacity="0.80" />
+
+                <!-- 7. SUMMIT BEACON & LABELS -->
+                <g class="summit-beacon">
+                    <polygon points="1060,146 1068,162 1052,162" fill="var(--warm-accent)" opacity="0.95" />
+                    <circle cx="1060" cy="155" r="2.2" fill="#fff" />
+                    <circle cx="1060" cy="155" r="14" fill="var(--warm-accent)" opacity="0.35" filter="url(#glow-blur)" />
+                </g>
+
+                <g fill="url(#topo-grad)" font-family="var(--font-mono)" letter-spacing="0.12em" opacity="0.75">
+                    <text x="1078" y="152" font-size="10.5" font-weight="700">▲ 3618m · MT. ASSINIBOINE</text>
+                    <text x="1078" y="165" font-size="7.5" opacity="0.85">11,870 FT · "MATTERHORN OF THE ROCKIES"</text>
+                    <circle cx="760" cy="615" r="2.5" fill="var(--cool-accent-bright)" opacity="0.95" />
+                    <text x="760" y="638" font-size="10" font-weight="700" text-anchor="middle" fill="var(--cool-accent-bright)">LAKE MAGOG · ELEV 2160m</text>
+                </g>
+            </g>
+        </svg>
     </div>
-    
+
+    <div class="container">
+
+        <!-- Top Status Bar / Theme Switcher -->
+        <header class="status-bar">
+            <div class="beacon">
+                <span class="pulse-dot" title="Active"></span>
+                <span>Solar Life Calendar · Memento Mori</span>
+            </div>
+            <div class="status-meta">
+                <span><a href="../">← sohanchy.com</a></span>
+                <span title="Today's Date">Today: <time id="todayLabel"></time></span>
+                <div class="theme-picker" aria-label="Color theme">
+                    <button class="theme-swatch swatch-green active" data-theme="green" title="Living Green 🌿 (Field of Greens)"
+                        aria-label="Living Green theme"></button>
+                    <button class="theme-swatch swatch-golden" data-theme="golden" title="Golden Solarpunk ☀️ (The Ideal Future)"
+                        aria-label="Golden Solarpunk theme"></button>
+                    <button class="theme-swatch swatch-moss" data-theme="moss" title="Dusk Moss 🌑 (Twilight Solarpunk)"
+                        aria-label="Dusk Moss theme"></button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Configuration Card -->
+        <section class="controls-card">
+            <div class="controls-header">
+                <h1 class="controls-title">Days Left Of Your Life</h1>
+                <p class="controls-subtitle">
+                    A solarpunk meditation on mortality and the present moment. Each box marks one day under the sun—those already lived, and those waiting to dawn.
+                </p>
+            </div>
+
+            <form class="form-row" onsubmit="event.preventDefault(); bdayEntered();">
+                <div class="form-group">
+                    <label for="bday" class="form-label">Date of Birth</label>
+                    <input type="date" id="bday" class="sp-input" required>
+                </div>
+
+                <div class="form-group" style="max-width: 170px;">
+                    <label for="lifeExp" class="form-label">Lifespan Horizon</label>
+                    <input type="number" id="lifeExp" class="sp-input" value="80" min="40" max="115" step="1" title="Expected lifespan in years">
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" id="saveBtn" class="sp-btn">
+                        <span>Render Calendar</span> ➔
+                    </button>
+                    <button type="button" id="todayScrollBtn" class="sp-btn sp-btn-secondary" onclick="scrollToToday()" style="display: none;">
+                        <span>Jump to Today</span> ↓
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Whole life, one viewport: one square is one week -->
+        <section id="lifeGlance" class="life-glance" aria-label="Life in weeks">
+            <div class="life-glance-card">
+                <p id="weeksLeftCount" class="life-glance-count">0 weeks left</p>
+                <p class="life-glance-caption">Each square is one week.</p>
+                <div class="life-glance-row">
+                    <div id="lifeGlanceLabels" class="life-glance-labels" aria-hidden="true"></div>
+                    <div id="lifeGlanceGrid" class="life-glance-grid" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Stats Dashboard -->
+        <section id="statsDashboard" class="stats-dashboard" aria-label="Life statistics">
+            <div class="stats-grid">
+                <div class="stat-tile tile-gone">
+                    <div class="stat-caption">Days Journeyed</div>
+                    <div id="daysLivedCount" class="stat-num">0</div>
+                    <div id="daysLivedPct" class="stat-detail">0% of life completed</div>
+                </div>
+
+                <div class="stat-tile tile-left">
+                    <div class="stat-caption">Days Remaining</div>
+                    <div id="daysLeftCount" class="stat-num">0</div>
+                    <div id="daysLeftDetail" class="stat-detail">Under the sun</div>
+                </div>
+
+                <div class="stat-tile tile-age">
+                    <div class="stat-caption">Current Age</div>
+                    <div id="currentAge" class="stat-num">0.0</div>
+                    <div id="ageDetail" class="stat-detail">Solar years</div>
+                </div>
+
+                <div class="stat-tile tile-total">
+                    <div class="stat-caption">Total Horizon</div>
+                    <div id="totalDaysCount" class="stat-num">0</div>
+                    <div id="totalDaysDetail" class="stat-detail">80 years expected</div>
+                </div>
+            </div>
+
+            <!-- Lifespan Progress Bar & Today Beacon -->
+            <div class="progress-card">
+                <div class="progress-header">
+                    <span>Lifespan Solar Progress</span>
+                    <span id="progressPctLabel" class="progress-pct">0%</span>
+                </div>
+                <div class="progress-track" aria-hidden="true">
+                    <div id="progressBarFill" class="progress-bar-fill" style="width: 0%;"></div>
+                </div>
+
+                <div class="jump-today-cta">
+                    <button type="button" class="jump-today-btn" onclick="scrollToToday()" aria-label="Jump to current day on grid">
+                        <div class="jump-today-left">
+                            <span class="jump-today-icon" aria-hidden="true">☼</span>
+                            <div class="jump-today-content">
+                                <span class="jump-today-title">Jump to Today</span>
+                                <span id="jumpTodaySub" class="jump-today-sub">See where you stand under the sun</span>
+                            </div>
+                        </div>
+                        <span class="jump-today-badge">Go to Grid ↓</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Display Card -->
+        <section class="calendar-card">
+            <div class="calendar-legend">
+                <span class="legend-item"><span class="legend-swatch gonedays">☑︎</span> Days Lived</span>
+                <span class="legend-item"><span class="legend-swatch today-marker">☼</span> Today (You are here)</span>
+                <span class="legend-item"><span class="legend-swatch leftdays">☐</span> Days Ahead</span>
+                <span class="legend-item">· 1 line = 3 weeks · 1 section = 1 year</span>
+            </div>
+
+            <div id="gridCalendar" class="gridbox">
+                <div class="empty-state">
+                    <div class="empty-state-icon">☼</div>
+                    Enter your birthday above and click <strong>Render Calendar</strong> to visualize your life grid under the sun.
+                </div>
+            </div>
+        </section>
+
+        <!-- Hidden compat target for legacy scripts/IDs -->
+        <div id="main" style="display:none;" aria-hidden="true"></div>
+        <div id="leftDaysCounter" style="display:none;" aria-hidden="true"></div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-top">
+                <div>
+                    <strong>Sohan Chowdhury</strong> · Software Engineer & Wilderness Explorer
+                </div>
+                <div class="footer-links">
+                    <a href="../">Home Portfolio</a>
+                    <a href="../#timeline">Timeline</a>
+                    <a href="../#projects">Projects</a>
+                    <a href="https://github.com/SohanChy" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>"Every sunrise is an invitation to brighten someone's day." — Solarpunk Ethos</span>
+                <a href="#" class="back-to-top">Back to top ↑</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
     <script src="zenscroll-min.js"></script>
-    <script>
-        var bday = null;
-        
-        function bdayEntered(){
-            bday = document.getElementById("bday").value;
 
-            if(bday != ""){
+    <!-- Theme Switcher -->
+    <script type="text/javascript">
+        (function () {
+            var picker = document.querySelector('.theme-picker');
+            if (!picker) return;
+            var swatches = picker.querySelectorAll('.theme-swatch');
+            var html = document.documentElement;
 
-                // Check browser support
-                if (typeof(Storage) !== "undefined") {
-                    localStorage.setItem("bday", bday);
+            var saved = localStorage.getItem('sp-theme') || 'green';
+            swatches.forEach(function (s) {
+                s.classList.toggle('active', s.getAttribute('data-theme') === saved);
+            });
 
-                    generateGrid(bday);
+            picker.addEventListener('click', function (e) {
+                var swatch = e.target.closest('.theme-swatch');
+                if (!swatch) return;
+                var theme = swatch.getAttribute('data-theme');
+
+                if (theme === 'green') {
+                    html.removeAttribute('data-theme');
                 } else {
-                    document.getElementById("main").innerHTML = "Sorry, your browser does not support Web Storage...";
+                    html.setAttribute('data-theme', theme);
                 }
 
+                localStorage.setItem('sp-theme', theme);
+                swatches.forEach(function (s) {
+                    s.classList.toggle('active', s === swatch);
+                });
+            });
+        })();
+    </script>
+
+    <!-- Scroll-Driven Celestial Cycle (Sunrise -> Midday -> Sunset) -->
+    <script type="text/javascript">
+        (function () {
+            var ticking = false;
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function () {
+                        var doc = document.documentElement;
+                        var total = doc.scrollHeight - window.innerHeight;
+                        var p = total > 0 ? Math.min(Math.max((window.pageYOffset || doc.scrollTop) / total, 0), 1) : 0;
+                        
+                        doc.style.setProperty('--scroll-p', p.toFixed(3));
+                        
+                        var sunriseOp = Math.max(0, Math.min(1, (0.42 - p) / 0.35)).toFixed(3);
+                        var middayOp = Math.max(0, Math.min(1, 1 - Math.abs(p - 0.45) * 3.5)).toFixed(3);
+                        var sunsetOp = Math.max(0, Math.min(1, (p - 0.48) / 0.35)).toFixed(3);
+                        
+                        doc.style.setProperty('--sunrise-op', sunriseOp);
+                        doc.style.setProperty('--midday-op', middayOp);
+                        doc.style.setProperty('--sunset-op', sunsetOp);
+
+                        var lightAngle = (115 + p * 130).toFixed(1) + 'deg';
+                        doc.style.setProperty('--light-angle', lightAngle);
+                        var shadowSkew = (-26 + p * 52).toFixed(1) + 'deg';
+                        doc.style.setProperty('--shadow-skew', shadowSkew);
+                        
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
+
+    <!-- Calendar Logic -->
+    <script type="text/javascript">
+        // Display today's date in header
+        (function () {
+            var todayEl = document.getElementById("todayLabel");
+            if (todayEl) {
+                var now = new Date();
+                var opts = { month: 'short', day: 'numeric', year: 'numeric' };
+                todayEl.textContent = now.toLocaleDateString('en-US', opts);
+                todayEl.setAttribute('datetime', now.toISOString().split('T')[0]);
+            }
+        })();
+
+        // Safe local date parser to prevent UTC midnight off-by-one errors
+        function parseLocalDate(dateStr) {
+            if (!dateStr) return null;
+            var parts = dateStr.split('-');
+            if (parts.length !== 3) return null;
+            return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+        }
+
+        function scrollToToday() {
+            var target = document.getElementById("leftDays");
+            if (!target) return;
+            if (window.zenscroll) {
+                zenscroll.center(target);
+            } else {
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
 
-        // Check browser support
-        if (typeof(Storage) !== "undefined") {
-                    var bdayStr = localStorage.getItem("bday");
+        function renderLifeGlance(lifeExp, weeksLived, weeksLeft) {
+            var glance = document.getElementById("lifeGlance");
+            var grid = document.getElementById("lifeGlanceGrid");
+            var labels = document.getElementById("lifeGlanceLabels");
+            var countEl = document.getElementById("weeksLeftCount");
+            if (!glance || !grid || !labels) return;
 
-                    if(bdayStr != null){
-                        bday = new Date(bdayStr);
-                        document.getElementById("bday").value = bday.toISOString().substr(0, 10);
-                        generateGrid(bday);
-                    }
-        } 
+            glance.style.setProperty("--life-years", String(lifeExp));
+            grid.style.setProperty("--life-years", String(lifeExp));
 
-        function calcLastDate(bday,todayDate){
-            var lifeExpectancy = 65;
+            if (countEl) {
+                countEl.textContent = weeksLeft.toLocaleString() + (weeksLeft === 1 ? " week left" : " weeks left");
+            }
 
-            var year = bday.getFullYear();
-            var month = bday.getMonth();
-            var day = bday.getDate();
+            var cells = document.createDocumentFragment();
+            var totalWeeks = lifeExp * 52;
+            for (var year = 0; year < lifeExp; year++) {
+                for (var week = 0; week < 52; week++) {
+                    var idx = year * 52 + week;
+                    var cell = document.createElement("span");
+                    cell.className = "week-cell";
+                    if (idx < weeksLived) cell.classList.add("spent");
+                    else if (idx === weeksLived && weeksLived < totalWeeks) cell.classList.add("now");
+                    else cell.classList.add("ahead");
+                    cell.title = "Age " + year + ", week " + (week + 1);
+                    cells.appendChild(cell);
+                }
+            }
+            grid.replaceChildren(cells);
 
-            var calcYear = year + (todayDate.getFullYear() - year) + lifeExpectancy;
-            
+            var ticks = document.createDocumentFragment();
+            for (var age = 0; age < lifeExp; age += 10) {
+                var tick = document.createElement("span");
+                tick.className = "decade-label";
+                tick.textContent = String(age);
+                tick.style.top = ((age + 0.5) / lifeExp * 100) + "%";
+                ticks.appendChild(tick);
+            }
+            var horizon = document.createElement("span");
+            horizon.className = "decade-label decade-label-end";
+            horizon.textContent = String(lifeExp);
+            horizon.style.top = "100%";
+            ticks.appendChild(horizon);
+            labels.replaceChildren(ticks);
 
-            var lastDate = new Date(calcYear , month, day)
-
-            
-            return lastDate;
+            glance.classList.add("active");
         }
 
-        function generateGrid(bday){
+        function bdayEntered() {
+            var bdayInput = document.getElementById("bday");
+            var expInput = document.getElementById("lifeExp");
+            var bdayVal = bdayInput ? bdayInput.value : "";
+            var lifeExpVal = expInput ? parseInt(expInput.value, 10) : 80;
+            if (isNaN(lifeExpVal) || lifeExpVal < 30) lifeExpVal = 80;
 
-            var bdayDate = new Date(bday);
+            if (bdayVal) {
+                if (typeof(Storage) !== "undefined") {
+                    localStorage.setItem("bday", bdayVal);
+                    localStorage.setItem("lifeExp", lifeExpVal.toString());
+                }
+                generateGrid(bdayVal, lifeExpVal);
+            }
+        }
+
+        function generateGrid(bdayStr, lifeExp) {
+            var bdayDate = parseLocalDate(bdayStr);
+            if (!bdayDate || isNaN(bdayDate.getTime())) return;
+
             var todayDate = new Date();
-            var lastDate = calcLastDate(bdayDate,todayDate);
+            todayDate.setHours(0, 0, 0, 0);
 
+            var gridEl = document.getElementById("gridCalendar");
+            var statsEl = document.getElementById("statsDashboard");
+            var scrollBtn = document.getElementById("todayScrollBtn");
+
+            // Validate past date
+            if (bdayDate > todayDate) {
+                gridEl.innerHTML = "<div class='empty-state'><div class='empty-state-icon'>⚠️</div>Date of birth cannot be in the future. Please select a valid date.</div>";
+                if (statsEl) statsEl.classList.remove('active');
+                if (scrollBtn) scrollBtn.style.display = 'none';
+                var glanceEl = document.getElementById("lifeGlance");
+                if (glanceEl) glanceEl.classList.remove("active");
+                return;
+            }
+
+            if (!lifeExp || isNaN(lifeExp) || lifeExp < 30) lifeExp = 80;
+
+            var lastDate = new Date(bdayDate.getFullYear() + lifeExp, bdayDate.getMonth(), bdayDate.getDate());
+            lastDate.setHours(0, 0, 0, 0);
+
+            var MS_PER_DAY = 86400000;
+            var totalDays = Math.max(1, Math.round((lastDate - bdayDate) / MS_PER_DAY));
+            var daysLived = Math.max(0, Math.round((todayDate - bdayDate) / MS_PER_DAY));
+            var daysLeft = Math.max(0, Math.round((lastDate - todayDate) / MS_PER_DAY));
+            var currentAge = Math.max(0, (todayDate - bdayDate) / (MS_PER_DAY * 365.25)).toFixed(1);
+            var pctCompleted = Math.min(100, Math.max(0, (daysLived / totalDays) * 100)).toFixed(1);
+
+            // Populate Stats Dashboard
+            document.getElementById("daysLivedCount").textContent = daysLived.toLocaleString();
+            document.getElementById("daysLivedPct").textContent = pctCompleted + "% of life horizon";
+            var weeksLived = Math.floor(daysLived / 7);
+            var totalWeeks = lifeExp * 52;
+            if (weeksLived > totalWeeks) weeksLived = totalWeeks;
+            var weeksLeft = totalWeeks - weeksLived;
+
+            document.getElementById("daysLeftCount").textContent = daysLeft.toLocaleString();
+            document.getElementById("daysLeftDetail").textContent = weeksLeft.toLocaleString() + (weeksLeft === 1 ? " week left to experience" : " weeks left to experience");
+            document.getElementById("currentAge").textContent = currentAge;
+            document.getElementById("ageDetail").textContent = "Solar years lived";
+            document.getElementById("totalDaysCount").textContent = totalDays.toLocaleString();
+            document.getElementById("totalDaysDetail").textContent = lifeExp + " solar years horizon";
+
+            document.getElementById("progressPctLabel").textContent = pctCompleted + "%";
+            document.getElementById("progressBarFill").style.width = pctCompleted + "%";
+
+            var jumpSub = document.getElementById("jumpTodaySub");
+            if (jumpSub) {
+                jumpSub.textContent = "Age " + currentAge + " · Day " + daysLived.toLocaleString() + " of " + totalDays.toLocaleString() + " under the sun";
+            }
+
+            // Sync hidden elements for backwards compatibility
+            var legacyCounter = document.getElementById("leftDaysCounter");
+            if (legacyCounter) legacyCounter.textContent = daysLeft;
+
+            if (statsEl) statsEl.classList.add('active');
+            if (scrollBtn) scrollBtn.style.display = 'inline-flex';
+            renderLifeGlance(lifeExp, weeksLived, weeksLeft);
+
+            // Generate Grid
             var text = "<span class='gonedays'>";
-            var symbol = "🗹";
+            var symbol = "☑︎";
+            var afterToday = false;
+            var i = 0;
+            var todayTime = todayDate.getTime();
+            var currentYear = todayDate.getFullYear();
 
-            var i = 1;
-            var iNow = i;
-            
-          
-            for (var d = new Date(bdayDate); d <= lastDate; i++) {
-                d.setDate(d.getDate() + 1);
-          
-                text += symbol;
+            for (var d = new Date(bdayDate); d <= lastDate; ) {
+                i++;
+                var dTime = d.getTime();
 
-                if(i%7 == 0){
+                if (!afterToday && dTime >= todayTime) {
+                    afterToday = true;
+                    symbol = "☐";
+                    text += "</span><span id='leftDays' class='today-marker' title='Today · Living in the Present'>☼</span><span class='leftdays'>";
+                } else {
+                    text += symbol;
+                }
+
+                if (i % 7 === 0) {
                     text += " ";
                 }
 
-                if(i%21 == 0){
+                if (i % 21 === 0) {
                     text += "<br>";
                 }
 
-                if(i%365 == 0){
-                    text += "<hr>";
-                }
-                
-                d.setHours(0,0,0,0);
-                todayDate.setHours(0,0,0,0);
-                
-                if(d.getTime() == todayDate.getTime()){
-                    symbol = "☐";
-                    text = text + "</span><span id='leftDays' class='leftdays'>";
-                    iNow = i;
-                } 
-                
+                // Advance by 1 day
+                d.setDate(d.getDate() + 1);
 
+                // Yearly milestone divider
+                if (i % 365 === 0 && d <= lastDate) {
+                    var completedYears = Math.floor(i / 365);
+                    var yearNumber = bdayDate.getFullYear() + completedYears;
+                    var isCurrentYear = (yearNumber === currentYear);
+                    text += "</span><div class='year-divider'><span class='year-badge" + (isCurrentYear ? " current-year" : "") + "'>Age " + completedYears + " · Year " + yearNumber + (isCurrentYear ? " ★ Current" : "") + "</span></div><span class='" + (afterToday ? "leftdays" : "gonedays") + "'>";
+                }
             }
 
-
-            text = text + "</span>";
-
-            document.getElementById("gridCalendar").innerHTML = text;
-            document.getElementById("leftDaysCounter").innerHTML = i - iNow;
-            
-            setTimeout(function(){
-                zenscroll.intoView(document.getElementById("leftDays"));
-            }, 1000);
-        
+            text += "</span>";
+            gridEl.innerHTML = text;
         }
-        
-       
-        
-    </script>
 
+        // Initialize from URL query params or localStorage
+        (function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var queryBday = urlParams.get("bday");
+            var queryExp = urlParams.get("lifeExp");
+
+            var savedBday = queryBday || (typeof(Storage) !== "undefined" ? localStorage.getItem("bday") : null);
+            var savedExp = queryExp || (typeof(Storage) !== "undefined" ? localStorage.getItem("lifeExp") : null) || "80";
+
+            var expInput = document.getElementById("lifeExp");
+            if (expInput) expInput.value = savedExp;
+
+            if (savedBday) {
+                var bdayInput = document.getElementById("bday");
+                if (bdayInput) bdayInput.value = savedBday;
+                generateGrid(savedBday, parseInt(savedExp, 10));
+            }
+        })();
+    </script>
 
 </body>
 

@@ -1,0 +1,632 @@
+/* ==========================================================================
+   Days Left of Your Life – Solarpunk Life Calendar
+   Companion to Sohan Chowdhury's personal portfolio (sohanchy.com)
+   ========================================================================== */
+
+/* ── Main Controls & Form Card ── */
+.controls-card {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-left: 4.5px solid var(--warm-accent);
+    border-radius: 12px;
+    padding: 24px 26px;
+    box-shadow: 0 10px 32px rgba(245, 158, 11, 0.14), var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    margin-bottom: 28px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.controls-header {
+    margin-bottom: 18px;
+}
+
+.controls-title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.controls-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.55;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 180px;
+}
+
+.form-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.sp-input {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-dark);
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.sp-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--glow);
+    background: #ffffff;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.sp-btn {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--warm-accent) 100%);
+    color: #ffffff;
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 11px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 3px 12px var(--glow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.sp-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--glow);
+    filter: brightness(1.06);
+}
+
+.sp-btn:active {
+    transform: translateY(0);
+}
+
+.sp-btn-secondary {
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1.5px solid var(--border-dark);
+    box-shadow: none;
+}
+
+.sp-btn-secondary:hover {
+    background: #ffffff;
+    border-color: var(--accent);
+    color: var(--link);
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.15);
+}
+
+/* ── Stats Dashboard ── */
+.stats-dashboard {
+    margin-bottom: 28px;
+    display: none;
+}
+
+.stats-dashboard.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.stat-tile {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 16px 18px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.stat-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.stat-tile.tile-left {
+    border-left: 3.5px solid var(--accent);
+}
+
+.stat-tile.tile-gone {
+    border-left: 3.5px solid var(--warm-accent);
+}
+
+.stat-tile.tile-total {
+    border-left: 3.5px solid var(--cool-accent);
+}
+
+.stat-tile.tile-age {
+    border-left: 3.5px solid var(--pop);
+}
+
+.stat-num {
+    font-family: var(--font-mono);
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    color: var(--text);
+}
+
+.stat-tile.tile-left .stat-num { color: var(--accent); }
+.stat-tile.tile-gone .stat-num { color: var(--warm-deep); }
+.stat-tile.tile-age .stat-num  { color: var(--pop); }
+
+.stat-caption {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-faint);
+}
+
+.stat-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ── Progress Bar Card & Jump to Today CTA ── */
+.progress-card {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 18px 20px 16px 20px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--card-shadow);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.progress-pct {
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: var(--bg-highlight);
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--vine-start) 0%, var(--vine-mid) 60%, var(--vine-end) 100%);
+    border-radius: 5px;
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 8px var(--glow);
+}
+
+/* ── Jump to Today Beacon Button ── */
+.jump-today-cta {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--border);
+}
+
+.jump-today-btn {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(22, 163, 74, 0.08) 0%, rgba(217, 119, 6, 0.12) 100%);
+    border: 1.5px solid var(--border-dark);
+    border-radius: 9px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    color: var(--text);
+    text-align: left;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    transition: all 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.jump-today-btn:hover {
+    background: linear-gradient(135deg, rgba(22, 163, 74, 0.16) 0%, rgba(217, 119, 6, 0.22) 100%);
+    border-color: var(--accent);
+    box-shadow: 0 4px 18px var(--glow), 0 0 12px rgba(245, 158, 11, 0.2);
+    transform: translateY(-2px);
+}
+
+.jump-today-btn:active {
+    transform: translateY(0);
+}
+
+.jump-today-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.jump-today-icon {
+    font-size: 1.55rem;
+    color: var(--warm-accent);
+    line-height: 1;
+    display: inline-block;
+    filter: drop-shadow(0 0 6px var(--warm-accent));
+    transition: transform 0.25s ease;
+}
+
+.jump-today-btn:hover .jump-today-icon {
+    transform: rotate(45deg) scale(1.15);
+}
+
+.jump-today-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.jump-today-title {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+
+.jump-today-sub {
+    font-size: 11.5px;
+    color: var(--text-muted);
+}
+
+.jump-today-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--link);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.jump-today-btn:hover .jump-today-badge {
+    background: #ffffff;
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 2px 8px var(--glow);
+    transform: translateX(2px);
+}
+
+/* ── Life in weeks (fits the horizon in one view) ── */
+.life-glance {
+    display: none;
+    margin-bottom: 28px;
+}
+
+.life-glance.active {
+    display: block;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.life-glance-card {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-top: 3.5px solid var(--warm-accent);
+    border-radius: 12px;
+    padding: 22px 18px 18px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    text-align: center;
+}
+
+.life-glance-count {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 4px 0;
+    color: var(--text);
+}
+
+.life-glance-caption {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+}
+
+.life-glance-row {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.life-glance-labels {
+    position: relative;
+    flex: 0 0 32px;
+    width: 32px;
+}
+
+.decade-label {
+    position: absolute;
+    left: 0;
+    width: 28px;
+    text-align: right;
+    padding-right: 7px;
+    box-sizing: border-box;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    line-height: 1;
+    color: var(--text-faint);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.decade-label::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 5px;
+    height: 1px;
+    background: var(--text-faint);
+    opacity: 0.8;
+}
+
+.decade-label-end {
+    transform: translateY(-100%);
+}
+
+.decade-label-end::after {
+    top: auto;
+    bottom: 0;
+}
+
+.life-glance-grid {
+    --life-years: 80;
+    width: min(calc(100% - 40px), calc(70svh * 52 / var(--life-years)));
+    aspect-ratio: 52 / var(--life-years);
+    display: grid;
+    grid-template-columns: repeat(52, minmax(0, 1fr));
+    grid-template-rows: repeat(var(--life-years), minmax(0, 1fr));
+    gap: 1px;
+    flex: 0 1 auto;
+    min-width: 0;
+}
+
+.week-cell {
+    display: block;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 1px;
+}
+
+.week-cell.spent {
+    background: var(--text-faint);
+    opacity: 0.45;
+}
+
+.week-cell.ahead {
+    background: var(--accent);
+}
+
+.week-cell.now {
+    background: var(--pop);
+    box-shadow: 0 0 6px var(--pop);
+    animation: pulse-today 2s infinite ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Calendar Grid Container ── */
+.calendar-card {
+    background: var(--bg-surface);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-top: 3.5px solid var(--accent);
+    border-radius: 12px;
+    padding: 26px 22px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    margin-bottom: 40px;
+}
+
+.calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed var(--border);
+}
+
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.legend-swatch {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.gridbox {
+    font-family: var(--font-mono);
+    font-size: 1.18rem;
+    line-height: 1.6;
+    letter-spacing: 0.16em;
+    text-align: center;
+    word-break: break-all;
+    user-select: none;
+    -webkit-user-select: none;
+    margin: 0 auto;
+}
+
+.gonedays {
+    color: var(--text-faint);
+    opacity: 0.52;
+}
+
+.leftdays {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.today-marker {
+    display: inline;
+    color: var(--pop);
+    font-weight: 700;
+    text-shadow: 0 0 8px var(--pop);
+    animation: pulse-today 2s infinite ease-in-out;
+}
+
+@keyframes pulse-today {
+    0%, 100% { opacity: 1; text-shadow: 0 0 8px var(--pop); }
+    50%      { opacity: 0.75; text-shadow: 0 0 16px var(--pop); }
+}
+
+.year-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 22px 0 16px 0;
+}
+
+.year-divider::before,
+.year-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.year-badge {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-faint);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 3px 12px;
+    border-radius: 12px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.year-badge.current-year {
+    border-color: var(--pop);
+    color: var(--pop);
+    font-weight: 700;
+    background: var(--bg-surface-alpha);
+    box-shadow: 0 0 10px rgba(225, 29, 72, 0.25);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    line-height: 1.7;
+}
+
+.empty-state-icon {
+    font-size: 2.2rem;
+    color: var(--warm-accent);
+    margin-bottom: 12px;
+}
+
+/* ── Mobile Tweaks ── */
+@media (max-width: 600px) {
+    .controls-card {
+        padding: 18px 16px;
+    }
+    .controls-title {
+        font-size: 1.5rem;
+    }
+    .controls-subtitle {
+        font-size: 0.95rem;
+    }
+    .gridbox {
+        font-size: 1.02rem;
+        letter-spacing: 0.12em;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .calendar-legend {
+        font-size: 11px;
+        gap: 10px;
+    }
+}

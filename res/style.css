@@ -1408,26 +1408,11 @@ body {
 /* ── Mobile ── */
 @media (max-width: 600px) {
     .solarpunk-bg {
+        contain: none;
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-    }
-
-    .sp-layer,
-    .sp-golden-light,
-    .sp-golden-spot,
-    .facet-east-lit,
-    .facet-east-shadow,
-    .facet-west-lit,
-    .facet-west-shadow,
-    .mountain-cast-shadow,
-    .lake-water-reflection {
-        transition: none;
-    }
-
-    .summit-beacon {
-        animation: none;
     }
 
     .container {

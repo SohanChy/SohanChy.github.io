@@ -397,6 +397,27 @@
     color: var(--text-muted);
 }
 
+.life-glance-share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.life-glance-share .sp-btn:disabled {
+    cursor: wait;
+    opacity: 0.7;
+    transform: none;
+}
+
+.life-glance-share-status {
+    min-height: 1.2em;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
 .life-glance-row {
     display: flex;
     align-items: stretch;

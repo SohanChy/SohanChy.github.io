@@ -1,32 +1,63 @@
 ---
-title: This is a tricky situation...
+title: 404 - Not Found
 permalink: /404.html
 ---
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ShortURL-for-Github</title>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-37749531-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-37749531-3');
-</script>
-
-    <script src="redirectorDB.js"></script>
-    <script src="redirector.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found · Sohan Chowdhury</title>
+    <link rel="stylesheet" href="/res/style.css" type="text/css" media="all">
+    <script src="/redirectorDB.js"></script>
+    <script src="/redirector.js"></script>
+    <style>
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            font-family: var(--font-mono);
+        }
+        .error-code {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--yellow);
+            margin: 0;
+            line-height: 1;
+        }
+        .error-msg {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin: 16px 0 24px 0;
+        }
+        .home-btn {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            padding: 8px 18px;
+            background: var(--bg-surface);
+            color: var(--text);
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+        .home-btn:hover {
+            background: var(--bg-card);
+            color: var(--cyan);
+        }
+    </style>
 </head>
 <body>
-<div class="text-center">
-    <h1>Whoops, this page doesn't exist.</h1>
-    <h1>Move along. (404 error)</h1>
-    <a href="/">Get back to Home</a>
-</div>
+    <div class="container">
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <p class="error-msg">Signal lost. The requested resource does not exist or has moved.</p>
+            <a href="/" class="home-btn">&larr; Return to Homepage</a>
+        </div>
+    </div>
 </body>
 </html>

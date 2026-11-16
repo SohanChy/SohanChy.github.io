@@ -6,7 +6,6 @@ var redirectorDB = {
 "git"     : 'https://github.com/SohanChy?tab=repositories',
 "code"    : 'https://github.com/SohanChy?tab=repositories',
 "gists"   : 'https://gist.github.com/SohanChy',
-"fb"      : 'https://fb.me/sifat3d',
 "twitter" : 'https://twitter.com/iam_sohan',
 "blog"    : 'https://blog.sohanchy.com',
 "cloud"   : 'https://drive.google.com/embeddedfolderview?id=0B6K4wLxlfQugdWVGTUJnakd5WTA#grid',

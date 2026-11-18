@@ -1485,16 +1485,32 @@ body {
     gap: 14px;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-email-btn {
     color: var(--text);
     text-decoration: none;
+    border: none;
     border-bottom: 1px solid var(--border);
+    background: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: inherit;
+    cursor: pointer;
     transition: color 0.15s ease, border-color 0.15s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-email-btn:hover {
     color: var(--warm-accent);
     border-bottom-color: var(--warm-accent);
+}
+
+.footer-email-revealed {
+    color: var(--text);
+    user-select: all;
+    -webkit-user-select: all;
+    cursor: text;
 }
 
 .footer-bottom {

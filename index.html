@@ -1034,12 +1034,16 @@
     <script type="text/javascript">
         (function () {
             var ticking = false;
+            var bg = document.querySelector('.solarpunk-bg');
             function onScroll() {
                 if (!ticking) {
                     window.requestAnimationFrame(function () {
                         var doc = document.documentElement;
+                        var scrollY = window.scrollY || window.pageYOffset || 0;
+                        // Clamp to [0, max] to ignore rubber-band overscroll on mobile
                         var total = doc.scrollHeight - window.innerHeight;
-                        var p = total > 0 ? Math.min(Math.max((window.pageYOffset || doc.scrollTop) / total, 0), 1) : 0;
+                        if (total <= 0) { ticking = false; return; }
+                        var p = Math.min(Math.max(scrollY / total, 0), 1);
 
                         // Normalized progress (0 at top, 1 at bottom)
                         doc.style.setProperty('--scroll-p', p.toFixed(3));

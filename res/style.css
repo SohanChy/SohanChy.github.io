@@ -206,6 +206,7 @@ html {
     transition: background-color 0.3s ease;
     overflow-x: clip;
     max-width: 100%;
+    overscroll-behavior-y: none;
 }
 
 body {
@@ -236,6 +237,9 @@ body {
     z-index: 0;
     overflow: hidden;
     contain: strict;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: contents;
 }
 
 .sp-layer {
@@ -244,12 +248,13 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 /* 1. Sunrise Layer (Morning Golden Hour: Top of Page) */
 .sp-sunrise-layer {
     opacity: var(--sunrise-op, 1);
-    transition: opacity 0.14s ease-out;
 }
 
 .sp-sunrise-sky {
@@ -266,7 +271,6 @@ body {
 /* 2. Midday Layer (Short, Bright Solar Tech: Mid-Page) */
 .sp-midday-layer {
     opacity: var(--midday-op, 0);
-    transition: opacity 0.14s ease-out;
 }
 
 .sp-midday-sky {
@@ -283,7 +287,6 @@ body {
 /* 3. Sunset Layer (Evening Golden Hour: Bottom of Page into Alpine Dusk) */
 .sp-sunset-layer {
     opacity: var(--sunset-op, 0);
-    transition: opacity 0.14s ease-out;
 }
 
 .sp-sunset-sky {
@@ -308,7 +311,6 @@ body {
         transparent 66%
     );
     mix-blend-mode: soft-light;
-    transition: background 0.08s ease-out;
 }
 
 .sp-golden-spot {
@@ -326,7 +328,6 @@ body {
     );
     pointer-events: none;
     filter: blur(42px);
-    transition: left 0.08s ease-out;
 }
 
 /* ── Mount Assiniboine: Golden Light & Mountain Shadow System ── */
@@ -337,23 +338,19 @@ body {
 /* East Facet: Lit at top/morning, transitions into shadow on scroll */
 .facet-east-lit {
     opacity: calc(1 - var(--scroll-p, 0) * 0.90);
-    transition: opacity 0.06s ease-out;
 }
 
 .facet-east-shadow {
     opacity: calc(0.08 + var(--scroll-p, 0) * 0.88);
-    transition: opacity 0.06s ease-out;
 }
 
 /* West Facet: Starts in deep cool shadow, blazes into sunset alpenglow */
 .facet-west-lit {
     opacity: calc(0.12 + var(--scroll-p, 0) * 0.88);
-    transition: opacity 0.06s ease-out;
 }
 
 .facet-west-shadow {
     opacity: calc(0.92 - var(--scroll-p, 0) * 0.85);
-    transition: opacity 0.06s ease-out;
 }
 
 /* Mountain Cast Shadow: Sweeps dynamically across Lake Magog and the valley */
@@ -361,7 +358,6 @@ body {
     transform-box: view-box;
     transform-origin: 1060px 160px;
     transform: skewX(var(--shadow-skew, -26deg));
-    transition: transform 0.08s ease-out, opacity 0.08s ease-out;
     opacity: 0.88;
 }
 
@@ -373,7 +369,6 @@ body {
 /* Lake Magog Golden-Hour Water Reflection */
 .lake-water-reflection {
     opacity: calc(0.35 + var(--scroll-p, 0) * 0.55);
-    transition: opacity 0.08s ease-out;
 }
 
 /* Summit Pinnacle Alpenglow Beacon */
@@ -1527,9 +1522,6 @@ body {
 /* ── Mobile ── */
 @media (max-width: 600px) {
     .solarpunk-bg {
-        contain: none;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
     }
